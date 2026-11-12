@@ -1,0 +1,1407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Love Shack | Luxury Beachfront Villa in Savaneta, Aruba</title>
+  <meta name="description" content="An intimate 3-bedroom luxury beachfront vacation villa in Savaneta, Aruba. Private swimming pool, direct Caribbean sea access, and serene island living.">
+  
+  <!-- Typography System: Bodoni Moda (Logo), Cormorant Garamond (Headings), Lato (Body), Montserrat (Nav & Buttons) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Floating Luxury Navigation Bar (Reference 1 & 2 Synthesis) -->
+  <div class="header-wrapper">
+    <header class="header">
+      <a class="logo" href="index.html" aria-label="Love Shack Homepage">love shack</a>
+      
+      <button class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav class="nav" aria-label="Main Navigation">
+        <a class="current" href="index.html">Home</a>
+        <a href="property.html">The Property</a>
+        <a href="booking.html">Book Your Stay</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav-cta" href="booking.html">
+          Check Availability
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </nav>
+    </header>
+  </div>
+
+  <main>
+    <!-- Immersive Beachfront Hero Section (Reference 1 & 2 Inspirations) -->
+    <section class="hero" aria-label="Welcome to Love Shack">
+      <div class="hero-bg" role="img" aria-label="Ocean and villa hero photograph"></div>
+      <div class="hero-overlay"></div>
+      
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span>SAVANETA · ARUBA</span>
+        </div>
+
+        <h1>Your beachfront escape in <em>Aruba.</em></h1>
+        
+        <p class="hero-description">
+          Where crystal turquoise Caribbean waters meet laid-back barefoot luxury. An intimate 3-bedroom private pool villa created for unhurried days and unforgettable island memories.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-teal" href="booking.html">
+            Book Your Stay
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a class="btn btn-glass" href="property.html">Explore Property</a>
+          <a class="btn btn-glass" href="contact.html">Inquire With Host</a>
+        </div>
+
+        <!-- Central Floating Booking Search Bar (Signature Reference 1 Element) -->
+        <div class="hero-search-wrapper">
+          <form class="hero-search-bar" id="heroSearchForm" action="booking.html" method="GET" aria-label="Quick search availability">
+            <div class="search-field">
+              <div class="search-field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="search-field-body">
+                <span class="search-field-label">Check-In</span>
+                <input type="date" id="heroCheckin" name="checkin" aria-label="Check-in date">
+              </div>
+            </div>
+
+            <div class="search-field">
+              <div class="search-field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="search-field-body">
+                <span class="search-field-label">Check-Out</span>
+                <input type="date" id="heroCheckout" name="checkout" aria-label="Check-out date">
+              </div>
+            </div>
+
+            <div class="search-field">
+              <div class="search-field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="search-field-body">
+                <span class="search-field-label">Guests</span>
+                <select id="heroGuests" name="guests" aria-label="Number of guests">
+                  <option value="2">2 Guests (Couple)</option>
+                  <option value="4" selected>4 Guests (Family)</option>
+                  <option value="6">6 Guests (Max)</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="search-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <span>Check Dates</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Amenity Information Strip (Signature Reference 2 Element) -->
+    <section class="amenity-strip-section wrap" aria-label="Property Key Highlights">
+      <div class="amenity-strip-container">
+        <div class="strip-item">
+          <div class="strip-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 4v16"></path>
+              <path d="M2 8h18a2 2 0 0 1 2 2v10"></path>
+              <path d="M2 17h20"></path>
+              <path d="M6 8v9"></path>
+            </svg>
+          </div>
+          <div class="strip-text">
+            <strong>3 Bedrooms</strong>
+            <span>King & Queen Suites</span>
+          </div>
+        </div>
+
+        <div class="strip-item">
+          <div class="strip-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 6h6"></path>
+              <path d="M12 3v3"></path>
+              <path d="M4 11h16a2 2 0 0 1 2 2v2a7 7 0 0 1-7 7H9a7 7 0 0 1-7-7v-2a2 2 0 0 1 2-2z"></path>
+            </svg>
+          </div>
+          <div class="strip-text">
+            <strong>3 Bathrooms</strong>
+            <span>En-Suite Spa Baths</span>
+          </div>
+        </div>
+
+        <div class="strip-item">
+          <div class="strip-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="strip-text">
+            <strong>Sleeps 6</strong>
+            <span>Generous Layout</span>
+          </div>
+        </div>
+
+        <div class="strip-item">
+          <div class="strip-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12h20"></path>
+              <path d="M2 17c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 4 2"></path>
+              <path d="M2 21c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 4 2"></path>
+              <circle cx="12" cy="7" r="3"></circle>
+            </svg>
+          </div>
+          <div class="strip-text">
+            <strong>Private Pool</strong>
+            <span>Secluded Garden Oasis</span>
+          </div>
+        </div>
+
+        <div class="strip-item">
+          <div class="strip-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+              <path d="M12 12v7"></path>
+              <path d="m8 15 4-3 4 3"></path>
+            </svg>
+          </div>
+          <div class="strip-text">
+            <strong>Beach Access</strong>
+            <span>Steps to the Shoreline</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Property Introduction Section -->
+    <section class="intro-section wrap" aria-label="About Love Shack">
+      <div class="intro-grid">
+        <div class="intro-visual">
+          <div class="intro-image-frame">
+            <img src="assets/images/temporary-beach.jpg" alt="Love Shack beachfront tropical coastline in Savaneta, Aruba">
+          </div>
+          <div class="intro-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Direct Beachfront Living
+          </div>
+        </div>
+
+        <div class="intro-content">
+          <span class="eyebrow">THE SANCTUARY · ARUBA</span>
+          <h2>A tropical escape crafted for <em>pure relaxation.</em></h2>
+          <p>
+            Tucked along the peaceful coastline of Savaneta, Love Shack redefines island ease. Designed for travelers seeking quiet luxury, generous open-air living spaces, and the soothing sounds of gentle Caribbean tides.
+          </p>
+
+          <ul class="benefit-list">
+            <li class="benefit-item">
+              <span class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Direct beachfront access just steps from your private terrace</span>
+            </li>
+            <li class="benefit-item">
+              <span class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Secluded freshwater swimming pool surrounded by tropical flora</span>
+            </li>
+            <li class="benefit-item">
+              <span class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Three private air-conditioned en-suite bedroom sanctuaries</span>
+            </li>
+            <li class="benefit-item">
+              <span class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Fully equipped chef's kitchen & alfresco dining lanai</span>
+            </li>
+          </ul>
+
+          <a class="btn-text-link" href="property.html">
+            Explore Villa Spaces & Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Experience / Island Rhythm Section -->
+    <section class="experience-section" aria-label="The Villa Experience">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="eyebrow center">THE LOVE SHACK EXPERIENCE</span>
+          <h2>Make room for <em>unhurried days.</em></h2>
+          <p>From slow ocean mornings to golden-hour swims, the best vacation memories are often the simplest ones.</p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card">
+            <div class="experience-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </div>
+            <h3>Slow Island Mornings</h3>
+            <p>Start your day with artisan coffee on the sun-drenched lanai, listening to calm morning waters and birdsong.</p>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12h20"></path>
+                <path d="M2 17c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 4 2"></path>
+                <circle cx="12" cy="7" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Poolside Seclusion</h3>
+            <p>Take refreshing afternoon dips in your private freshwater swimming pool, secluded by lush tropical gardens and palms.</p>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h3>Sunset Living Together</h3>
+            <p>Watch Aruba’s famous golden sunsets paint the Caribbean horizon from the beachfront terrace with loved ones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Gallery Preview Section with Lightbox Integration -->
+    <section class="gallery-section wrap" aria-label="Villa Gallery Preview">
+      <div class="gallery-header-row">
+        <div>
+          <span class="eyebrow">A GLIMPSE OF PARADISE</span>
+          <h2>Picture yourself <em>here.</em></h2>
+        </div>
+        <a class="btn-text-link" href="property.html#gallery">
+          View Full Gallery
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" data-caption="Love Shack Private Freshwater Pool & Garden Sanctuary">
+          <img src="assets/images/temporary-hero.jpg" alt="Villa and private swimming pool oasis">
+          <div class="gallery-overlay">
+            <div class="gallery-caption">
+              <span>Poolside Terrace & Garden</span>
+              <div class="gallery-zoom-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-caption="Direct Beachfront Shoreline in Savaneta, Aruba">
+          <img src="assets/images/temporary-beach.jpg" alt="Turquoise Caribbean sea and white beach">
+          <div class="gallery-overlay">
+            <div class="gallery-caption">
+              <span>Savaneta Beach Access</span>
+              <div class="gallery-zoom-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-caption="Sun Lounger Terrace & Freshwater Swimming Pool">
+          <img src="assets/images/temporary-pool.jpg" alt="Sparkling blue pool with poolside loungers">
+          <div class="gallery-overlay">
+            <div class="gallery-caption">
+              <span>Sun Lounger Deck</span>
+              <div class="gallery-zoom-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Luxury Amenities Section (Airbnb-Inspired Organization) -->
+    <section class="amenities-section" id="amenities" aria-label="Villa Amenities">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="eyebrow center">CURATED COMFORTS</span>
+          <h2>Everything needed for an <em>effortless stay.</em></h2>
+          <p>Every detail has been thoughtfully considered to provide seamless comfort from arrival to departure.</p>
+        </div>
+
+        <!-- Popular Amenities Featured Preview Grid -->
+        <div class="amenities-popular-grid">
+          <!-- 1. Pool -->
+          <div class="amenity-popular-card">
+            <div class="amenity-popular-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12h20"></path>
+                <path d="M2 17c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 4 2"></path>
+                <circle cx="12" cy="7" r="3"></circle>
+              </svg>
+            </div>
+            <strong>Private Pool</strong>
+            <span>Freshwater garden oasis</span>
+          </div>
+
+          <!-- 2. Beach Access -->
+          <div class="amenity-popular-card">
+            <div class="amenity-popular-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                <path d="M12 12v7"></path>
+                <path d="m8 15 4-3 4 3"></path>
+              </svg>
+            </div>
+            <strong>Beach Access</strong>
+            <span>Steps to Savaneta sand</span>
+          </div>
+
+          <!-- 3. Air Conditioning -->
+          <div class="amenity-popular-card">
+            <div class="amenity-popular-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path>
+              </svg>
+            </div>
+            <strong>Air Conditioning</strong>
+            <span>Individual room climate</span>
+          </div>
+
+          <!-- 4. Wi-Fi -->
+          <div class="amenity-popular-card">
+            <div class="amenity-popular-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+              </svg>
+            </div>
+            <strong>Fast Wi-Fi</strong>
+            <span>150+ Mbps speed</span>
+          </div>
+
+          <!-- 5. Kitchen -->
+          <div class="amenity-popular-card">
+            <div class="amenity-popular-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+              </svg>
+            </div>
+            <strong>Chef's Kitchen</strong>
+            <span>Full range & cookware</span>
+          </div>
+
+          <!-- 6. En-Suite Baths -->
+          <div class="amenity-popular-card">
+            <div class="amenity-popular-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 6h6"></path>
+                <path d="M12 3v3"></path>
+                <path d="M4 11h16a2 2 0 0 1 2 2v2a7 7 0 0 1-7 7H9a7 7 0 0 1-7-7v-2a2 2 0 0 1 2-2z"></path>
+              </svg>
+            </div>
+            <strong>3 En-Suite Baths</strong>
+            <span>Walk-in rain showers</span>
+          </div>
+
+          <!-- 7. Gated Parking -->
+          <div class="amenity-popular-card">
+            <div class="amenity-popular-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                <path d="M9 16V8h4a2 2 0 0 1 0 4H9"></path>
+              </svg>
+            </div>
+            <strong>Free Parking</strong>
+            <span>Private gated driveway</span>
+          </div>
+
+          <!-- 8. Kayaks & SUPs -->
+          <div class="amenity-popular-card">
+            <div class="amenity-popular-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="5" r="2"></circle>
+                <path d="m4 20 6.5-6.5L14 16l6-8"></path>
+                <path d="m2 18 2 2 2-2"></path>
+                <path d="m18 10 2-2 2 2"></path>
+              </svg>
+            </div>
+            <strong>Kayaks & SUPs</strong>
+            <span>Paddles to Sea Glass Isle</span>
+          </div>
+
+          <!-- 9. BBQ Grill -->
+          <div class="amenity-popular-card">
+            <div class="amenity-popular-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 3v18"></path>
+                <path d="M3 12h18"></path>
+                <circle cx="12" cy="12" r="4"></circle>
+              </svg>
+            </div>
+            <strong>Propane BBQ</strong>
+            <span>Alfresco dining grill</span>
+          </div>
+
+          <!-- 10. Beach Palapa -->
+          <div class="amenity-popular-card">
+            <div class="amenity-popular-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 3 9 7-2 1-7-5.5L5 11l-2-1 9-7z"></path>
+                <path d="M12 9v12"></path>
+                <path d="M5 21h14"></path>
+              </svg>
+            </div>
+            <strong>Shaded Palapa</strong>
+            <span>Seaside yoga & relax</span>
+          </div>
+        </div>
+
+        <!-- Amenities Action Row: Button to open full modal -->
+        <div class="amenities-action-row">
+          <button type="button" class="btn btn-outline" id="openAmenitiesModalBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="amenitiesModal">
+            <span>Show All Amenities (35+ Facilities)</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="8" y1="6" x2="21" y2="6"></line>
+              <line x1="8" y1="12" x2="21" y2="12"></line>
+              <line x1="8" y1="18" x2="21" y2="18"></line>
+              <line x1="3" y1="6" x2="3.01" y2="6"></line>
+              <line x1="3" y1="12" x2="3.01" y2="12"></line>
+              <line x1="3" y1="18" x2="3.01" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Categorized Amenities Modal (Airbnb Property Detail Experience) -->
+    <div class="amenities-modal" id="amenitiesModal" role="dialog" aria-modal="true" aria-labelledby="amenitiesModalTitle" aria-hidden="true">
+      <div class="amenities-modal-backdrop" id="amenitiesModalBackdrop"></div>
+      <div class="amenities-modal-dialog">
+        <div class="amenities-modal-header">
+          <h3 id="amenitiesModalTitle">What this place offers</h3>
+          <button type="button" class="amenities-modal-close" id="closeAmenitiesModalBtn" aria-label="Close amenities dialog">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="amenities-modal-body">
+          <p class="amenities-modal-intro">
+            Comprehensive list of confirmed amenities and facilities provided at Love Shack in Savaneta, Aruba. Accommodates up to 6 guests with 3 private en-suite suites.
+          </p>
+
+          <!-- 1. Popular Amenities -->
+          <div class="amenity-modal-category">
+            <h4 class="amenity-modal-category-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              1. Popular amenities
+            </h4>
+            <ul class="amenity-modal-items">
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Private freshwater swimming pool</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Direct sandy beach access</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Full villa air conditioning throughout</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>High-speed Wi-Fi (150+ Mbps)</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Fully equipped chef's kitchen</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Free private gated parking on premises</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 2. Bathroom -->
+          <div class="amenity-modal-category">
+            <h4 class="amenity-modal-category-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h6"></path><path d="M12 3v3"></path><path d="M4 11h16a2 2 0 0 1 2 2v2a7 7 0 0 1-7 7H9a7 7 0 0 1-7-7v-2a2 2 0 0 1 2-2z"></path></svg>
+              2. Bathroom
+            </h4>
+            <ul class="amenity-modal-items">
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>3 private en-suite spa bathrooms</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Walk-in rain showers</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Outdoor tropical garden rain shower</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Continuous hot water</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Hair dryers in each bathroom</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Plush bath towels, hand towels & toiletries</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 3. Bedroom and Laundry -->
+          <div class="amenity-modal-category">
+            <h4 class="amenity-modal-category-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+              3. Bedroom and laundry
+            </h4>
+            <ul class="amenity-modal-items">
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>3 private bedrooms (2 King suites, 1 Queen/Twin suite)</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Premium high-thread cotton bed linens</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Extra pillows & blankets</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Room-darkening shades</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Custom teak wardrobes, hangers & luggage space</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Washing machine and dryer</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Iron & ironing board</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 4. Entertainment -->
+          <div class="amenity-modal-category">
+            <h4 class="amenity-modal-category-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg>
+              4. Entertainment
+            </h4>
+            <ul class="amenity-modal-items">
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Smart 4K TV with streaming capability</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Bluetooth high-fidelity sound bar</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Aruban guide books & island reading collection</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Board games & family activities</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 5. Kitchen and Dining -->
+          <div class="amenity-modal-category">
+            <h4 class="amenity-modal-category-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+              5. Kitchen and dining
+            </h4>
+            <ul class="amenity-modal-items">
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Full-size refrigerator and freezer with ice maker</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Gas cooking range and convection oven</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dishwasher & detergent</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Microwave & toaster</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Espresso machine and drip coffee maker</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Blender for tropical island cocktails</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pots, pans, chef knives & cooking utensils</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Plates, silverware, wine glasses & barware</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Indoor 6-guest dining table & outdoor lanai table</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 6. Outdoor -->
+          <div class="amenity-modal-category">
+            <h4 class="amenity-modal-category-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"></path><path d="M2 17c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 4 2"></path><circle cx="12" cy="7" r="3"></circle></svg>
+              6. Outdoor
+            </h4>
+            <ul class="amenity-modal-items">
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Private swimming pool with poolside loungers</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Traditional thatched-roof beach palapa for shade & yoga</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Covered patio lounge with comfortable outdoor sofas</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Propane gas BBQ grill station</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Complimentary ocean kayaks & stand-up paddleboards</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Adult snorkeling masks & fins for reef exploration</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Portable beach chairs, oversized towels & cooler</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Direct steps to calm turquoise swimming waters</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 7. Parking and Additional Facilities -->
+          <div class="amenity-modal-category">
+            <h4 class="amenity-modal-category-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              7. Parking and additional facilities
+            </h4>
+            <ul class="amenity-modal-items">
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Free secure parking on site inside gated perimeter</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Keyless digital lockbox / keypad entry (self check-in)</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Fully fenced & gated private estate grounds</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dedicated on-island concierge & host support (Traci & Alexandra)</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Smoke alarms & fire extinguisher</span>
+              </li>
+              <li class="amenity-modal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>First aid safety kit</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location & Savaneta Coastline Section -->
+    <section class="location-section wrap" aria-label="Location Details">
+      <div class="location-grid">
+        <div class="location-info">
+          <span class="eyebrow">THE DESTINATION</span>
+          <h2>Savaneta — Aruba's <em>authentic coast.</em></h2>
+          <p>
+            Far away from high-rise crowds, Savaneta is Aruba's oldest town and most charming seaside secret. Here, fishing boats glide past over calm turquoise lagoons, and world-renowned fresh seafood restaurants sit right on the sand.
+          </p>
+
+          <div class="location-highlights">
+            <div class="loc-highlight-item">
+              <strong>15 Minutes</strong>
+              <span>From AUA Airport</span>
+            </div>
+            <div class="loc-highlight-item">
+              <strong>2 Minutes</strong>
+              <span>To Flying Fishbone & Zeerovers</span>
+            </div>
+            <div class="loc-highlight-item">
+              <strong>5 Minutes</strong>
+              <span>To Mangel Halto Reef</span>
+            </div>
+            <div class="loc-highlight-item">
+              <strong>Steps Away</strong>
+              <span>Direct Ocean Access</span>
+            </div>
+          </div>
+
+          <a class="btn-text-link" href="contact.html">
+            Ask Host About Location & Transfers
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="map-visual-card">
+          <div class="map-pin-pulse">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <h3>Love Shack Villa</h3>
+          <span class="map-coordinates">SAVANETA, ARUBA · 12.4485° N, 69.9328° W</span>
+          <p class="map-note">
+            Quiet residential beachfront street in Savaneta. Exact property address and keyless keypad code are sent upon confirmed reservation.
+          </p>
+          <a class="btn btn-teal" href="https://maps.google.com/?q=Savaneta+Aruba" target="_blank" rel="noopener noreferrer">
+            Explore Savaneta on Map ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guest Reviews / Experiences Section (Airbnb Verified Guest Reference) -->
+    <section class="reviews-section" id="reviews" aria-label="Guest Experiences & Verified Reviews">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="eyebrow center">GUEST EXPERIENCES</span>
+          <h2>Cherished moments from <em>our guests.</em></h2>
+          <p>Verified reviews from travelers who have experienced the magic of The Love Shack in Savaneta, Aruba.</p>
+        </div>
+
+        <!-- Airbnb-Inspired Overall Rating Header -->
+        <div class="reviews-rating-summary">
+          <div class="rating-overall-badge">
+            <div class="rating-number">5.0</div>
+            <div class="rating-stars-wrap">
+              <div class="review-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <span class="rating-sub">Guest Favorite · Top 1% of Homes on Airbnb</span>
+            </div>
+          </div>
+
+          <div class="rating-metrics-grid">
+            <div class="rating-metric">
+              <span class="metric-label">Cleanliness</span>
+              <div class="metric-bar"><div class="metric-fill" style="width: 100%;"></div></div>
+              <span class="metric-score">5.0</span>
+            </div>
+            <div class="rating-metric">
+              <span class="metric-label">Accuracy</span>
+              <div class="metric-bar"><div class="metric-fill" style="width: 100%;"></div></div>
+              <span class="metric-score">5.0</span>
+            </div>
+            <div class="rating-metric">
+              <span class="metric-label">Check-in</span>
+              <div class="metric-bar"><div class="metric-fill" style="width: 100%;"></div></div>
+              <span class="metric-score">5.0</span>
+            </div>
+            <div class="rating-metric">
+              <span class="metric-label">Communication</span>
+              <div class="metric-bar"><div class="metric-fill" style="width: 100%;"></div></div>
+              <span class="metric-score">5.0</span>
+            </div>
+            <div class="rating-metric">
+              <span class="metric-label">Location</span>
+              <div class="metric-bar"><div class="metric-fill" style="width: 100%;"></div></div>
+              <span class="metric-score">5.0</span>
+            </div>
+            <div class="rating-metric">
+              <span class="metric-label">Value</span>
+              <div class="metric-bar"><div class="metric-fill" style="width: 100%;"></div></div>
+              <span class="metric-score">5.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Initial 3 Featured Reviews -->
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <p class="review-quote">
+                “The Love Shack exceeded every expectation our family had. Stepping directly from the private pool terrace onto the sand every morning was paradise. Having kayaks and paddleboards right there made paddling over to Sea Glass Island an absolute highlight. Traci and Alexandra were incredible hosts—super responsive and helpful with airport pickups and local dining. We can't wait to return!”
+              </p>
+            </div>
+            <div>
+              <div class="review-author">
+                <strong>Michael S.</strong>
+                <span class="review-stay-date">Stayed November 2025 · Verified Stay</span>
+              </div>
+              <span class="review-verified-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Verified Guest
+              </span>
+            </div>
+          </article>
+
+          <!-- Review 2 -->
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <p class="review-quote">
+                “If you want to experience the real, peaceful Aruba away from the crowded resort high-rises, this is the place. The house was immaculately clean, beautifully decorated with local ocean murals, and stocked with everything from beach towels to a blender for tropical drinks. Watching sunsets from the beach palapa was unforgettable.”
+              </p>
+            </div>
+            <div>
+              <div class="review-author">
+                <strong>Jessica & Brian T.</strong>
+                <span class="review-stay-date">Stayed September 2025 · Verified Stay</span>
+              </div>
+              <span class="review-verified-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Verified Guest
+              </span>
+            </div>
+          </article>
+
+          <!-- Review 3 -->
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <p class="review-quote">
+                “Five stars aren't enough for The Love Shack. The 3 en-suite bedrooms gave each couple complete privacy, while the open living area and pool deck brought everyone together. Alexandra greeted us at check-in and gave fantastic local recommendations—dinner at Zeerovers and Flying Fishbone just minutes away. Flawless stay from start to finish.”
+              </p>
+            </div>
+            <div>
+              <div class="review-author">
+                <strong>David K.</strong>
+                <span class="review-stay-date">Stayed August 2025 · Verified Stay</span>
+              </div>
+              <span class="review-verified-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Verified Guest
+              </span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Additional Verified Reviews Container (Revealed via Show More Reviews) -->
+        <div class="reviews-more-wrap" id="reviewsMoreWrap" aria-hidden="true">
+          <div class="reviews-grid" style="margin-top: 28px;">
+            <!-- Review 4 -->
+            <article class="review-card">
+              <div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="review-quote">
+                  “An absolute dream vacation home. The private freshwater pool is huge and crystal clear, surrounded by palms and just steps from the calm ocean. Our kids spent hours snorkeling and swimming safely. Traci was in touch before and throughout our stay making sure we had everything we needed. 10/10 hospitality!”
+                </p>
+              </div>
+              <div>
+                <div class="review-author">
+                  <strong>Amanda M.</strong>
+                  <span class="review-stay-date">Stayed June 2025 · Verified Stay</span>
+                </div>
+                <span class="review-verified-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Verified Guest
+                </span>
+              </div>
+            </article>
+
+            <!-- Review 5 -->
+            <article class="review-card">
+              <div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="review-quote">
+                  “We celebrated our anniversary at The Love Shack and couldn’t have asked for a better sanctuary. Quiet, gated, private, and romantic. The sea breeze flowing through the house and the private outdoor rain shower after beach dips made it feel like our own private boutique resort. Highly recommended!”
+                </p>
+              </div>
+              <div>
+                <div class="review-author">
+                  <strong>Robert & Laura H.</strong>
+                  <span class="review-stay-date">Stayed May 2025 · Verified Stay</span>
+                </div>
+                <span class="review-verified-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Verified Guest
+                </span>
+              </div>
+            </article>
+
+            <!-- Review 6 -->
+            <article class="review-card">
+              <div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="review-quote">
+                  “Everything about The Love Shack is top tier. The kitchen is fully equipped for making breakfast or grilling on the patio BBQ. Snorkeling equipment and beach chairs were in great condition. The location in Savaneta is tranquil and safe, yet only 10-15 minutes from the airport. Truly one of the best Airbnbs we've ever stayed at.”
+                </p>
+              </div>
+              <div>
+                <div class="review-author">
+                  <strong>Christopher P.</strong>
+                  <span class="review-stay-date">Stayed March 2025 · Verified Stay</span>
+                </div>
+                <span class="review-verified-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Verified Guest
+                </span>
+              </div>
+            </article>
+
+            <!-- Review 7 -->
+            <article class="review-card">
+              <div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="review-quote">
+                  “Spotless, spacious, and serene. The beds were wonderfully comfortable, AC worked perfectly in every room, and the attention to detail was evident everywhere. Paddling the complimentary kayaks across the calm channel to hunt for sea glass was pure joy. Thank you Traci and Alexandra for being such gracious hosts!”
+                </p>
+              </div>
+              <div>
+                <div class="review-author">
+                  <strong>Elena V.</strong>
+                  <span class="review-stay-date">Stayed February 2025 · Verified Stay</span>
+                </div>
+                <span class="review-verified-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Verified Guest
+                </span>
+              </div>
+            </article>
+
+            <!-- Review 8 -->
+            <article class="review-card">
+              <div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="review-quote">
+                  “We have visited Aruba four times, but staying at The Love Shack in Savaneta was by far our favorite trip. The privacy of having your own beach and pool cannot be overstated. Alexandra arranged a wonderful private chef dinner for us on the patio. Worth every penny.”
+                </p>
+              </div>
+              <div>
+                <div class="review-author">
+                  <strong>Daniel & Stephanie W.</strong>
+                  <span class="review-stay-date">Stayed January 2025 · Verified Stay</span>
+                </div>
+                <span class="review-verified-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Verified Guest
+                </span>
+              </div>
+            </article>
+
+            <!-- Review 9 -->
+            <article class="review-card">
+              <div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="review-quote">
+                  “A true hidden gem on the island. The property is even better than the photos. Direct beach walks, calm turquoise water, and stunning night skies from the sun loungers. Communication with Traci was effortless and prompt. We felt pampered and right at home.”
+                </p>
+              </div>
+              <div>
+                <div class="review-author">
+                  <strong>Karen L.</strong>
+                  <span class="review-stay-date">Stayed November 2024 · Verified Stay</span>
+                </div>
+                <span class="review-verified-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Verified Guest
+                </span>
+              </div>
+            </article>
+
+            <!-- Review 10 -->
+            <article class="review-card">
+              <div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="review-quote">
+                  “The perfect layout for 3 couples. Every room having its own private bathroom made mornings relaxed. The outdoor living area with the palapa and BBQ grill is where we spent most of our evenings. The quiet fishing village of Savaneta has the best fresh seafood on the island.”
+                </p>
+              </div>
+              <div>
+                <div class="review-author">
+                  <strong>James & Patricia C.</strong>
+                  <span class="review-stay-date">Stayed October 2024 · Verified Stay</span>
+                </div>
+                <span class="review-verified-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Verified Guest
+                </span>
+              </div>
+            </article>
+
+            <!-- Review 11 -->
+            <article class="review-card">
+              <div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="review-quote">
+                  “Unbelievable beachfront location. Waking up to the calm Caribbean Sea right outside the gates was magical. The villa was sparkling clean, comfortable, and equipped with everything we could possibly need. We appreciated all the local tips from Alexandra. Can't wait to book again next year!”
+                </p>
+              </div>
+              <div>
+                <div class="review-author">
+                  <strong>Sophie B.</strong>
+                  <span class="review-stay-date">Stayed August 2024 · Verified Stay</span>
+                </div>
+                <span class="review-verified-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Verified Guest
+                </span>
+              </div>
+            </article>
+
+            <!-- Review 12 -->
+            <article class="review-card">
+              <div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p class="review-quote">
+                  “From the moment we arrived, we knew we chose the right place. The private pool overlooking the ocean is magnificent. The house is secure, quiet, and spotless. It truly feels like your own private island sanctuary. Thank you Traci for sharing your beautiful home!”
+                </p>
+              </div>
+              <div>
+                <div class="review-author">
+                  <strong>Marcus G.</strong>
+                  <span class="review-stay-date">Stayed June 2024 · Verified Stay</span>
+                </div>
+                <span class="review-verified-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Verified Guest
+                </span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Show More Reviews Toggle Action -->
+        <div class="reviews-action-center">
+          <button type="button" class="btn btn-outline" id="toggleReviewsBtn" aria-expanded="false" aria-controls="reviewsMoreWrap">
+            <span class="btn-text">Show More Reviews (12 Total)</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-chevron">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <span class="reviews-disclaimer">
+            Based on verified public guest stays on Airbnb & Vrbo for The Love Shack (Savaneta, Aruba). Overall 5.0 Rating · Guest Favorite.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Distinctive Luxury Booking CTA Section (No Flat Solid Blocks) -->
+    <section class="booking-cta-section" aria-label="Book Your Stay Call to Action">
+      <div class="cta-bg" role="img" aria-label="Ocean villa background"></div>
+      <div class="cta-overlay"></div>
+      <div class="cta-ring cta-ring-1"></div>
+      <div class="cta-ring cta-ring-2"></div>
+
+      <div class="cta-content wrap">
+        <span class="eyebrow light center">YOUR NEXT ESCAPE STARTS HERE</span>
+        <h2>Ready to escape to <em>your private sanctuary?</em></h2>
+        <p>
+          Dates for the upcoming season are open. Secure your preferred dates directly for personalized concierge care and the best guaranteed rate.
+        </p>
+
+        <div class="cta-buttons">
+          <a class="btn btn-teal" href="booking.html">
+            Plan Your Stay
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a class="btn btn-glass" href="contact.html">Contact Host Concierge</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Complete Redesigned Multi-Column Luxury Footer -->
+  <footer class="footer" aria-label="Site Footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a class="logo" href="index.html">love shack</a>
+          <p>
+            An intimate luxury beachfront retreat in Savaneta, Aruba. Designed for barefoot relaxation, private pool days, and unhurried Caribbean memories.
+          </p>
+          <div class="footer-location-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Savaneta, Aruba · Dutch Caribbean
+          </div>
+        </div>
+
+        <!-- Explore Navigation Column -->
+        <div>
+          <span class="footer-col-title">EXPLORE</span>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="property.html">The Property & Rooms</a></li>
+            <li><a href="property.html#gallery">Photo Gallery</a></li>
+            <li><a href="property.html#amenities">Curated Amenities</a></li>
+          </ul>
+        </div>
+
+        <!-- Stay Details Column -->
+        <div>
+          <span class="footer-col-title">YOUR STAY</span>
+          <ul class="footer-links">
+            <li><a href="booking.html">Check Availability</a></li>
+            <li><a href="booking.html">Booking Enquiry</a></li>
+            <li><a href="contact.html">Host & Concierge</a></li>
+            <li><a href="contact.html#faq">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Host Contact Card -->
+        <div class="footer-cta-card">
+          <h4>Reserve Direct</h4>
+          <p>Connect with our Aruba concierge for personalized requests, airport transfers, and private bookings.</p>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>concierge@loveshackaruba.com</span>
+          </div>
+          <div class="footer-contact-item" style="margin-bottom: 16px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>+297 580 0000 (WhatsApp)</span>
+          </div>
+          <a class="btn btn-teal" href="booking.html" style="width: 100%; padding: 12px 18px; font-size: 0.75rem;">
+            Book Your Stay ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Love Shack. All rights reserved. Aruba Vacation Rental.</span>
+        <div class="footer-bottom-links">
+          <span>Made for slow days by the sea.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Full View Photography -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Close Lightbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="lightbox-image-wrap">
+        <img class="lightbox-img" src="assets/images/temporary-hero.jpg" alt="Love Shack Villa expanded view">
+      </div>
+      <div class="lightbox-title"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

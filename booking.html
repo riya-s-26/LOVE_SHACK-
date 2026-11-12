@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Your Stay | Love Shack — Savaneta, Aruba</title>
+  <meta name="description" content="Reserve your private luxury villa in Savaneta, Aruba. Direct booking inquiry for Love Shack beachfront property with private swimming pool.">
+  
+  <!-- Typography System: Bodoni Moda (Logo), Cormorant Garamond (Headings), Lato (Body), Montserrat (Nav & Buttons) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Floating Luxury Navigation Bar -->
+  <div class="header-wrapper">
+    <header class="header">
+      <a class="logo" href="index.html" aria-label="Love Shack Homepage">love shack</a>
+      
+      <button class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav class="nav" aria-label="Main Navigation">
+        <a href="index.html">Home</a>
+        <a href="property.html">The Property</a>
+        <a class="current" href="booking.html">Book Your Stay</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav-cta" href="booking.html">
+          Check Availability
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </nav>
+    </header>
+  </div>
+
+  <main>
+    <!-- Page Hero Banner -->
+    <section class="page-banner" aria-label="Book Your Stay">
+      <div class="page-banner-bg" role="img" aria-label="Love Shack Villa Background"></div>
+      <div class="page-banner-overlay"></div>
+      <div class="page-banner-content">
+        <span class="eyebrow light center">RESERVE YOUR GETAWAY</span>
+        <h1>Begin your <em>island escape.</em></h1>
+        <p>
+          Select your travel dates and share party details. Our local concierge will verify calendar availability and respond within 24 hours with exact seasonal pricing.
+        </p>
+      </div>
+    </section>
+
+    <!-- Booking Form & Interactive Live Summary Layout -->
+    <section class="booking-section wrap" aria-label="Booking Inquiry Interface">
+      <div class="booking-layout">
+        <!-- Left: Booking Inquiry Form -->
+        <div class="form-card">
+          <span class="eyebrow">DIRECT INQUIRY</span>
+          <h2>Select Dates & Details</h2>
+          <p>Direct host inquiry without booking middleman fees. No payment is charged today.</p>
+
+          <form id="bookingForm" novalidate>
+            <!-- Check-in & Check-out -->
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="checkin">Check-in Date *</label>
+                <input type="date" id="checkin" name="checkin" required aria-required="true">
+              </div>
+              <div class="form-group">
+                <label for="checkout">Check-out Date *</label>
+                <input type="date" id="checkout" name="checkout" required aria-required="true">
+              </div>
+            </div>
+
+            <!-- Guests -->
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="adults">Adult Guests (13+) *</label>
+                <select id="adults" name="adults" required>
+                  <option value="1">1 Adult</option>
+                  <option value="2" selected>2 Adults</option>
+                  <option value="3">3 Adults</option>
+                  <option value="4">4 Adults</option>
+                  <option value="5">5 Adults</option>
+                  <option value="6">6 Adults (Max)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="children">Children (0–12)</label>
+                <select id="children" name="children">
+                  <option value="0" selected>0 Children</option>
+                  <option value="1">1 Child</option>
+                  <option value="2">2 Children</option>
+                  <option value="3">3 Children</option>
+                  <option value="4">4 Children</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Guest Contact Info -->
+            <div class="form-group">
+              <label for="bookingName">Full Name *</label>
+              <input type="text" id="bookingName" name="name" placeholder="e.g. Sarah Miller" required aria-required="true">
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="bookingEmail">Email Address *</label>
+                <input type="email" id="bookingEmail" name="email" placeholder="sarah@example.com" required aria-required="true">
+              </div>
+              <div class="form-group">
+                <label for="bookingPhone">Phone / WhatsApp</label>
+                <input type="tel" id="bookingPhone" name="phone" placeholder="+1 (555) 000-0000">
+              </div>
+            </div>
+
+            <!-- Special Requests -->
+            <div class="form-group">
+              <label for="bookingNotes">Special Requests or Occasion (Optional)</label>
+              <textarea id="bookingNotes" name="notes" placeholder="Tell us about your trip (e.g. celebrating an anniversary, airport transfer inquiry, grocery pre-stocking)..."></textarea>
+            </div>
+
+            <!-- Informational Notice (No Fake Payment) -->
+            <div class="form-notice">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <p>
+                <strong>Frontend Inquiry Preview:</strong> Submitting this form requests availability and pricing from our host team without immediate charge. Live payment and calendar sync will be integrated during backend development.
+              </p>
+            </div>
+
+            <button type="submit" class="btn btn-teal" style="width: 100%;">
+              Send Booking Inquiry
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <div class="form-feedback" id="bookingFeedback" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <!-- Right: Live Booking Summary Card -->
+        <aside class="booking-summary-card" aria-label="Reservation Summary">
+          <div class="summary-villa-header">
+            <div class="summary-thumb">
+              <img src="assets/images/temporary-hero.jpg" alt="Love Shack Villa">
+            </div>
+            <div class="summary-header-text">
+              <h3>Love Shack Villa</h3>
+              <span>Savaneta Beachfront, Aruba</span>
+            </div>
+          </div>
+
+          <div class="summary-dates-box">
+            <div class="summary-date-row">
+              <span>CHECK-IN</span>
+              <span id="sumCheckin">Not selected</span>
+            </div>
+            <div class="summary-date-row">
+              <span>CHECK-OUT</span>
+              <span id="sumCheckout">Not selected</span>
+            </div>
+            <div class="summary-date-row">
+              <span>DURATION</span>
+              <span id="sumNights">—</span>
+            </div>
+            <div class="summary-date-row">
+              <span>PARTY</span>
+              <span id="sumGuests">2 Guests</span>
+            </div>
+          </div>
+
+          <div class="summary-pricing-row">
+            <div>
+              <strong>Estimated Total</strong>
+              <div style="font-size: 0.72rem; color: var(--color-text-muted);">From $650 / night base rate</div>
+            </div>
+            <span id="sumTotal">From $650 / night</span>
+          </div>
+
+          <span class="footer-col-title" style="color: var(--color-primary); margin-bottom: 12px;">INCLUDED WITH YOUR STAY:</span>
+          <ul class="summary-inclusions">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Exclusive access to private swimming pool</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Direct beachfront access steps from lanai</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>High-speed Wi-Fi & 4K smart entertainment</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Beach chairs, beach towels & cooler sets</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dedicated pre-arrival island concierge support</span>
+            </li>
+          </ul>
+
+          <div class="summary-contact-help">
+            Prefer to speak directly? <br>
+            <a href="contact.html">Message host on WhatsApp: +297 580 0000 ↗</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Redesigned Multi-Column Luxury Footer -->
+  <footer class="footer" aria-label="Site Footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="index.html">love shack</a>
+          <p>An intimate luxury beachfront retreat in Savaneta, Aruba. Designed for barefoot relaxation, private pool days, and unhurried Caribbean memories.</p>
+          <div class="footer-location-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Savaneta, Aruba · Dutch Caribbean
+          </div>
+        </div>
+
+        <div>
+          <span class="footer-col-title">EXPLORE</span>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="property.html">The Property & Rooms</a></li>
+            <li><a href="property.html#gallery">Photo Gallery</a></li>
+            <li><a href="property.html#amenities">Curated Amenities</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="footer-col-title">YOUR STAY</span>
+          <ul class="footer-links">
+            <li><a href="booking.html">Check Availability</a></li>
+            <li><a href="booking.html">Booking Enquiry</a></li>
+            <li><a href="contact.html">Host & Concierge</a></li>
+            <li><a href="contact.html#faq">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-cta-card">
+          <h4>Reserve Direct</h4>
+          <p>Connect with our Aruba concierge for personalized requests, airport transfers, and private bookings.</p>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>concierge@loveshackaruba.com</span>
+          </div>
+          <div class="footer-contact-item" style="margin-bottom: 16px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>+297 580 0000 (WhatsApp)</span>
+          </div>
+          <a class="btn btn-teal" href="booking.html" style="width: 100%; padding: 12px 18px; font-size: 0.75rem;">
+            Book Your Stay ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Love Shack. All rights reserved. Aruba Vacation Rental.</span>
+        <div class="footer-bottom-links">
+          <span>Made for slow days by the sea.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
