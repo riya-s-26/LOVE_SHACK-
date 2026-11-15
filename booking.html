@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Book Your Stay | Love Shack — Savaneta, Aruba</title>
-  <meta name="description" content="Reserve your private luxury villa in Savaneta, Aruba. Direct booking inquiry for Love Shack beachfront property with private swimming pool.">
+  <title>Book Your Stay | The Love Shack — Savaneta, Aruba</title>
+  <meta name="description" content="Reserve your private luxury villa in Savaneta, Aruba. Direct booking inquiry for The Love Shack beachfront property with private swimming pool.">
   
   <!-- Typography System: Bodoni Moda (Logo), Cormorant Garamond (Headings), Lato (Body), Montserrat (Nav & Buttons) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
 </head>
 <body>
 
   <!-- Floating Luxury Navigation Bar -->
   <div class="header-wrapper">
     <header class="header">
-      <a class="logo" href="index.html" aria-label="Love Shack Homepage">love shack</a>
+      <a class="logo" href="index.html" aria-label="The Love Shack Homepage">The Love Shack</a>
       
       <button class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -31,7 +31,10 @@
       <nav class="nav" aria-label="Main Navigation">
         <a href="index.html">Home</a>
         <a href="property.html">The Property</a>
-        <a class="current" href="booking.html">Book Your Stay</a>
+        <a href="property.html#rooms">Rooms</a>
+        <a href="property.html#gallery">Gallery</a>
+        <a href="property.html#amenities">Amenities</a>
+        <a href="property.html#location">Location</a>
         <a href="contact.html">Contact</a>
         <a class="nav-cta" href="booking.html">
           Check Availability
@@ -47,28 +50,53 @@
   <main>
     <!-- Page Hero Banner -->
     <section class="page-banner" aria-label="Book Your Stay">
-      <div class="page-banner-bg" role="img" aria-label="Love Shack Villa Background"></div>
+      <div class="page-banner-bg" role="img" aria-label="The Love Shack Villa Background"></div>
       <div class="page-banner-overlay"></div>
       <div class="page-banner-content">
-        <span class="eyebrow light center">RESERVE YOUR GETAWAY</span>
-        <h1>Begin your <em>island escape.</em></h1>
+        <span class="eyebrow light center">RESERVE YOUR STAY</span>
+        <h1>Begin your island <em>escape.</em></h1>
         <p>
-          Select your travel dates and share party details. Our local concierge will verify calendar availability and respond within 24 hours with exact seasonal pricing.
+          Select your preferred dates and tailor your beachfront stay at The Love Shack in Savaneta, Aruba.
         </p>
       </div>
     </section>
 
-    <!-- Booking Form & Interactive Live Summary Layout -->
-    <section class="booking-section wrap" aria-label="Booking Inquiry Interface">
-      <div class="booking-layout">
-        <!-- Left: Booking Inquiry Form -->
-        <div class="form-card">
-          <span class="eyebrow">DIRECT INQUIRY</span>
-          <h2>Select Dates & Details</h2>
-          <p>Direct host inquiry without booking middleman fees. No payment is charged today.</p>
+    <!-- Multi-Step Booking Section -->
+    <section class="booking-section wrap" aria-label="Direct Reservation Interface">
+      
+      <!-- Progress Bar (5 Steps) -->
+      <div class="booking-steps-bar" role="tablist" aria-label="Booking steps">
+        <div class="booking-step-item active" id="stepIndicator1">
+          <div class="booking-step-num">1</div>
+          <span>Dates & Guests</span>
+        </div>
+        <div class="booking-step-item" id="stepIndicator2">
+          <div class="booking-step-num">2</div>
+          <span>Rates & Summary</span>
+        </div>
+        <div class="booking-step-item" id="stepIndicator3">
+          <div class="booking-step-num">3</div>
+          <span>Customise Stay</span>
+        </div>
+        <div class="booking-step-item" id="stepIndicator4">
+          <div class="booking-step-num">4</div>
+          <span>Guest Details</span>
+        </div>
+        <div class="booking-step-item" id="stepIndicator5">
+          <div class="booking-step-num">5</div>
+          <span>Review & Submit</span>
+        </div>
+      </div>
 
-          <form id="bookingForm" novalidate>
-            <!-- Check-in & Check-out -->
+      <div class="booking-layout">
+        <!-- Left: Dynamic Booking Steps Flow -->
+        <div class="form-card">
+          <!-- STEP 1: Select Dates & Guests -->
+          <div class="booking-step-pane active" id="paneStep1">
+            <span class="eyebrow">STEP 1 OF 5</span>
+            <h2>Select Dates & Guests</h2>
+            <p>Choose your arrival and departure dates. The Love Shack requires a 3-night minimum stay (max 6 guests).</p>
+
             <div class="form-group-row">
               <div class="form-group">
                 <label for="checkin">Check-in Date *</label>
@@ -80,7 +108,6 @@
               </div>
             </div>
 
-            <!-- Guests -->
             <div class="form-group-row">
               <div class="form-group">
                 <label for="adults">Adult Guests (13+) *</label>
@@ -90,7 +117,7 @@
                   <option value="3">3 Adults</option>
                   <option value="4">4 Adults</option>
                   <option value="5">5 Adults</option>
-                  <option value="6">6 Adults (Max)</option>
+                  <option value="6">6 Adults (Maximum)</option>
                 </select>
               </div>
               <div class="form-group">
@@ -105,30 +132,367 @@
               </div>
             </div>
 
-            <!-- Guest Contact Info -->
-            <div class="form-group">
-              <label for="bookingName">Full Name *</label>
-              <input type="text" id="bookingName" name="name" placeholder="e.g. Sarah Miller" required aria-required="true">
+            <button type="button" class="btn btn-teal" id="btnCheckAvailability" style="width: 100%; margin-top: 10px;">
+              Check Availability & Rates
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <div class="form-feedback" id="feedbackStep1" aria-live="polite"></div>
+          </div>
+
+          <!-- STEP 2: Rates & Accommodation Summary -->
+          <div class="booking-step-pane" id="paneStep2">
+            <span class="eyebrow">STEP 2 OF 5 · RATES &amp; SUMMARY</span>
+            <h2>Stay &amp; Rate Summary</h2>
+            <p>Review the calculated rate breakdown for your selected dates and guest party.</p>
+
+            <div class="review-section-box">
+              <div class="review-row">
+                <span>Property:</span>
+                <strong>The Love Shack (Savaneta, Aruba)</strong>
+              </div>
+              <div class="review-row">
+                <span>Check-in:</span>
+                <strong id="rateSummaryCheckin">—</strong>
+              </div>
+              <div class="review-row">
+                <span>Check-out:</span>
+                <strong id="rateSummaryCheckout">—</strong>
+              </div>
+              <div class="review-row">
+                <span>Length of Stay:</span>
+                <strong id="rateSummaryNights">—</strong>
+              </div>
+              <div class="review-row">
+                <span>Guest Party:</span>
+                <strong id="rateSummaryParty">—</strong>
+              </div>
+              <div class="review-row">
+                <span>Nightly Rate:</span>
+                <strong id="rateSummaryRate">—</strong>
+              </div>
+              <div class="review-row">
+                <span>Accommodation Subtotal:</span>
+                <strong id="rateSummarySubtotal">—</strong>
+              </div>
+              <div class="review-row">
+                <span>Turnover &amp; Cleaning Fee:</span>
+                <strong id="rateSummaryCleaning">$180.00 USD</strong>
+              </div>
+              <div class="review-total-row">
+                <span>Estimated Total:</span>
+                <span id="rateSummaryGrandTotal" style="color: var(--color-primary);">$0.00 USD</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px;">
+              <button type="button" class="btn btn-outline" id="btnBackToStep1" style="flex: 1;">
+                &larr; Change Dates
+              </button>
+              <button type="button" class="btn btn-teal" id="btnGoToStep3" style="flex: 2;">
+                Continue to Customise Stay &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Customise Your Stay -->
+          <div class="booking-step-pane" id="paneStep3">
+            <span class="eyebrow">STEP 3 OF 5 · ENHANCE YOUR RETREAT</span>
+            <h2>Customise Your Stay</h2>
+            <p>Select bespoke on-island services and amenities to personalize your Aruban retreat.</p>
+
+            <div id="servicesContainer">
+              <!-- Dynamically populated or static fallback list -->
+              <!-- 1. Dining Extras -->
+              <div class="services-category-block">
+                <div class="services-category-title">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                  1. Dining Extras
+                </div>
+                <div class="service-cards-list">
+                  <label class="service-addon-card" data-service-id="1" data-service-name="Private Aruban Chef Dinner" data-service-price="180">
+                    <input type="checkbox" class="service-checkbox" value="1" style="width: auto;">
+                    <div class="service-addon-info">
+                      <h4>Private Aruban Chef Dinner</h4>
+                      <p>Three-course custom seaside dinner prepared fresh on your pool lanai by a private local Aruban chef.</p>
+                    </div>
+                    <div class="service-addon-pricing">
+                      <span class="service-price-tag">+$180.00</span>
+                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per stay</small>
+                    </div>
+                  </label>
+
+                  <label class="service-addon-card" data-service-id="2" data-service-name="Caribbean Seafood BBQ Basket" data-service-price="95">
+                    <input type="checkbox" class="service-checkbox" value="2" style="width: auto;">
+                    <div class="service-addon-info">
+                      <h4>Caribbean Seafood BBQ Basket</h4>
+                      <p>Fresh catch red snapper, jumbo shrimp, Caribbean marinades, plantains, and charcoal essentials delivered for your patio grill.</p>
+                    </div>
+                    <div class="service-addon-pricing">
+                      <span class="service-price-tag">+$95.00</span>
+                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per stay</small>
+                    </div>
+                  </label>
+
+                  <label class="service-addon-card" data-service-id="3" data-service-name="Daily Fresh Tropical Breakfast Basket" data-service-price="45">
+                    <input type="checkbox" class="service-checkbox" value="3" style="width: auto;">
+                    <div class="service-addon-info">
+                      <h4>Daily Fresh Tropical Breakfast Basket</h4>
+                      <p>Freshly baked Dutch pastries, local fruits, Aruban jams, artisanal cheeses, and farm-fresh eggs.</p>
+                    </div>
+                    <div class="service-addon-pricing">
+                      <span class="service-price-tag">+$45.00</span>
+                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per stay</small>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- 2. Romantic Add-ons -->
+              <div class="services-category-block">
+                <div class="services-category-title">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                  2. Romantic Add-ons
+                </div>
+                <div class="service-cards-list">
+                  <label class="service-addon-card" data-service-id="4" data-service-name="Sunset Beach Cabana & Champagne Toast" data-service-price="120">
+                    <input type="checkbox" class="service-checkbox" value="4" style="width: auto;">
+                    <div class="service-addon-info">
+                      <h4>Sunset Beach Cabana & Champagne Toast</h4>
+                      <p>Chilled Laurent-Perrier champagne, artisanal chocolate strawberries, and seaside lantern styling for twilight.</p>
+                    </div>
+                    <div class="service-addon-pricing">
+                      <span class="service-price-tag">+$120.00</span>
+                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per stay</small>
+                    </div>
+                  </label>
+
+                  <label class="service-addon-card" data-service-id="5" data-service-name="Couples Beachside Massage (60 min)" data-service-price="160">
+                    <input type="checkbox" class="service-checkbox" value="5" style="width: auto;">
+                    <div class="service-addon-info">
+                      <h4>Couples Beachside Massage (60 min)</h4>
+                      <p>Restorative side-by-side massage on your private ocean deck with certified Aruban spa therapists.</p>
+                    </div>
+                    <div class="service-addon-pricing">
+                      <span class="service-price-tag">+$160.00</span>
+                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per stay</small>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- 3. Celebration Packages -->
+              <div class="services-category-block">
+                <div class="services-category-title">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"></path><path d="M2 7h20v5H2z"></path><path d="M12 22V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+                  3. Celebration Packages
+                </div>
+                <div class="service-cards-list">
+                  <label class="service-addon-card" data-service-id="6" data-service-name="Island Anniversary / Birthday Celebration Package" data-service-price="150">
+                    <input type="checkbox" class="service-checkbox" value="6" style="width: auto;">
+                    <div class="service-addon-info">
+                      <h4>Anniversary / Birthday Package</h4>
+                      <p>Handcrafted floral arrangement, bespoke cake, custom greeting card, and beachside champagne chilling on arrival.</p>
+                    </div>
+                    <div class="service-addon-pricing">
+                      <span class="service-price-tag">+$150.00</span>
+                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per stay</small>
+                    </div>
+                  </label>
+
+                  <label class="service-addon-card" data-service-id="7" data-service-name="Aruban Welcome Rum & Charcuterie Board" data-service-price="65">
+                    <input type="checkbox" class="service-checkbox" value="7" style="width: auto;">
+                    <div class="service-addon-info">
+                      <h4>Aruban Welcome Rum & Charcuterie Board</h4>
+                      <p>Boutique aged rum bottle, artisanal cheeses, cured meats, island crisps, and dried tropical fruits.</p>
+                    </div>
+                    <div class="service-addon-pricing">
+                      <span class="service-price-tag">+$65.00</span>
+                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per stay</small>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- 4. Other Extras -->
+              <div class="services-category-block">
+                <div class="services-category-title">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                  4. Other Extras
+                </div>
+                <div class="service-cards-list">
+                  <label class="service-addon-card" data-service-id="8" data-service-name="VIP Airport Round-Trip Chauffeur" data-service-price="80">
+                    <input type="checkbox" class="service-checkbox" value="8" style="width: auto;">
+                    <div class="service-addon-info">
+                      <h4>VIP Airport Round-Trip Chauffeur</h4>
+                      <p>Private Mercedes van transfer from Queen Beatrix Airport directly to The Love Shack, luggage assistance included.</p>
+                    </div>
+                    <div class="service-addon-pricing">
+                      <span class="service-price-tag">+$80.00</span>
+                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per stay</small>
+                    </div>
+                  </label>
+
+                  <label class="service-addon-card" data-service-id="9" data-service-name="Guided Sea Glass Island Kayak Tour" data-service-price="75">
+                    <input type="checkbox" class="service-checkbox" value="9" style="width: auto;">
+                    <div class="service-addon-info">
+                      <h4>Guided Sea Glass Island Kayak Tour</h4>
+                      <p>Two-hour guided mangrove and reef excursion paddling directly from The Love Shack beach to historic Sea Glass Island.</p>
+                    </div>
+                    <div class="service-addon-pricing">
+                      <span class="service-price-tag">+$75.00</span>
+                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per stay</small>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px;">
+              <button type="button" class="btn btn-outline" id="btnBackToStep2" style="flex: 1;">
+                &larr; Back
+              </button>
+              <button type="button" class="btn btn-outline" id="btnSkipExtras" style="flex: 1.5;">
+                Skip Extras &rarr;
+              </button>
+              <button type="button" class="btn btn-teal" id="btnGoToStep4" style="flex: 2;">
+                Continue with Selected Extras &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Guest Details Form -->
+          <div class="booking-step-pane" id="paneStep4">
+            <span class="eyebrow">STEP 4 OF 5</span>
+            <h2>Guest & Contact Details</h2>
+            <p>Please enter your contact information so our island concierge team can coordinate your reservation.</p>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="e.g. Sarah" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="e.g. Miller" required>
+              </div>
             </div>
 
             <div class="form-group-row">
               <div class="form-group">
-                <label for="bookingEmail">Email Address *</label>
-                <input type="email" id="bookingEmail" name="email" placeholder="sarah@example.com" required aria-required="true">
+                <label for="guestEmail">Email Address *</label>
+                <input type="email" id="guestEmail" name="guestEmail" placeholder="sarah@example.com" required>
               </div>
               <div class="form-group">
-                <label for="bookingPhone">Phone / WhatsApp</label>
-                <input type="tel" id="bookingPhone" name="phone" placeholder="+1 (555) 000-0000">
+                <label for="guestPhone">Phone / WhatsApp *</label>
+                <input type="tel" id="guestPhone" name="guestPhone" placeholder="+1 (555) 000-0000" required>
               </div>
             </div>
 
-            <!-- Special Requests -->
             <div class="form-group">
-              <label for="bookingNotes">Special Requests or Occasion (Optional)</label>
-              <textarea id="bookingNotes" name="notes" placeholder="Tell us about your trip (e.g. celebrating an anniversary, airport transfer inquiry, grocery pre-stocking)..."></textarea>
+              <label for="guestCountry">Country / Territory</label>
+              <input type="text" id="guestCountry" name="guestCountry" placeholder="e.g. United States, Canada, Netherlands">
             </div>
 
-            <!-- Informational Notice (No Fake Payment) -->
+            <div class="form-group">
+              <label for="specialRequests">Special Requests, Occasion or Arrival Notes (Optional)</label>
+              <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Tell us if you are celebrating an anniversary, require airport coordination, or have dietary preferences..."></textarea>
+            </div>
+
+            <div class="form-feedback" id="feedbackStep4" aria-live="polite"></div>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px;">
+              <button type="button" class="btn btn-outline" id="btnBackToStep3" style="flex: 1;">
+                &larr; Back to Extras
+              </button>
+              <button type="button" class="btn btn-teal" id="btnGoToStep5" style="flex: 2;">
+                Review Booking Details &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 5: Review & Submit Booking Request -->
+          <div class="booking-step-pane" id="paneStep5">
+            <span class="eyebrow">STEP 5 OF 5 · REVIEW RESERVATION</span>
+            <h2>Review Reservation Request</h2>
+            <p>Please review your dates, guest details, and stay summary before submitting your reservation request.</p>
+
+            <div class="review-section-box">
+              <h3>
+                <span>Dates &amp; Accommodation</span>
+                <button type="button" id="editStepDatesBtn" class="btn-text-link" style="font-size: 0.72rem;">Edit Dates</button>
+              </h3>
+              <div class="review-row">
+                <span>Villa:</span>
+                <strong>The Love Shack (Savaneta Beachfront, Aruba)</strong>
+              </div>
+              <div class="review-row">
+                <span>Stay Dates:</span>
+                <strong id="revDates">—</strong>
+              </div>
+              <div class="review-row">
+                <span>Total Duration:</span>
+                <strong id="revDuration">—</strong>
+              </div>
+              <div class="review-row">
+                <span>Guests:</span>
+                <strong id="revGuests">—</strong>
+              </div>
+              <div class="review-row">
+                <span>Base Accommodation:</span>
+                <strong id="revAccommodation">$0.00 USD</strong>
+              </div>
+              <div class="review-row">
+                <span>Cleaning &amp; Turnover Fee:</span>
+                <strong id="revCleaning">$180.00 USD</strong>
+              </div>
+            </div>
+
+            <div class="review-section-box" id="revServicesBox" style="display: none;">
+              <h3>
+                <span>Custom Stay Extras</span>
+                <button type="button" id="editStepServicesBtn" class="btn-text-link" style="font-size: 0.72rem;">Edit Extras</button>
+              </h3>
+              <div id="revServicesList"></div>
+            </div>
+
+            <div class="review-section-box">
+              <h3>
+                <span>Guest Details</span>
+                <button type="button" id="editStepGuestBtn" class="btn-text-link" style="font-size: 0.72rem;">Edit Contact</button>
+              </h3>
+              <div class="review-row">
+                <span>Name:</span>
+                <strong id="revGuestName">—</strong>
+              </div>
+              <div class="review-row">
+                <span>Email:</span>
+                <strong id="revGuestEmail">—</strong>
+              </div>
+              <div class="review-row">
+                <span>Phone / WhatsApp:</span>
+                <strong id="revGuestPhone">—</strong>
+              </div>
+              <div class="review-row" id="revGuestCountryRow" style="display: none;">
+                <span>Country:</span>
+                <strong id="revGuestCountry">—</strong>
+              </div>
+              <div class="review-row" id="revNotesRow" style="display: none;">
+                <span>Special Requests:</span>
+                <span id="revSpecialRequests" style="color: var(--color-text-muted); font-style: italic;">—</span>
+              </div>
+            </div>
+
+            <div class="review-section-box" style="background: #fafafa; border-color: var(--color-secondary);">
+              <div class="review-total-row" style="border: none; padding: 0; font-size: 1.35rem;">
+                <span>Estimated Total:</span>
+                <span id="revGrandTotal" style="color: var(--color-primary);">$0.00 USD</span>
+              </div>
+            </div>
+
             <div class="form-notice">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -136,30 +500,35 @@
                 <line x1="12" y1="8" x2="12.01" y2="8"></line>
               </svg>
               <p>
-                <strong>Frontend Inquiry Preview:</strong> Submitting this form requests availability and pricing from our host team without immediate charge. Live payment and calendar sync will be integrated during backend development.
+                <strong>Reservation Request:</strong> Direct bookings are confirmed by our concierge within 24 hours. No payment is charged today.
               </p>
             </div>
 
-            <button type="submit" class="btn btn-teal" style="width: 100%;">
-              Send Booking Inquiry
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
+            <div class="form-feedback" id="feedbackStep5" aria-live="polite"></div>
 
-            <div class="form-feedback" id="bookingFeedback" aria-live="polite"></div>
-          </form>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px;">
+              <button type="button" class="btn btn-outline" id="btnBackToStep4" style="flex: 1;">
+                &larr; Back
+              </button>
+              <button type="button" class="btn btn-teal" id="btnSubmitBookingRequest" style="flex: 2;">
+                Submit Reservation Request
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Right: Live Booking Summary Card -->
+        <!-- Right: Live Synchronized Booking Summary Card -->
         <aside class="booking-summary-card" aria-label="Reservation Summary">
           <div class="summary-villa-header">
             <div class="summary-thumb">
-              <img src="assets/images/temporary-hero.jpg" alt="Love Shack Villa">
+              <img src="assets/images/temporary-hero.jpg" alt="The Love Shack Villa">
             </div>
             <div class="summary-header-text">
-              <h3>Love Shack Villa</h3>
+              <h3>The Love Shack Villa</h3>
               <span>Savaneta Beachfront, Aruba</span>
             </div>
           </div>
@@ -186,7 +555,7 @@
           <div class="summary-pricing-row">
             <div>
               <strong>Estimated Total</strong>
-              <div style="font-size: 0.72rem; color: var(--color-text-muted);">From $650 / night base rate</div>
+              <div id="sumPricingSubcaption" style="font-size: 0.72rem; color: var(--color-text-muted);">From $650 / night</div>
             </div>
             <span id="sumTotal">From $650 / night</span>
           </div>
@@ -224,12 +593,12 @@
     </section>
   </main>
 
-  <!-- Redesigned Multi-Column Luxury Footer -->
+  <!-- Multi-Column Luxury Footer -->
   <footer class="footer" aria-label="Site Footer">
     <div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="logo" href="index.html">love shack</a>
+          <a class="logo" href="index.html">The Love Shack</a>
           <p>An intimate luxury beachfront retreat in Savaneta, Aruba. Designed for barefoot relaxation, private pool days, and unhurried Caribbean memories.</p>
           <div class="footer-location-tag">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -275,7 +644,7 @@
       </div>
 
       <div class="footer-bottom">
-        <span>© <span id="year">2026</span> Love Shack. All rights reserved. Aruba Vacation Rental.</span>
+        <span>© <span id="year">2026</span> The Love Shack. All rights reserved. Aruba Vacation Rental.</span>
         <div class="footer-bottom-links">
           <span>Made for slow days by the sea.</span>
         </div>
@@ -283,6 +652,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=2.2"></script>
 </body>
 </html>

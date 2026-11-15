@@ -11,14 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
 </head>
 <body>
 
   <!-- Floating Luxury Navigation Bar (Reference 1 & 2 Synthesis) -->
   <div class="header-wrapper">
     <header class="header">
-      <a class="logo" href="index.html" aria-label="Love Shack Homepage">love shack</a>
+      <a class="logo" href="index.html" aria-label="The Love Shack Homepage">The Love Shack</a>
       
       <button class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -334,15 +334,15 @@
       </div>
     </section>
 
-    <!-- Curated Gallery Preview Section with Lightbox Integration -->
-    <section class="gallery-section wrap" aria-label="Villa Gallery Preview">
+    <!-- Curated Gallery Preview Section: Showcase Gallery -->
+    <section class="gallery-section wrap" id="gallery" aria-label="Villa Gallery Preview">
       <div class="gallery-header-row">
         <div>
-          <span class="eyebrow">A GLIMPSE OF PARADISE</span>
+          <span class="eyebrow">PROPERTY SHOWCASE</span>
           <h2>Picture yourself <em>here.</em></h2>
         </div>
         <a class="btn-text-link" href="property.html#gallery">
-          View Full Gallery
+          Explore Property Views
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
@@ -350,55 +350,29 @@
         </a>
       </div>
 
+      <!-- 3-Photo Property Showcase Gallery Grid -->
       <div class="gallery-grid">
-        <div class="gallery-item" data-caption="Love Shack Private Freshwater Pool & Garden Sanctuary">
-          <img src="assets/images/temporary-hero.jpg" alt="Villa and private swimming pool oasis">
+        <div class="gallery-item" data-caption="Private beachfront swimming pool with sun lounger terrace and sunset ocean view">
+          <img src="assets/images/temporary-hero.jpg" alt="Oceanfront Villa &amp; Freshwater Pool Sanctuary" loading="lazy">
           <div class="gallery-overlay">
-            <div class="gallery-caption">
-              <span>Poolside Terrace & Garden</span>
-              <div class="gallery-zoom-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <polyline points="9 21 3 21 3 15"></polyline>
-                  <line x1="21" y1="3" x2="14" y2="10"></line>
-                  <line x1="3" y1="21" x2="10" y2="14"></line>
-                </svg>
-              </div>
-            </div>
+            <span class="gallery-tag">Villa Exterior &amp; Pool</span>
+            <p class="gallery-caption">Oceanfront Villa &amp; Freshwater Pool Sanctuary</p>
           </div>
         </div>
 
-        <div class="gallery-item" data-caption="Direct Beachfront Shoreline in Savaneta, Aruba">
-          <img src="assets/images/temporary-beach.jpg" alt="Turquoise Caribbean sea and white beach">
+        <div class="gallery-item" data-caption="Private swimming pool nestled in a tropical Aruban garden setting">
+          <img src="assets/images/temporary-pool.jpg" alt="Freshwater Pool Sanctuary" loading="lazy">
           <div class="gallery-overlay">
-            <div class="gallery-caption">
-              <span>Savaneta Beach Access</span>
-              <div class="gallery-zoom-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <polyline points="9 21 3 21 3 15"></polyline>
-                  <line x1="21" y1="3" x2="14" y2="10"></line>
-                  <line x1="3" y1="21" x2="10" y2="14"></line>
-                </svg>
-              </div>
-            </div>
+            <span class="gallery-tag">Pool Terrace</span>
+            <p class="gallery-caption">Freshwater Pool Sanctuary</p>
           </div>
         </div>
 
-        <div class="gallery-item" data-caption="Sun Lounger Terrace & Freshwater Swimming Pool">
-          <img src="assets/images/temporary-pool.jpg" alt="Sparkling blue pool with poolside loungers">
+        <div class="gallery-item" data-caption="Direct access to calm, crystal-clear turquoise waters and soft sand">
+          <img src="assets/images/temporary-beach.jpg" alt="Savaneta Caribbean Beach" loading="lazy">
           <div class="gallery-overlay">
-            <div class="gallery-caption">
-              <span>Sun Lounger Deck</span>
-              <div class="gallery-zoom-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <polyline points="9 21 3 21 3 15"></polyline>
-                  <line x1="21" y1="3" x2="14" y2="10"></line>
-                  <line x1="3" y1="21" x2="10" y2="14"></line>
-                </svg>
-              </div>
-            </div>
+            <span class="gallery-tag">Beachfront</span>
+            <p class="gallery-caption">Savaneta Caribbean Beach</p>
           </div>
         </div>
       </div>
@@ -898,400 +872,6 @@
       </div>
     </section>
 
-    <!-- Guest Reviews / Experiences Section (Airbnb Verified Guest Reference) -->
-    <section class="reviews-section" id="reviews" aria-label="Guest Experiences & Verified Reviews">
-      <div class="wrap">
-        <div class="section-header">
-          <span class="eyebrow center">GUEST EXPERIENCES</span>
-          <h2>Cherished moments from <em>our guests.</em></h2>
-          <p>Verified reviews from travelers who have experienced the magic of The Love Shack in Savaneta, Aruba.</p>
-        </div>
-
-        <!-- Airbnb-Inspired Overall Rating Header -->
-        <div class="reviews-rating-summary">
-          <div class="rating-overall-badge">
-            <div class="rating-number">5.0</div>
-            <div class="rating-stars-wrap">
-              <div class="review-stars" aria-label="5 out of 5 stars">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="rating-sub">Guest Favorite · Top 1% of Homes on Airbnb</span>
-            </div>
-          </div>
-
-          <div class="rating-metrics-grid">
-            <div class="rating-metric">
-              <span class="metric-label">Cleanliness</span>
-              <div class="metric-bar"><div class="metric-fill" style="width: 100%;"></div></div>
-              <span class="metric-score">5.0</span>
-            </div>
-            <div class="rating-metric">
-              <span class="metric-label">Accuracy</span>
-              <div class="metric-bar"><div class="metric-fill" style="width: 100%;"></div></div>
-              <span class="metric-score">5.0</span>
-            </div>
-            <div class="rating-metric">
-              <span class="metric-label">Check-in</span>
-              <div class="metric-bar"><div class="metric-fill" style="width: 100%;"></div></div>
-              <span class="metric-score">5.0</span>
-            </div>
-            <div class="rating-metric">
-              <span class="metric-label">Communication</span>
-              <div class="metric-bar"><div class="metric-fill" style="width: 100%;"></div></div>
-              <span class="metric-score">5.0</span>
-            </div>
-            <div class="rating-metric">
-              <span class="metric-label">Location</span>
-              <div class="metric-bar"><div class="metric-fill" style="width: 100%;"></div></div>
-              <span class="metric-score">5.0</span>
-            </div>
-            <div class="rating-metric">
-              <span class="metric-label">Value</span>
-              <div class="metric-bar"><div class="metric-fill" style="width: 100%;"></div></div>
-              <span class="metric-score">5.0</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Initial 3 Featured Reviews -->
-        <div class="reviews-grid">
-          <!-- Review 1 -->
-          <article class="review-card">
-            <div>
-              <div class="review-stars" aria-label="5 out of 5 stars">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <p class="review-quote">
-                “The Love Shack exceeded every expectation our family had. Stepping directly from the private pool terrace onto the sand every morning was paradise. Having kayaks and paddleboards right there made paddling over to Sea Glass Island an absolute highlight. Traci and Alexandra were incredible hosts—super responsive and helpful with airport pickups and local dining. We can't wait to return!”
-              </p>
-            </div>
-            <div>
-              <div class="review-author">
-                <strong>Michael S.</strong>
-                <span class="review-stay-date">Stayed November 2025 · Verified Stay</span>
-              </div>
-              <span class="review-verified-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Verified Guest
-              </span>
-            </div>
-          </article>
-
-          <!-- Review 2 -->
-          <article class="review-card">
-            <div>
-              <div class="review-stars" aria-label="5 out of 5 stars">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <p class="review-quote">
-                “If you want to experience the real, peaceful Aruba away from the crowded resort high-rises, this is the place. The house was immaculately clean, beautifully decorated with local ocean murals, and stocked with everything from beach towels to a blender for tropical drinks. Watching sunsets from the beach palapa was unforgettable.”
-              </p>
-            </div>
-            <div>
-              <div class="review-author">
-                <strong>Jessica & Brian T.</strong>
-                <span class="review-stay-date">Stayed September 2025 · Verified Stay</span>
-              </div>
-              <span class="review-verified-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Verified Guest
-              </span>
-            </div>
-          </article>
-
-          <!-- Review 3 -->
-          <article class="review-card">
-            <div>
-              <div class="review-stars" aria-label="5 out of 5 stars">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <p class="review-quote">
-                “Five stars aren't enough for The Love Shack. The 3 en-suite bedrooms gave each couple complete privacy, while the open living area and pool deck brought everyone together. Alexandra greeted us at check-in and gave fantastic local recommendations—dinner at Zeerovers and Flying Fishbone just minutes away. Flawless stay from start to finish.”
-              </p>
-            </div>
-            <div>
-              <div class="review-author">
-                <strong>David K.</strong>
-                <span class="review-stay-date">Stayed August 2025 · Verified Stay</span>
-              </div>
-              <span class="review-verified-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Verified Guest
-              </span>
-            </div>
-          </article>
-        </div>
-
-        <!-- Additional Verified Reviews Container (Revealed via Show More Reviews) -->
-        <div class="reviews-more-wrap" id="reviewsMoreWrap" aria-hidden="true">
-          <div class="reviews-grid" style="margin-top: 28px;">
-            <!-- Review 4 -->
-            <article class="review-card">
-              <div>
-                <div class="review-stars" aria-label="5 out of 5 stars">
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                </div>
-                <p class="review-quote">
-                  “An absolute dream vacation home. The private freshwater pool is huge and crystal clear, surrounded by palms and just steps from the calm ocean. Our kids spent hours snorkeling and swimming safely. Traci was in touch before and throughout our stay making sure we had everything we needed. 10/10 hospitality!”
-                </p>
-              </div>
-              <div>
-                <div class="review-author">
-                  <strong>Amanda M.</strong>
-                  <span class="review-stay-date">Stayed June 2025 · Verified Stay</span>
-                </div>
-                <span class="review-verified-badge">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified Guest
-                </span>
-              </div>
-            </article>
-
-            <!-- Review 5 -->
-            <article class="review-card">
-              <div>
-                <div class="review-stars" aria-label="5 out of 5 stars">
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                </div>
-                <p class="review-quote">
-                  “We celebrated our anniversary at The Love Shack and couldn’t have asked for a better sanctuary. Quiet, gated, private, and romantic. The sea breeze flowing through the house and the private outdoor rain shower after beach dips made it feel like our own private boutique resort. Highly recommended!”
-                </p>
-              </div>
-              <div>
-                <div class="review-author">
-                  <strong>Robert & Laura H.</strong>
-                  <span class="review-stay-date">Stayed May 2025 · Verified Stay</span>
-                </div>
-                <span class="review-verified-badge">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified Guest
-                </span>
-              </div>
-            </article>
-
-            <!-- Review 6 -->
-            <article class="review-card">
-              <div>
-                <div class="review-stars" aria-label="5 out of 5 stars">
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                </div>
-                <p class="review-quote">
-                  “Everything about The Love Shack is top tier. The kitchen is fully equipped for making breakfast or grilling on the patio BBQ. Snorkeling equipment and beach chairs were in great condition. The location in Savaneta is tranquil and safe, yet only 10-15 minutes from the airport. Truly one of the best Airbnbs we've ever stayed at.”
-                </p>
-              </div>
-              <div>
-                <div class="review-author">
-                  <strong>Christopher P.</strong>
-                  <span class="review-stay-date">Stayed March 2025 · Verified Stay</span>
-                </div>
-                <span class="review-verified-badge">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified Guest
-                </span>
-              </div>
-            </article>
-
-            <!-- Review 7 -->
-            <article class="review-card">
-              <div>
-                <div class="review-stars" aria-label="5 out of 5 stars">
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                </div>
-                <p class="review-quote">
-                  “Spotless, spacious, and serene. The beds were wonderfully comfortable, AC worked perfectly in every room, and the attention to detail was evident everywhere. Paddling the complimentary kayaks across the calm channel to hunt for sea glass was pure joy. Thank you Traci and Alexandra for being such gracious hosts!”
-                </p>
-              </div>
-              <div>
-                <div class="review-author">
-                  <strong>Elena V.</strong>
-                  <span class="review-stay-date">Stayed February 2025 · Verified Stay</span>
-                </div>
-                <span class="review-verified-badge">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified Guest
-                </span>
-              </div>
-            </article>
-
-            <!-- Review 8 -->
-            <article class="review-card">
-              <div>
-                <div class="review-stars" aria-label="5 out of 5 stars">
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                </div>
-                <p class="review-quote">
-                  “We have visited Aruba four times, but staying at The Love Shack in Savaneta was by far our favorite trip. The privacy of having your own beach and pool cannot be overstated. Alexandra arranged a wonderful private chef dinner for us on the patio. Worth every penny.”
-                </p>
-              </div>
-              <div>
-                <div class="review-author">
-                  <strong>Daniel & Stephanie W.</strong>
-                  <span class="review-stay-date">Stayed January 2025 · Verified Stay</span>
-                </div>
-                <span class="review-verified-badge">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified Guest
-                </span>
-              </div>
-            </article>
-
-            <!-- Review 9 -->
-            <article class="review-card">
-              <div>
-                <div class="review-stars" aria-label="5 out of 5 stars">
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                </div>
-                <p class="review-quote">
-                  “A true hidden gem on the island. The property is even better than the photos. Direct beach walks, calm turquoise water, and stunning night skies from the sun loungers. Communication with Traci was effortless and prompt. We felt pampered and right at home.”
-                </p>
-              </div>
-              <div>
-                <div class="review-author">
-                  <strong>Karen L.</strong>
-                  <span class="review-stay-date">Stayed November 2024 · Verified Stay</span>
-                </div>
-                <span class="review-verified-badge">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified Guest
-                </span>
-              </div>
-            </article>
-
-            <!-- Review 10 -->
-            <article class="review-card">
-              <div>
-                <div class="review-stars" aria-label="5 out of 5 stars">
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                </div>
-                <p class="review-quote">
-                  “The perfect layout for 3 couples. Every room having its own private bathroom made mornings relaxed. The outdoor living area with the palapa and BBQ grill is where we spent most of our evenings. The quiet fishing village of Savaneta has the best fresh seafood on the island.”
-                </p>
-              </div>
-              <div>
-                <div class="review-author">
-                  <strong>James & Patricia C.</strong>
-                  <span class="review-stay-date">Stayed October 2024 · Verified Stay</span>
-                </div>
-                <span class="review-verified-badge">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified Guest
-                </span>
-              </div>
-            </article>
-
-            <!-- Review 11 -->
-            <article class="review-card">
-              <div>
-                <div class="review-stars" aria-label="5 out of 5 stars">
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                </div>
-                <p class="review-quote">
-                  “Unbelievable beachfront location. Waking up to the calm Caribbean Sea right outside the gates was magical. The villa was sparkling clean, comfortable, and equipped with everything we could possibly need. We appreciated all the local tips from Alexandra. Can't wait to book again next year!”
-                </p>
-              </div>
-              <div>
-                <div class="review-author">
-                  <strong>Sophie B.</strong>
-                  <span class="review-stay-date">Stayed August 2024 · Verified Stay</span>
-                </div>
-                <span class="review-verified-badge">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified Guest
-                </span>
-              </div>
-            </article>
-
-            <!-- Review 12 -->
-            <article class="review-card">
-              <div>
-                <div class="review-stars" aria-label="5 out of 5 stars">
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                </div>
-                <p class="review-quote">
-                  “From the moment we arrived, we knew we chose the right place. The private pool overlooking the ocean is magnificent. The house is secure, quiet, and spotless. It truly feels like your own private island sanctuary. Thank you Traci for sharing your beautiful home!”
-                </p>
-              </div>
-              <div>
-                <div class="review-author">
-                  <strong>Marcus G.</strong>
-                  <span class="review-stay-date">Stayed June 2024 · Verified Stay</span>
-                </div>
-                <span class="review-verified-badge">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified Guest
-                </span>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- Show More Reviews Toggle Action -->
-        <div class="reviews-action-center">
-          <button type="button" class="btn btn-outline" id="toggleReviewsBtn" aria-expanded="false" aria-controls="reviewsMoreWrap">
-            <span class="btn-text">Show More Reviews (12 Total)</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-chevron">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <span class="reviews-disclaimer">
-            Based on verified public guest stays on Airbnb & Vrbo for The Love Shack (Savaneta, Aruba). Overall 5.0 Rating · Guest Favorite.
-          </span>
-        </div>
-      </div>
-    </section>
-
     <!-- Distinctive Luxury Booking CTA Section (No Flat Solid Blocks) -->
     <section class="booking-cta-section" aria-label="Book Your Stay Call to Action">
       <div class="cta-bg" role="img" aria-label="Ocean villa background"></div>
@@ -1326,7 +906,7 @@
       <div class="footer-grid">
         <!-- Brand Column -->
         <div class="footer-brand">
-          <a class="logo" href="index.html">love shack</a>
+          <a class="logo" href="index.html">The Love Shack</a>
           <p>
             An intimate luxury beachfront retreat in Savaneta, Aruba. Designed for barefoot relaxation, private pool days, and unhurried Caribbean memories.
           </p>

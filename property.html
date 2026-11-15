@@ -11,14 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
 </head>
 <body>
 
   <!-- Floating Luxury Navigation Bar -->
   <div class="header-wrapper">
     <header class="header">
-      <a class="logo" href="index.html" aria-label="Love Shack Homepage">love shack</a>
+      <a class="logo" href="index.html" aria-label="The Love Shack Homepage">The Love Shack</a>
       
       <button class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -185,54 +185,44 @@
       </div>
     </section>
 
-    <!-- Full Interactive Gallery Grid with Lightbox -->
+    <!-- Full Interactive Gallery Grid with Lightbox (Property Showcase) -->
     <section class="wrap" id="gallery" style="padding-bottom: 90px;" aria-label="Full Villa Gallery">
-      <div class="section-header">
-        <span class="eyebrow center">PHOTO GALLERY</span>
-        <h2>Explore every <em>corner.</em></h2>
-        <p>Click any photograph below to expand into full resolution view.</p>
+      <div class="gallery-header-row">
+        <div>
+          <span class="eyebrow">PROPERTY SHOWCASE</span>
+          <h2>A glimpse of <em>paradise.</em></h2>
+        </div>
+        <p style="max-width: 480px; color: var(--color-text-muted);">
+          Explore the secluded beachfront veranda, sun-drenched private pool terrace, and peaceful Caribbean shoreline. Click any photograph to inspect in full detail.
+        </p>
       </div>
 
+      <!-- 3-Photo Property Showcase Gallery Grid -->
       <div class="gallery-grid">
-        <div class="gallery-item" data-caption="Love Shack Private Freshwater Pool & Lanai Lounge">
-          <img src="assets/images/temporary-hero.jpg" alt="Villa and private swimming pool oasis">
+        <div class="gallery-item" data-caption="Private beachfront swimming pool with sun lounger terrace and sunset ocean view">
+          <img src="assets/images/temporary-hero.jpg" alt="Oceanfront Villa &amp; Freshwater Pool Sanctuary" loading="lazy">
           <div class="gallery-overlay">
-            <div class="gallery-caption">
-              <span>Private Pool & Lanai Lounge</span>
-              <div class="gallery-zoom-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
-              </div>
-            </div>
+            <span class="gallery-tag">Villa Exterior &amp; Pool</span>
+            <p class="gallery-caption">Oceanfront Villa &amp; Freshwater Pool Sanctuary</p>
           </div>
         </div>
 
-        <div class="gallery-item" data-caption="Direct Shoreline Access on Savaneta Beach">
-          <img src="assets/images/temporary-beach.jpg" alt="Turquoise Caribbean sea and white beach">
+        <div class="gallery-item" data-caption="Private swimming pool nestled in a tropical Aruban garden setting">
+          <img src="assets/images/temporary-pool.jpg" alt="Freshwater Pool Sanctuary" loading="lazy">
           <div class="gallery-overlay">
-            <div class="gallery-caption">
-              <span>Direct Shoreline Access</span>
-              <div class="gallery-zoom-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
-              </div>
-            </div>
+            <span class="gallery-tag">Pool Terrace</span>
+            <p class="gallery-caption">Freshwater Pool Sanctuary</p>
           </div>
         </div>
 
-        <div class="gallery-item" data-caption="Sun Lounger Terrace & Garden Oasis">
-          <img src="assets/images/temporary-pool.jpg" alt="Sparkling blue pool with poolside loungers">
+        <div class="gallery-item" data-caption="Direct access to calm, crystal-clear turquoise waters and soft sand">
+          <img src="assets/images/temporary-beach.jpg" alt="Savaneta Caribbean Beach" loading="lazy">
           <div class="gallery-overlay">
-            <div class="gallery-caption">
-              <span>Sun Lounger Terrace</span>
-              <div class="gallery-zoom-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
-              </div>
-            </div>
+            <span class="gallery-tag">Beachfront</span>
+            <p class="gallery-caption">Savaneta Caribbean Beach</p>
           </div>
         </div>
       </div>
-      <p style="font-size: 0.8rem; color: var(--color-text-muted); text-align: center; margin-top: 18px; font-style: italic;">
-        Note: Temporary visual placeholders shown for layout demonstration. Client approved high-resolution photography can be updated upon asset handoff.
-      </p>
     </section>
 
     <!-- Comprehensive Amenities Matrix -->
@@ -385,7 +375,7 @@
     <div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="logo" href="index.html">love shack</a>
+          <a class="logo" href="index.html">The Love Shack</a>
           <p>An intimate luxury beachfront retreat in Savaneta, Aruba. Designed for barefoot relaxation, private pool days, and unhurried Caribbean memories.</p>
           <div class="footer-location-tag">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>

@@ -11,14 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
 </head>
 <body>
 
   <!-- Floating Luxury Navigation Bar -->
   <div class="header-wrapper">
     <header class="header">
-      <a class="logo" href="index.html" aria-label="Love Shack Homepage">love shack</a>
+      <a class="logo" href="index.html" aria-label="The Love Shack Homepage">The Love Shack</a>
       
       <button class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -31,7 +31,10 @@
       <nav class="nav" aria-label="Main Navigation">
         <a href="index.html">Home</a>
         <a href="property.html">The Property</a>
-        <a href="booking.html">Book Your Stay</a>
+        <a href="property.html#rooms">Rooms</a>
+        <a href="property.html#gallery">Gallery</a>
+        <a href="property.html#amenities">Amenities</a>
+        <a href="property.html#location">Location</a>
         <a class="current" href="contact.html">Contact</a>
         <a class="nav-cta" href="booking.html">
           Check Availability
@@ -172,7 +175,7 @@
         <div class="form-card">
           <span class="eyebrow">SEND A MESSAGE</span>
           <h2>Direct Host Inquiry</h2>
-          <p>Have a custom request or question? Drop us a note and we'll reply promptly.</p>
+          <p>Have a custom request or question? Send a direct message to our villa concierge.</p>
 
           <form id="contactForm" novalidate>
             <div class="form-group">
@@ -194,10 +197,10 @@
             <div class="form-group">
               <label for="contactSubject">Inquiry Topic</label>
               <select id="contactSubject" name="subject">
-                <option value="general" selected>General Question</option>
-                <option value="dates">Booking Dates & Availability</option>
-                <option value="concierge">Concierge & Island Transfers</option>
-                <option value="celebration">Special Occasion / Anniversary</option>
+                <option value="General Question" selected>General Question</option>
+                <option value="Booking Dates & Availability">Booking Dates & Availability</option>
+                <option value="Concierge & Island Transfers">Concierge & Island Transfers</option>
+                <option value="Special Occasion / Anniversary">Special Occasion / Anniversary</option>
               </select>
             </div>
 
@@ -213,12 +216,12 @@
                 <line x1="12" y1="8" x2="12.01" y2="8"></line>
               </svg>
               <p>
-                <strong>Frontend Demo:</strong> Form submission displays a preview confirmation notice. Live email forwarding will be hooked into the backend SMTP / API service.
+                Direct inquiries are handled by our dedicated Aruban villa concierge. We respect your privacy.
               </p>
             </div>
 
             <button type="submit" class="btn btn-teal" style="width: 100%;">
-              Send Message
+              Send Inquiry
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -257,7 +260,7 @@
     <div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="logo" href="index.html">love shack</a>
+          <a class="logo" href="index.html">The Love Shack</a>
           <p>An intimate luxury beachfront retreat in Savaneta, Aruba. Designed for barefoot relaxation, private pool days, and unhurried Caribbean memories.</p>
           <div class="footer-location-tag">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>

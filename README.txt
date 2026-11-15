@@ -24,7 +24,8 @@ Comprehensive Frontend Redesign & Implementation
 - Deep Slate: #253B45 (Comfortable, high-readability body text)
 
 3. TYPOGRAPHY SYSTEM
-- Logo Wordmark: Bodoni Moda (strictly "love shack" in lowercase, no full stop or decorative dot)
+- Logo Wordmark: Bodoni Moda ("The Love Shack", rendered in brand blush pink #F4C9D4)
+- Navigation Panel Text: Soft blush pink (#F4C9D4) across logo, links, active underline, and CTA text on white floating bar
 - Main Headings: Cormorant Garamond (large editorial proportions with weight and italic styling)
 - Body Content: Lato (clean, comfortable, readable paragraph typography)
 - Navigation, Buttons, Badges: Montserrat (modern, structured, distinct)
