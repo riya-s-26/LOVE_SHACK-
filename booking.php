@@ -418,23 +418,23 @@ foreach ($services as $svc) {
           <span class="footer-col-title" style="color: var(--color-primary); margin-bottom: 12px;">INCLUDED WITH YOUR STAY:</span>
           <ul class="summary-inclusions">
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="inclusion-dot"></span>
               <span>Exclusive access to private swimming pool</span>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="inclusion-dot"></span>
               <span>Direct beachfront access steps from lanai</span>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="inclusion-dot"></span>
               <span>High-speed Wi-Fi & 4K smart entertainment</span>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="inclusion-dot"></span>
               <span>Beach chairs, beach towels & cooler sets</span>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="inclusion-dot"></span>
               <span>Dedicated pre-arrival island concierge support</span>
             </li>
           </ul>

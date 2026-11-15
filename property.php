@@ -241,8 +241,8 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
               <div class="amenities-cat-grid">
                 <?php foreach ($catItems as $item): ?>
                   <div class="amenity-item-row">
-                    <div class="amenity-icon-bullet">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <div class="amenity-icon-bullet" aria-hidden="true">
+                      <span class="amenity-dot"></span>
                     </div>
                     <div class="amenity-text-block">
                       <strong><?= htmlspecialchars($item['name']) ?></strong>
@@ -382,20 +382,32 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
         </div>
         <div class="rules-list">
           <div class="rule-box">
-            <strong>Check-in & Check-out</strong>
-            <p>Check-in from <?= htmlspecialchars($settings['checkin_time'] ?? '15:00') ?>; Check-out by <?= htmlspecialchars($settings['checkout_time'] ?? '11:00') ?>. Digital keyless lock.</p>
+            <span class="rule-num">01</span>
+            <div class="rule-text">
+              <strong>Check-in & Check-out</strong>
+              <p>Check-in from <?= htmlspecialchars($settings['checkin_time'] ?? '15:00') ?>; Check-out by <?= htmlspecialchars($settings['checkout_time'] ?? '11:00') ?>. Digital keyless lock.</p>
+            </div>
           </div>
           <div class="rule-box">
-            <strong>Quiet Island Hours</strong>
-            <p>Savaneta is a peaceful residential fishing hamlet. Respectful quiet hours commence at 10:00 PM.</p>
+            <span class="rule-num">02</span>
+            <div class="rule-text">
+              <strong>Quiet Island Hours</strong>
+              <p>Savaneta is a peaceful residential fishing hamlet. Respectful quiet hours commence at 10:00 PM.</p>
+            </div>
           </div>
           <div class="rule-box">
-            <strong>Guest Capacity</strong>
-            <p>Maximum <?= (int)($property['max_guests'] ?? 6) ?> registered guests allowed overnight. No unauthorized commercial events.</p>
+            <span class="rule-num">03</span>
+            <div class="rule-text">
+              <strong>Guest Capacity</strong>
+              <p>Maximum <?= (int)($property['max_guests'] ?? 6) ?> registered guests allowed overnight. No unauthorized commercial events.</p>
+            </div>
           </div>
           <div class="rule-box">
-            <strong>Non-Smoking Sanctuary</strong>
-            <p>Smoking is strictly prohibited inside all indoor suites and living quarters.</p>
+            <span class="rule-num">04</span>
+            <div class="rule-text">
+              <strong>Non-Smoking Sanctuary</strong>
+              <p>Smoking is strictly prohibited inside all indoor suites and living quarters.</p>
+            </div>
           </div>
         </div>
       </div>

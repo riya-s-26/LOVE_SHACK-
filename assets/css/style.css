@@ -14,8 +14,17 @@
   --color-secondary: #319DA0;     /* Ocean Teal: Interactive highlights, icons, active states */
   --color-secondary-hover: #268285;/* Deep teal for button hover */
   --color-secondary-soft: rgba(49, 157, 160, 0.12); /* Soft teal tint */
-  --color-accent-pink: #F4C9D4;   /* Pastel Pink: Restrained luxury accents & highlights */
-  --color-accent-pink-soft: #fcf1f4; /* Ultra-soft pink blush */
+  --color-blush-pink: #F4C9D4;       /* Original Light Blush Pink for Luxury Accents */
+  --color-dark-pink: #832247;        /* Rich Dark Pink for Logo and Navigation Links */
+  --color-dark-pink-hover: #5e1430;  /* Deeper dark pink for link hover */
+  --color-accent-pink: #832247;      /* Rich Dark Pink */
+  --color-accent-pink-soft: #fdf2f5; /* Ultra-soft blush */
+  --color-header-bg: rgba(255, 255, 255, 0.95); /* Clean white / soft off-white header panel */
+  --color-nav-link: #832247;         /* Dark pink navigation links */
+  --color-nav-link-hover: #5e1430;   /* Deeper dark pink on hover */
+  --color-nav-underline: #832247;    /* Dark pink active indicator underline */
+  --color-teal-cta: #135461;         /* Standout Ocean Teal button */
+  --color-teal-cta-hover: #0d3d47;   /* Deep teal hover */
   --color-bg-aqua: #F5FAFA;       /* Soft Aqua White: Light alternating section backgrounds */
   --color-white: #FFFFFF;         /* Crisp White */
   --color-text-body: #253B45;     /* Deep Slate: Readable, comfortable paragraph body text */
@@ -109,85 +118,70 @@ h1, h2, h3, h4 {
   font-family: var(--font-heading);
   color: var(--color-primary);
   font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
 }
 
 h1 {
-  font-size: clamp(2.8rem, 5.8vw, 4.8rem);
-  line-height: 1.02;
+  font-size: clamp(2.8rem, 5.6vw, 4.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
 }
 
 h2 {
-  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-  line-height: 1.1;
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 h3 {
-  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
   line-height: 1.25;
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
+  line-height: 1.35;
 }
 
 p {
   color: var(--color-text-body);
   font-size: 1.025rem;
-  line-height: 1.8;
+  line-height: 1.82;
+  letter-spacing: 0.008em;
+  margin-bottom: 1.25rem;
 }
 
-/* Editorial Heading Italic Teal Accents (from Reference 2) */
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Natural Editorial Serif Italics: Warm, human, and timeless (no forced artificial colors) */
 h1 em, h2 em, h3 em {
   font-style: italic;
   font-weight: 400;
-  color: var(--color-secondary);
+  color: inherit;
 }
 
-/* Eyebrow / Section Category Tag */
+/* Eyebrow / Section Category Tag: Clean, refined uppercase tracking (removed robotic dashes) */
 .eyebrow {
   font-family: var(--font-ui);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-secondary);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.eyebrow::before {
-  content: "";
   display: inline-block;
-  width: 22px;
-  height: 2px;
-  background-color: var(--color-accent-pink);
-  border-radius: 2px;
+  margin-bottom: 12px;
 }
 
 .eyebrow.light {
   color: #c7ebec;
 }
 
-.eyebrow.light::before {
-  background-color: var(--color-accent-pink);
-}
-
 .eyebrow.center {
-  justify-content: center;
-}
-
-.eyebrow.center::after {
-  content: "";
-  display: inline-block;
-  width: 22px;
-  height: 2px;
-  background-color: var(--color-accent-pink);
-  border-radius: 2px;
+  display: block;
+  text-align: center;
 }
 
 /* --------------------------------------------------------------------------
@@ -322,7 +316,7 @@ h1 em, h2 em, h3 em {
 }
 
 /* --------------------------------------------------------------------------
-   5. FLOATING LUXURY NAVIGATION BAR (REFERENCE 1 & 2)
+   5. FLOATING LUXURY NAVIGATION BAR
    -------------------------------------------------------------------------- */
 .header-wrapper {
   position: fixed;
@@ -341,12 +335,12 @@ h1 em, h2 em, h3 em {
   margin: 0 auto;
   height: 74px;
   padding: 0 28px;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.95); /* Clean white / soft off-white panel */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(220, 235, 235, 0.85);
   border-radius: var(--radius-pill);
-  box-shadow: 0 10px 36px rgba(15, 55, 71, 0.12);
+  box-shadow: 0 10px 36px rgba(15, 55, 71, 0.10);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -357,7 +351,7 @@ h1 em, h2 em, h3 em {
 .header-wrapper.scrolled .header {
   background: rgba(255, 255, 255, 0.98);
   height: 68px;
-  box-shadow: 0 14px 40px rgba(15, 55, 71, 0.18);
+  box-shadow: 0 14px 40px rgba(15, 55, 71, 0.16);
   border-color: rgba(220, 235, 235, 1);
 }
 
@@ -367,7 +361,7 @@ h1 em, h2 em, h3 em {
   font-size: 1.85rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--color-accent-pink);
+  color: var(--color-dark-pink); /* Dark pink logo text */
   text-decoration: none;
   line-height: 1;
   display: flex;
@@ -377,15 +371,30 @@ h1 em, h2 em, h3 em {
 }
 
 .header .logo {
-  color: var(--color-accent-pink);
+  font-family: var(--font-logo);
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-dark-pink); /* Dark pink logo text */
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
 }
 
 .header .logo:hover {
   opacity: 0.85;
-  color: var(--color-accent-pink);
+  color: var(--color-dark-pink-hover);
+  transform: none;
+  box-shadow: none;
 }
 
-/* Navigation Links in Montserrat — All pastel pink */
+/* Navigation Links in Montserrat — Dark pink text on white panel */
 .nav {
   display: flex;
   align-items: center;
@@ -393,7 +402,7 @@ h1 em, h2 em, h3 em {
 }
 
 .nav a {
-  color: var(--color-accent-pink);
+  color: var(--color-dark-pink);
 }
 
 .nav a:not(.nav-cta) {
@@ -401,7 +410,7 @@ h1 em, h2 em, h3 em {
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: var(--color-accent-pink);
+  color: var(--color-dark-pink); /* Dark pink navigation links */
   padding: 8px 0;
   position: relative;
   transition: opacity var(--transition-fast), color var(--transition-fast);
@@ -410,13 +419,14 @@ h1 em, h2 em, h3 em {
 .nav a:not(.nav-cta):hover,
 .nav a:hover {
   opacity: 0.82;
-  color: var(--color-accent-pink);
+  color: var(--color-dark-pink-hover);
 }
 
 /* Active Page Indicator */
 .nav a.current,
 .nav a.current:not(.nav-cta) {
-  color: var(--color-accent-pink);
+  color: var(--color-dark-pink); /* Dark pink active text */
+  font-weight: 700;
 }
 
 .nav a.current::after,
@@ -427,11 +437,11 @@ h1 em, h2 em, h3 em {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--color-accent-pink);
+  background-color: var(--color-dark-pink); /* Dark pink active underline */
   border-radius: 2px;
 }
 
-/* Nav CTA Pill Button */
+/* Nav CTA Pill Button - Teal background with white text */
 .nav-cta,
 .nav a.nav-cta {
   font-family: var(--font-ui);
@@ -439,8 +449,8 @@ h1 em, h2 em, h3 em {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background-color: var(--color-primary);
-  color: var(--color-accent-pink);
+  background-color: var(--color-teal-cta); /* Standout Ocean Teal */
+  color: var(--color-white) !important;
   padding: 12px 22px;
   border-radius: var(--radius-pill);
   display: inline-flex;
@@ -448,27 +458,28 @@ h1 em, h2 em, h3 em {
   gap: 8px;
   transition: all var(--transition-base);
   box-shadow: 0 4px 14px rgba(22, 78, 99, 0.2);
+  border: 1px solid transparent;
 }
 
 .nav-cta svg,
 .nav a.nav-cta svg {
   width: 14px;
   height: 14px;
-  stroke: var(--color-accent-pink);
+  stroke: var(--color-white);
   transition: transform var(--transition-fast);
 }
 
 .nav-cta:hover,
 .nav a.nav-cta:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-accent-pink);
+  background-color: var(--color-teal-cta-hover);
+  color: var(--color-white) !important;
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(49, 157, 160, 0.35);
+  box-shadow: 0 6px 18px rgba(19, 84, 97, 0.35);
 }
 
 .nav-cta:hover svg,
 .nav a.nav-cta:hover svg {
-  stroke: var(--color-accent-pink);
+  stroke: var(--color-white);
   transform: translateX(3px) translateY(-1px);
 }
 
@@ -485,7 +496,7 @@ h1 em, h2 em, h3 em {
   position: relative;
   align-items: center;
   justify-content: center;
-  color: var(--color-accent-pink);
+  color: var(--color-dark-pink);
   transition: background-color var(--transition-fast);
 }
 
@@ -497,6 +508,7 @@ h1 em, h2 em, h3 em {
   width: 24px;
   height: 24px;
   stroke-width: 2;
+  stroke: var(--color-dark-pink);
 }
 
 /* --------------------------------------------------------------------------
@@ -562,13 +574,13 @@ h1 em, h2 em, h3 em {
 /* Destination Tag (From Reference 2) */
 .hero-tag {
   font-family: var(--font-ui);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #d1f2f3;
   background: rgba(22, 78, 99, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding: 8px 20px;
@@ -585,28 +597,37 @@ h1 em, h2 em, h3 em {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--color-accent-pink);
-  box-shadow: 0 0 8px var(--color-accent-pink);
+  background-color: var(--color-nav-underline);
+  box-shadow: 0 0 8px var(--color-nav-underline);
 }
 
 .hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 5.8vw, 4.8rem);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
   color: var(--color-white);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .hero h1 em {
-  color: #48d1d5; /* Luminous teal highlight for Aruba */
-  text-shadow: 0 2px 14px rgba(49, 157, 160, 0.4);
+  font-style: italic;
+  font-weight: 400;
+  color: #6ee7b7; /* Luminous Caribbean seafoam highlight */
+  text-shadow: 0 2px 14px rgba(110, 231, 183, 0.3);
 }
 
 .hero-description {
-  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
-  line-height: 1.8;
-  color: #e5f6f7;
-  max-width: 680px;
+  font-family: var(--font-body);
+  font-size: clamp(1.08rem, 1.4vw, 1.25rem);
+  line-height: 1.82;
+  color: #eaf6f7;
+  max-width: 660px;
   margin: 0 auto 36px;
   font-weight: 300;
+  letter-spacing: 0.01em;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -904,7 +925,7 @@ h1 em, h2 em, h3 em {
   align-items: center;
   gap: 8px;
   border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-accent-pink);
+  border-left: 3px solid var(--color-secondary);
 }
 
 .intro-badge svg {
@@ -914,47 +935,70 @@ h1 em, h2 em, h3 em {
 }
 
 .intro-content h2 {
-  margin-bottom: 22px;
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.8vw, 3.1rem);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  color: var(--color-primary);
 }
 
 .intro-content p {
-  font-size: 1.05rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.85;
   color: var(--color-text-body);
   margin-bottom: 28px;
+  letter-spacing: 0.005em;
 }
 
-/* Luxury Benefit Bullet List */
+/* Luxury Benefit Bullet List (index.html) */
 .benefit-list {
   list-style: none;
   margin-bottom: 36px;
   display: grid;
-  gap: 14px;
+  gap: 16px;
+  padding: 0;
 }
 
 .benefit-item {
   display: flex;
   align-items: center;
   gap: 14px;
-  font-size: 0.98rem;
+  font-size: 1rem;
   color: var(--color-text-body);
 }
 
-.benefit-icon {
-  width: 28px;
-  height: 28px;
+.benefit-dot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background-color: var(--color-secondary-soft);
-  color: var(--color-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: var(--color-secondary);
+  display: inline-block;
   flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--color-secondary-soft);
 }
 
-.benefit-icon svg {
-  width: 14px;
-  height: 14px;
-  stroke-width: 2.5;
+/* Intro Checklist (index.php) */
+.intro-checklist {
+  list-style: none;
+  margin-bottom: 32px;
+  display: grid;
+  gap: 16px;
+  padding: 0;
+}
+
+.intro-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1rem;
+  color: var(--color-text-body);
+}
+
+.intro-checklist li .benefit-dot {
+  margin-top: 1px;
 }
 
 /* --------------------------------------------------------------------------
@@ -987,39 +1031,31 @@ h1 em, h2 em, h3 em {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
+  margin-top: 48px;
 }
 
 .experience-card {
   background-color: var(--color-white);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(22, 78, 99, 0.12);
   border-radius: var(--radius-md);
-  padding: 40px 32px;
+  padding: 44px 34px;
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition-base);
-  position: relative;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  /* Smooth 280ms transition across background, border, transform, and shadow */
+  transition: background-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.experience-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 32px;
-  right: 32px;
-  height: 3px;
-  background: transparent;
-  transition: background-color var(--transition-base);
-}
-
-.experience-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(49, 157, 160, 0.4);
-}
-
-.experience-card:hover::before {
-  background: linear-gradient(90deg, var(--color-secondary), var(--color-accent-pink));
+.experience-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .experience-icon-wrap {
@@ -1028,33 +1064,84 @@ h1 em, h2 em, h3 em {
   border-radius: 14px;
   background-color: var(--color-bg-aqua);
   color: var(--color-secondary);
+  border: 1px solid rgba(49, 157, 160, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
-  transition: all var(--transition-fast);
+  transition: background-color 280ms ease, color 280ms ease, border-color 280ms ease, transform 280ms ease;
 }
 
 .experience-icon-wrap svg {
   width: 28px;
   height: 28px;
   stroke-width: 1.75;
+  stroke: var(--color-secondary);
+  transition: stroke 280ms ease;
 }
 
-.experience-card:hover .experience-icon-wrap {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
+.experience-num {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  line-height: 1;
+  margin-bottom: 18px;
+  transition: color 280ms ease;
 }
 
 .experience-card h3 {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-primary);
+  transition: color 280ms ease;
 }
 
 .experience-card p {
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   color: var(--color-text-muted);
-  line-height: 1.75;
+  line-height: 1.76;
+  margin-bottom: 0;
+  transition: color 280ms ease;
+}
+
+/* Hover Interaction across ALL 3 cards: Smooth Teal Transition (280ms) */
+.experience-card:hover,
+.experience-card:focus-within {
+  background-color: #135461; /* Rich ocean teal */
+  border-color: #135461;
+  transform: translateY(-6px);
+  box-shadow: 0 18px 42px rgba(19, 84, 97, 0.3);
+}
+
+.experience-card:hover h3,
+.experience-card:focus-within h3 {
+  color: #FFFFFF;
+}
+
+.experience-card:hover p,
+.experience-card:focus-within p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.experience-card:hover .experience-icon-wrap,
+.experience-card:focus-within .experience-icon-wrap {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.experience-card:hover .experience-icon-wrap svg,
+.experience-card:focus-within .experience-icon-wrap svg {
+  stroke: #FFFFFF;
+}
+
+.experience-card:hover .experience-num,
+.experience-card:focus-within .experience-num {
+  color: #FFFFFF;
 }
 
 /* --------------------------------------------------------------------------
@@ -1416,20 +1503,47 @@ h1 em, h2 em, h3 em {
   list-style: none;
   display: grid;
   gap: 12px;
+  padding: 0;
 }
 
 .amenity-list li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.92rem;
+  gap: 12px;
+  font-size: 0.94rem;
   color: var(--color-text-body);
 }
 
-.amenity-list li svg {
-  width: 16px;
-  height: 16px;
-  color: var(--color-secondary);
+.amenity-list li .amenity-dot,
+.amenity-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.amenity-modal-items {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.amenity-modal-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.94rem;
+  color: var(--color-text-body);
+}
+
+.amenity-modal-item .amenity-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
   flex-shrink: 0;
 }
 
@@ -2100,8 +2214,12 @@ h1 em, h2 em, h3 em {
   margin-bottom: 20px;
 }
 
-.booking-cta-section h2 em {
-  color: var(--color-accent-pink);
+.booking-cta-section h2 em,
+.booking-cta-content h2 em,
+.cta-content h2 em {
+  color: var(--color-blush-pink);
+  font-style: italic;
+  font-weight: 400;
 }
 
 .booking-cta-section p {
@@ -2427,29 +2545,84 @@ h1 em, h2 em, h3 em {
   font-weight: 600;
 }
 
-/* House Rules Strip */
+/* House Rules & Numbered Stay Guidelines */
 .rules-card {
   background-color: var(--color-bg-aqua);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 36px 40px;
-  margin: 80px 0;
+  margin: 60px 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 20px;
+}
+
+.rules-card:has(.rules-list) {
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.rules-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.rule-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--color-white);
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(22, 78, 99, 0.08);
+  box-shadow: 0 2px 8px rgba(22, 78, 99, 0.04);
+  transition: all var(--transition-fast);
+}
+
+.rule-box:hover {
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.rule-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-bg-aqua);
+  border: 1.5px solid var(--color-secondary);
+  color: var(--color-primary);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rule-text {
+  flex: 1;
 }
 
 .rule-box strong {
   display: block;
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--color-primary);
   margin-bottom: 4px;
+  line-height: 1.25;
 }
 
+.rule-box p,
 .rule-box span {
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
 }
 
 /* --------------------------------------------------------------------------
@@ -2571,14 +2744,17 @@ h1 em, h2 em, h3 em {
   color: var(--color-text-body);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .bath-feature-list li::before {
-  content: "✓";
-  font-weight: 700;
-  color: var(--color-secondary);
-  font-size: 0.85rem;
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  flex-shrink: 0;
 }
 
 /* Full 7-Category Amenities Layout (property.php) */
@@ -2622,10 +2798,10 @@ h1 em, h2 em, h3 em {
 }
 
 .amenity-icon-bullet {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background-color: var(--color-bg-aqua);
+  background-color: var(--color-secondary-soft);
   color: var(--color-secondary);
   display: flex;
   align-items: center;
@@ -2634,9 +2810,12 @@ h1 em, h2 em, h3 em {
   margin-top: 2px;
 }
 
-.amenity-icon-bullet svg {
-  width: 14px;
-  height: 14px;
+.amenity-icon-bullet .amenity-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  display: block;
 }
 
 .amenity-text-block strong {
@@ -2896,22 +3075,27 @@ h1 em, h2 em, h3 em {
 .summary-inclusions {
   list-style: none;
   display: grid;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 24px;
+  padding: 0;
 }
 
 .summary-inclusions li {
-  font-size: 0.84rem;
+  font-size: 0.85rem;
   color: var(--color-text-muted);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-.summary-inclusions li svg {
-  width: 14px;
-  height: 14px;
-  color: var(--color-secondary);
+.summary-inclusions li .inclusion-dot,
+.inclusion-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 .summary-contact-help {
@@ -3473,10 +3657,17 @@ h1 em, h2 em, h3 em {
   .header {
     height: 64px;
     padding: 0 18px;
+    background: rgba(255, 255, 255, 0.98);
+  }
+
+  .header .logo {
+    font-size: 1.55rem;
+    padding: 0;
   }
 
   .menu-btn {
     display: flex;
+    color: var(--color-dark-pink);
   }
 
   /* Full screen luxury mobile drawer */
@@ -3490,11 +3681,11 @@ h1 em, h2 em, h3 em {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    box-shadow: 0 20px 48px rgba(15, 55, 71, 0.22);
+    box-shadow: 0 20px 48px rgba(15, 55, 71, 0.18);
     padding: 28px 24px;
     flex-direction: column;
     align-items: stretch;
-    gap: 18px;
+    gap: 16px;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-12px);
@@ -3510,15 +3701,21 @@ h1 em, h2 em, h3 em {
   .nav a:not(.nav-cta) {
     font-size: 1.05rem;
     padding: 10px 0;
-    color: var(--color-accent-pink);
+    color: var(--color-dark-pink);
     border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .nav a.current:not(.nav-cta) {
+    color: var(--color-dark-pink);
+    font-weight: 700;
   }
 
   .nav-cta {
     justify-content: center;
     padding: 15px;
     margin-top: 6px;
-    color: var(--color-accent-pink);
+    background-color: var(--color-teal-cta);
+    color: var(--color-white) !important;
   }
 
   .hero {

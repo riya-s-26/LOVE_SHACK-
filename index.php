@@ -113,19 +113,19 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
 
           <ul class="intro-checklist">
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="benefit-dot"></span>
               <span>100% private freshwater swimming pool with dedicated double sun lounger terrace</span>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="benefit-dot"></span>
               <span>Immediate beach access steps from your covered outdoor lanai</span>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="benefit-dot"></span>
               <span>3 private en-suite suites accommodating up to 6 discerning guests</span>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="benefit-dot"></span>
               <span>Walking distance to world-renowned waterfront dining at Zeerovers</span>
             </li>
           </ul>
@@ -230,29 +230,51 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
       </div>
 
       <div class="experience-grid">
-        <div class="experience-card">
+        <article class="experience-card">
           <div class="experience-card-inner">
-            <span class="experience-num">01</span>
+            <div class="experience-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </div>
             <h3>Slow Island Mornings</h3>
-            <p>Brew fresh Caribbean coffee in the gourmet kitchen and listen to the gentle morning tide roll in while reading under shaded palms.</p>
+            <p>Start your day with artisan coffee on the sun-drenched lanai, listening to calm morning waters and birdsong.</p>
           </div>
-        </div>
+        </article>
 
-        <div class="experience-card">
+        <article class="experience-card">
           <div class="experience-card-inner">
-            <span class="experience-num">02</span>
+            <div class="experience-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12h20"></path>
+                <path d="M2 17c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 4 2"></path>
+                <circle cx="12" cy="7" r="3"></circle>
+              </svg>
+            </div>
             <h3>Poolside Seclusion</h3>
-            <p>Spend unhurried afternoons lounging by your private freshwater swimming pool, completely sheltered from external island traffic.</p>
+            <p>Take refreshing afternoon dips in your private freshwater swimming pool, secluded by lush tropical gardens and palms.</p>
           </div>
-        </div>
+        </article>
 
-        <div class="experience-card">
+        <article class="experience-card">
           <div class="experience-card-inner">
-            <span class="experience-num">03</span>
+            <div class="experience-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
             <h3>Sunset Living Together</h3>
-            <p>Gather on the oceanfront lanai with chilled wine as the Aruban horizon ignites in vibrant magenta and gold tones.</p>
+            <p>Watch Aruba’s famous golden sunsets paint the Caribbean horizon from the beachfront terrace with loved ones.</p>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
@@ -317,7 +339,17 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
         ?>
           <div class="amenity-popular-card">
             <div class="amenity-popular-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
             </div>
             <div class="amenity-popular-text">
               <h4><?= htmlspecialchars($am['name']) ?></h4>
@@ -421,20 +453,32 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
         </div>
         <div class="rules-list">
           <div class="rule-box">
-            <strong>Check-in & Check-out</strong>
-            <p>Check-in from <?= htmlspecialchars($settings['checkin_time'] ?? '15:00') ?>; Check-out by <?= htmlspecialchars($settings['checkout_time'] ?? '11:00') ?>. Digital keyless lock.</p>
+            <span class="rule-num">01</span>
+            <div class="rule-text">
+              <strong>Check-in & Check-out</strong>
+              <p>Check-in from <?= htmlspecialchars($settings['checkin_time'] ?? '15:00') ?>; Check-out by <?= htmlspecialchars($settings['checkout_time'] ?? '11:00') ?>. Digital keyless lock.</p>
+            </div>
           </div>
           <div class="rule-box">
-            <strong>Quiet Island Hours</strong>
-            <p>Savaneta is a peaceful residential fishing hamlet. Respectful quiet hours commence at 10:00 PM.</p>
+            <span class="rule-num">02</span>
+            <div class="rule-text">
+              <strong>Quiet Island Hours</strong>
+              <p>Savaneta is a peaceful residential fishing hamlet. Respectful quiet hours commence at 10:00 PM.</p>
+            </div>
           </div>
           <div class="rule-box">
-            <strong>Guest Capacity</strong>
-            <p>Maximum <?= (int)($property['max_guests'] ?? 6) ?> registered guests allowed overnight. No unauthorized commercial events.</p>
+            <span class="rule-num">03</span>
+            <div class="rule-text">
+              <strong>Guest Capacity</strong>
+              <p>Maximum <?= (int)($property['max_guests'] ?? 6) ?> registered guests allowed overnight. No unauthorized commercial events.</p>
+            </div>
           </div>
           <div class="rule-box">
-            <strong>Non-Smoking Sanctuary</strong>
-            <p>Smoking is strictly prohibited inside all indoor suites and living quarters.</p>
+            <span class="rule-num">04</span>
+            <div class="rule-text">
+              <strong>Non-Smoking Sanctuary</strong>
+              <p>Smoking is strictly prohibited inside all indoor suites and living quarters.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -485,8 +529,8 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
                 <div class="amenity-modal-items">
                   <?php foreach ($catItems as $item): ?>
                     <div class="amenity-modal-item">
-                      <div class="item-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <div class="item-icon" aria-hidden="true">
+                        <span class="amenity-dot"></span>
                       </div>
                       <div>
                         <strong><?= htmlspecialchars($item['name']) ?></strong>
