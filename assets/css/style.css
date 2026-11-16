@@ -531,6 +531,22 @@ h1 em, h2 em, h3 em {
   height: 24px;
   stroke-width: 2;
   stroke: var(--color-primary);
+  display: block;
+  pointer-events: none; /* Allows click to cleanly register on button */
+}
+
+.menu-btn .icon-close {
+  display: none;
+}
+
+.menu-btn[aria-expanded="true"] .icon-hamburger,
+.menu-btn.active .icon-hamburger {
+  display: none !important;
+}
+
+.menu-btn[aria-expanded="true"] .icon-close,
+.menu-btn.active .icon-close {
+  display: block !important;
 }
 
 /* --------------------------------------------------------------------------

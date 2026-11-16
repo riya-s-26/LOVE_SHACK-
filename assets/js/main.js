@@ -32,42 +32,59 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector(".nav");
 
   if (menuBtn && nav) {
+    // Ensure both hamburger and close icons exist inside menuBtn
+    let hamburgerIcon = menuBtn.querySelector(".icon-hamburger");
+    let closeIcon = menuBtn.querySelector(".icon-close");
+
+    if (!hamburgerIcon || !closeIcon) {
+      menuBtn.innerHTML = `
+        <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      `;
+      hamburgerIcon = menuBtn.querySelector(".icon-hamburger");
+      closeIcon = menuBtn.querySelector(".icon-close");
+    }
+
     const toggleMenu = (open) => {
       const isOpen = typeof open === "boolean" ? open : !nav.classList.contains("open");
       nav.classList.toggle("open", isOpen);
+      menuBtn.classList.toggle("active", isOpen);
       menuBtn.setAttribute("aria-expanded", String(isOpen));
-      
-      // Toggle Hamburger vs Close Icon
-      if (isOpen) {
-        menuBtn.innerHTML = `
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        `;
-      } else {
-        menuBtn.innerHTML = `
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        `;
-      }
+      menuBtn.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+
+      // Synchronize icon display cleanly without DOM replacement
+      if (hamburgerIcon) hamburgerIcon.style.display = isOpen ? "none" : "block";
+      if (closeIcon) closeIcon.style.display = isOpen ? "block" : "none";
     };
 
-    menuBtn.addEventListener("click", () => toggleMenu());
+    // Toggle menu on button click
+    menuBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleMenu();
+    });
 
     // Close when clicking any nav link
     nav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => toggleMenu(false));
+      link.addEventListener("click", () => {
+        toggleMenu(false);
+      });
     });
 
     // Close on click outside
     document.addEventListener("click", (e) => {
-      if (nav.classList.contains("open") && !nav.contains(e.target) && !menuBtn.contains(e.target)) {
-        toggleMenu(false);
+      if (!nav.classList.contains("open")) return;
+      if (nav.contains(e.target) || menuBtn.contains(e.target) || (e.target.closest && (e.target.closest(".menu-btn") || e.target.closest(".nav")))) {
+        return;
       }
+      toggleMenu(false);
     });
 
     // Close on Escape key
@@ -76,6 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleMenu(false);
       }
     });
+
+    // Close on resize to desktop layout
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 991 && nav.classList.contains("open")) {
+        toggleMenu(false);
+      }
+    }, { passive: true });
   }
 
   // ------------------------------------------------------------------------
