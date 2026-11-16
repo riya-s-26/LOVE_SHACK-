@@ -7,7 +7,7 @@
 declare(strict_types=1);
 
 $activePage = 'contact';
-$pageTitle = 'Contact & Concierge | The Love Shack — Savaneta, Aruba';
+$pageTitle = 'Contact & Concierge | The Love Shack Aruba';
 $pageDescription = 'Get in touch with The Love Shack host concierge in Savaneta, Aruba. Inquire about availability, private boat charters, or dining recommendations.';
 
 require_once __DIR__ . '/includes/header.php';

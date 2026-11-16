@@ -7,7 +7,7 @@
 declare(strict_types=1);
 
 $activePage = 'home';
-$pageTitle = 'The Love Shack · Luxury Beachfront Sanctuary · Savaneta, Aruba';
+$pageTitle = 'The Love Shack Aruba | Luxury Beachfront Sanctuary · Savaneta';
 $pageDescription = 'An intimate luxury beachfront hideaway in Savaneta, Aruba. Private swimming pool, direct Caribbean ocean access, and 3 private en-suite suites.';
 
 require_once __DIR__ . '/includes/header.php';
@@ -23,8 +23,8 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
     <!-- ====================================================================
          1. HERO SECTION WITH PROPERTY IMAGERY & PRIMARY BOOKING CTA
          ==================================================================== -->
-    <section class="hero" aria-label="Welcome to The Love Shack">
-      <div class="hero-bg" role="img" aria-label="Ocean and villa hero photograph" style="background-image: url('<?= htmlspecialchars($property['hero_image'] ?? 'assets/images/temporary-hero.jpg') ?>');"></div>
+    <section class="hero" aria-label="Welcome to The Love Shack Aruba">
+      <div class="hero-bg" role="img" aria-label="Caribbean beachfront and ocean hero photograph" style="background-image: url('<?= htmlspecialchars($property['beach_hero_image'] ?? 'assets/images/beach-hero.jpg') ?>');"></div>
       <div class="hero-overlay"></div>
       
       <div class="hero-content">
@@ -40,14 +40,17 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
 
         <div class="hero-actions">
           <a class="btn btn-teal" href="booking.php">
-            Check Availability
+            Book Your Stay
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
-          <a class="btn btn-glass" href="property.php">
-            Explore The Villa
+          <a class="btn btn-glass" href="property.php#accommodations">
+            Explore Property
+          </a>
+          <a class="btn btn-glass" href="contact.php">
+            Inquire With Host
           </a>
         </div>
 
@@ -55,33 +58,63 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
         <div class="hero-search-wrapper" aria-label="Search Availability">
           <form class="hero-search-bar" id="heroSearchForm" action="booking.php" method="GET">
             <div class="search-field">
-              <label for="heroCheckin">CHECK-IN</label>
-              <input type="date" id="heroCheckin" name="checkin" required>
+              <div class="search-field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="search-field-body">
+                <label for="heroCheckin">Check-In</label>
+                <input type="date" id="heroCheckin" name="checkin" required aria-label="Check-in date">
+              </div>
             </div>
 
             <div class="search-field">
-              <label for="heroCheckout">CHECK-OUT</label>
-              <input type="date" id="heroCheckout" name="checkout" required>
+              <div class="search-field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="search-field-body">
+                <label for="heroCheckout">Check-Out</label>
+                <input type="date" id="heroCheckout" name="checkout" required aria-label="Check-out date">
+              </div>
             </div>
 
             <div class="search-field">
-              <label for="heroGuests">GUESTS</label>
-              <select id="heroGuests" name="guests">
-                <option value="1">1 Guest</option>
-                <option value="2" selected>2 Guests</option>
-                <option value="3">3 Guests</option>
-                <option value="4">4 Guests</option>
-                <option value="5">5 Guests</option>
-                <option value="6">6 Guests (Max)</option>
-              </select>
+              <div class="search-field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="search-field-body">
+                <label for="heroGuests">Guests</label>
+                <select id="heroGuests" name="guests" aria-label="Number of guests">
+                  <option value="1">1 Guest</option>
+                  <option value="2" selected>2 Guests (Couple)</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests (Family)</option>
+                  <option value="5">5 Guests</option>
+                  <option value="6">6 Guests (Max)</option>
+                </select>
+              </div>
             </div>
 
             <button type="submit" class="search-btn" aria-label="Check Availability">
-              <span>Check</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
+              <span>Check Dates</span>
             </button>
           </form>
         </div>
@@ -89,7 +122,7 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
     </section>
 
     <!-- ====================================================================
-         2. PROPERTY INTRODUCTION / OVERVIEW (THE SANCTUARY · ARUBA)
+         2. PROPERTY INTRODUCTION / OVERVIEW (SAVANETA · ARUBA)
          ==================================================================== -->
     <section class="intro-section wrap" id="overview" aria-label="About The Love Shack">
       <div class="intro-grid">
@@ -104,7 +137,7 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
         </div>
 
         <div class="intro-content">
-          <span class="eyebrow"><?= htmlspecialchars($property['intro_badge'] ?? 'THE SANCTUARY · ARUBA') ?></span>
+          <span class="eyebrow"><?= htmlspecialchars($property['intro_badge'] ?? 'SAVANETA · ARUBA') ?></span>
           <h2><?= htmlspecialchars($property['intro_title'] ?? "Barefoot luxury on Aruba's peaceful southern coast.") ?></h2>
           
           <p>
@@ -130,7 +163,7 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
             </li>
           </ul>
 
-          <a class="btn-text-link" href="property.php#rooms">
+          <a class="btn-text-link" href="property.php#accommodations">
             Explore the property spaces & floor plans
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </a>
@@ -311,7 +344,7 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
               </ul>
 
               <div style="margin-top: 18px;">
-                <a class="btn-text-link" href="property.php#rooms">
+                <a class="btn-text-link" href="property.php#accommodations">
                   View suite details & photos
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </a>

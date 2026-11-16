@@ -17,7 +17,7 @@ $ext = '.php';
       <div class="footer-grid">
         <!-- Brand Column -->
         <div class="footer-brand">
-          <a class="logo" href="index<?= $ext ?>"><?= htmlspecialchars($settings['site_title'] ?? 'The Love Shack') ?></a>
+          <a class="logo" href="index<?= $ext ?>"><?= htmlspecialchars($settings['site_title'] ?? 'The Love Shack Aruba') ?></a>
           <p>
             An intimate luxury beachfront retreat in Savaneta, Aruba. Designed for barefoot relaxation, private pool days, and unhurried Caribbean memories.
           </p>
@@ -36,7 +36,7 @@ $ext = '.php';
           <ul class="footer-links">
             <li><a href="index.php">Home</a></li>
             <li><a href="property.php">The Property Overview</a></li>
-            <li><a href="property.php#rooms">Suites & Rooms</a></li>
+            <li><a href="property.php#accommodations">Suites & Rooms</a></li>
             <li><a href="property.php#gallery">Photo Gallery</a></li>
             <li><a href="property.php#amenities">Curated Amenities</a></li>
             <li><a href="property.php#location">Savaneta Location</a></li>

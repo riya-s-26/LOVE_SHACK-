@@ -776,4 +776,250 @@ document.addEventListener("DOMContentLoaded", () => {
     el.className = `form-feedback ${type}`;
     el.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
+
+  // ------------------------------------------------------------------------
+  // 10. Interactive Bedroom Photo Carousels & Viewer with Autoplay
+  // ------------------------------------------------------------------------
+  const bedroomCarousels = document.querySelectorAll(".bedroom-carousel");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  bedroomCarousels.forEach((carousel, carouselIdx) => {
+    const slides = carousel.querySelectorAll(".bedroom-slide");
+    const dots = carousel.querySelectorAll(".bedroom-carousel-dots .dot");
+    const prevBtn = carousel.querySelector(".bedroom-carousel-nav.prev");
+    const nextBtn = carousel.querySelector(".bedroom-carousel-nav.next");
+    const photosBtn = carousel.querySelector(".bedroom-photos-btn");
+    let currentIndex = 0;
+    const total = slides.length;
+    let autoplayTimer = null;
+    let isHoveredOrFocused = false;
+    let isInViewport = true;
+    const AUTOPLAY_INTERVAL = 3500; // 3.5 seconds
+
+    if (total <= 1) return;
+
+    const showSlide = (idx) => {
+      currentIndex = (idx + total) % total;
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === currentIndex);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentIndex);
+      });
+    };
+
+    const nextSlide = () => {
+      showSlide(currentIndex + 1);
+    };
+
+    const prevSlide = () => {
+      showSlide(currentIndex - 1);
+    };
+
+    // Autoplay Controller
+    const startAutoplay = () => {
+      if (prefersReducedMotion || isHoveredOrFocused || !isInViewport) return;
+      stopAutoplay();
+      autoplayTimer = setInterval(nextSlide, AUTOPLAY_INTERVAL);
+    };
+
+    const stopAutoplay = () => {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    };
+
+    const resetAutoplay = () => {
+      stopAutoplay();
+      startAutoplay();
+    };
+
+    // Staggered initial autoplay start so cards don't all flip in robotic sync
+    if (!prefersReducedMotion) {
+      setTimeout(() => {
+        startAutoplay();
+      }, 500 + carouselIdx * 700);
+    }
+
+    // Pause on hover
+    carousel.addEventListener("mouseenter", () => {
+      isHoveredOrFocused = true;
+      stopAutoplay();
+    });
+
+    carousel.addEventListener("mouseleave", () => {
+      isHoveredOrFocused = false;
+      startAutoplay();
+    });
+
+    // Pause on focus within (accessibility)
+    carousel.addEventListener("focusin", () => {
+      isHoveredOrFocused = true;
+      stopAutoplay();
+    });
+
+    carousel.addEventListener("focusout", (e) => {
+      if (!carousel.contains(e.relatedTarget)) {
+        isHoveredOrFocused = false;
+        startAutoplay();
+      }
+    });
+
+    // Pause when tab is hidden, resume when visible
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    });
+
+    // IntersectionObserver to pause when off-screen
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          isInViewport = entry.isIntersecting;
+          if (entry.isIntersecting) {
+            startAutoplay();
+          } else {
+            stopAutoplay();
+          }
+        });
+      }, { threshold: 0.15 });
+      observer.observe(carousel);
+    }
+
+    // Manual navigation controls
+    if (prevBtn) {
+      prevBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        prevSlide();
+        resetAutoplay();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        nextSlide();
+        resetAutoplay();
+      });
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", (e) => {
+        e.stopPropagation();
+        showSlide(i);
+        resetAutoplay();
+      });
+    });
+
+    const triggerLightbox = (slideEl) => {
+      const img = slideEl.querySelector("img");
+      if (!img) return;
+      const caption = img.alt || "The Love Shack Aruba";
+      const lightboxModal = document.getElementById("lightboxModal");
+      if (lightboxModal) {
+        const lightboxImg = lightboxModal.querySelector(".lightbox-img");
+        const lightboxTitle = lightboxModal.querySelector(".lightbox-title");
+        if (lightboxImg) lightboxImg.src = img.src;
+        if (lightboxTitle) lightboxTitle.textContent = caption;
+        lightboxModal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+    };
+
+    // Clicking active slide opens lightbox
+    slides.forEach((slide) => {
+      slide.addEventListener("click", () => {
+        triggerLightbox(slide);
+      });
+    });
+
+    // Clicking "View Photos" button opens active photo in lightbox
+    if (photosBtn) {
+      photosBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const activeSlide = carousel.querySelector(".bedroom-slide.active") || slides[0];
+        if (activeSlide) triggerLightbox(activeSlide);
+      });
+    }
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    carousel.addEventListener("touchstart", (e) => {
+      stopAutoplay();
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchStartX = e.changedTouches[0].screenX;
+      }
+    }, { passive: true });
+
+    carousel.addEventListener("touchend", (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 40) {
+          nextSlide();
+        } else if (touchEndX - touchStartX > 40) {
+          prevSlide();
+        }
+      }
+      startAutoplay();
+    }, { passive: true });
+  });
+
+  // ------------------------------------------------------------------------
+  // 11. Sticky Header Offset Smooth Scrolling for Anchor Destinations
+  // ------------------------------------------------------------------------
+  const scrollToTargetWithOffset = (targetEl) => {
+    if (!targetEl) return;
+    const headerWrapper = document.querySelector(".header-wrapper");
+    const headerHeight = headerWrapper ? headerWrapper.offsetHeight + 24 : 110;
+    const elementPosition = targetEl.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  };
+
+  // Handle direct hash navigation on page load
+  if (window.location.hash) {
+    const rawHash = window.location.hash;
+    const cleanHash = (rawHash === "#rooms" || rawHash === "#accommodations") ? "#accommodations" : rawHash;
+    const target = document.querySelector(cleanHash) || document.querySelector(rawHash);
+    if (target) {
+      setTimeout(() => {
+        scrollToTargetWithOffset(target);
+      }, 150);
+    }
+  }
+
+  // Smooth scroll for in-page anchor clicks
+  document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function(e) {
+      const href = this.getAttribute("href");
+      if (!href) return;
+      const hashIndex = href.indexOf("#");
+      if (hashIndex === -1) return;
+      const hash = href.substring(hashIndex);
+      if (!hash || hash === "#") return;
+
+      const currentPath = window.location.pathname.split("/").pop() || "index.html";
+      const targetPath = href.substring(0, hashIndex).split("/").pop();
+
+      // Check if same page link
+      if (!targetPath || targetPath === currentPath || (currentPath === "" && (targetPath === "index.html" || targetPath === "index.php"))) {
+        const cleanTarget = (hash === "#rooms" || hash === "#accommodations") ? (document.querySelector("#accommodations") || document.querySelector("#rooms")) : document.querySelector(hash);
+        if (cleanTarget) {
+          e.preventDefault();
+          scrollToTargetWithOffset(cleanTarget);
+          if (history.pushState) {
+            history.pushState(null, null, hash);
+          }
+        }
+      }
+    });
+  });
 });

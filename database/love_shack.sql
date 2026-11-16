@@ -60,7 +60,7 @@ CREATE TABLE `properties` (
   `hero_heading` VARCHAR(255) NOT NULL,
   `hero_description` TEXT NOT NULL,
   `hero_image` VARCHAR(255) NOT NULL,
-  `intro_badge` VARCHAR(64) DEFAULT 'THE SANCTUARY · ARUBA',
+  `intro_badge` VARCHAR(64) DEFAULT 'SAVANETA · ARUBA',
   `intro_title` VARCHAR(255) NOT NULL,
   `intro_content` TEXT NOT NULL,
   `bedrooms` TINYINT NOT NULL DEFAULT 3,
@@ -76,7 +76,7 @@ CREATE TABLE `properties` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `properties` (`id`, `name`, `slug`, `tagline`, `hero_heading`, `hero_description`, `hero_image`, `intro_badge`, `intro_title`, `intro_content`, `bedrooms`, `bathrooms`, `max_guests`, `base_nightly_rate`, `location_area`) VALUES
-(1, 'The Love Shack', 'the-love-shack', 'Barefoot luxury beachfront villa with private freshwater pool', 'Your beachfront escape in Aruba.', 'An intimate beachfront hideaway where barefoot island living meets understated elegance. Wake to gentle Caribbean waves and step directly from your private pool terrace onto secluded Aruban sands.', 'assets/images/temporary-hero.jpg', 'THE SANCTUARY · ARUBA', 'Barefoot luxury on Aruba\'s peaceful southern coast.', 'Tucked along the peaceful coastline of Savaneta, The Love Shack redefines island ease. Designed for travelers seeking quiet luxury, generous open-air living spaces, and the soothing sounds of gentle Caribbean tides.\r\n\r\nUnlike the bustling high-rise resort strip in the north, Savaneta offers untouched authentic island charm, calm clear turquoise shallows, and some of Aruba\'s most celebrated waterfront seafood restaurants just moments away.', 3, 3, 6, 650.00, 'Savaneta Beachfront, Aruba');
+(1, 'The Love Shack', 'the-love-shack', 'Barefoot luxury beachfront villa with private freshwater pool', 'Your beachfront escape in Aruba.', 'An intimate beachfront hideaway where barefoot island living meets understated elegance. Wake to gentle Caribbean waves and step directly from your private pool terrace onto secluded Aruban sands.', 'assets/images/beach-hero.jpg', 'SAVANETA · ARUBA', 'Barefoot luxury on Aruba\'s peaceful southern coast.', 'Tucked along the peaceful coastline of Savaneta, The Love Shack redefines island ease. Designed for travelers seeking quiet luxury, generous open-air living spaces, and the soothing sounds of gentle Caribbean tides.\r\n\r\nUnlike the bustling high-rise resort strip in the north, Savaneta offers untouched authentic island charm, calm clear turquoise shallows, and some of Aruba\'s most celebrated waterfront seafood restaurants just moments away.', 3, 3, 6, 650.00, 'Savaneta Beachfront, Aruba');
 
 -- ----------------------------------------------------------------------------
 -- 3. Table: rooms
@@ -89,15 +89,16 @@ CREATE TABLE `rooms` (
   `description` TEXT NOT NULL,
   `bed_configuration` VARCHAR(128) NOT NULL,
   `bathroom_details` VARCHAR(128) NOT NULL,
-  `image_url` VARCHAR(255) NOT NULL,
+  `view_details` VARCHAR(64) NOT NULL DEFAULT '',
+  `image_url` VARCHAR(255) NOT NULL DEFAULT '',
   `display_order` INT NOT NULL DEFAULT 1,
   FOREIGN KEY (`property_id`) REFERENCES `properties`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `rooms` (`property_id`, `name`, `suite_type`, `description`, `bed_configuration`, `bathroom_details`, `image_url`, `display_order`) VALUES
-(1, 'Master Ocean Suite', 'Primary Oceanfront Suite', 'Expansive primary sanctuary boasting direct sliding door access to the lanai pool deck, custom king bed frame, and wake-up views of turquoise Caribbean shallows.', 'King Bed with Organic Linens', 'En-suite Dual Vanity & Rain Shower', 'assets/images/temporary-hero.jpg', 1),
-(1, 'Garden Palm Suite', 'Secluded Garden Suite', 'Nestled overlooking tropical palm foliage. Features quiet air conditioning, blackout shades, and an airy coastal aesthetic for peaceful island slumber.', 'Queen Bed with Pillowtop Mattress', 'Private En-suite Bathroom & Stone Basin', 'assets/images/temporary-pool.jpg', 2),
-(1, 'Lagoon Breeze Suite', 'Flexible Guest Suite', 'Flexible luxury bedroom suite adaptable for couples, families, or accompanying friends. Steps from the private indoor courtyard and outdoor shower.', 'Two Twin Beds or Unified King', 'En-suite Bath with Natural Stone Accents', 'assets/images/temporary-beach.jpg', 3);
+INSERT INTO `rooms` (`property_id`, `name`, `suite_type`, `description`, `bed_configuration`, `bathroom_details`, `view_details`, `image_url`, `display_order`) VALUES
+(1, 'Sea Esta', 'BEDROOM 01 · Primary Suite', 'Spacious primary suite featuring a plush king-size bed, private en-suite bathroom with walk-in rainfall shower, quiet climate control, and thoughtful coastal touches.', 'King-size Bed', 'Private En-Suite Bathroom', 'Quiet Air Conditioning', 'assets/images/rooms/sea-esta-1.jpg', 1),
+(1, 'Sea Gem', 'BEDROOM 02 · Guest Suite', 'Peaceful guest bedroom appointed with a comfortable queen-size bed, private en-suite bathroom, quiet air conditioning, and a restful island ambiance.', 'Queen-size Bed', 'Private En-Suite Bathroom', 'Quiet Air Conditioning', 'assets/images/rooms/sea-gem-1.jpg', 2),
+(1, 'Bedroom 3', 'BEDROOM 03 · Guest Suite', 'Serene private bedroom featuring a king-size bed, dedicated private full bathroom with marble tile finishes, quiet air conditioning, and ample storage.', 'King-size Bed', 'Dedicated Full Bathroom', 'Marble Tile Finishes', 'assets/images/rooms/bedroom-3-1.jpg', 3);
 
 -- ----------------------------------------------------------------------------
 -- 4. Table: gallery_images
@@ -164,11 +165,13 @@ INSERT INTO `amenities` (`property_id`, `category`, `name`, `description`, `is_p
 (1, 'Entertainment', 'Board Games & Reading Library', 'Curated Caribbean books, card decks, and family games', 0, 22),
 
 (1, 'Kitchen and dining', 'Refrigerator with Ice Maker', 'Full-size double door fridge with filtered water', 0, 23),
-(1, 'Kitchen and dining', 'Dishwasher & Pods', 'Whisper-quiet dishwasher for effortless post-meal clean-up', 0, 24),
-(1, 'Kitchen and dining', 'Nespresso & Drip Coffee Bar', 'Coffee maker with complimentary starter pods and organic sugar', 0, 25),
-(1, 'Kitchen and dining', 'Blender & Citrus Juicer', 'Perfect for preparing fresh tropical smoothies and cocktails', 0, 26),
-(1, 'Kitchen and dining', 'Chef\'s Knife Set & Cookware', 'Stainless pans, baking trays, wine glasses, and champagne flutes', 0, 27),
-(1, 'Kitchen and dining', 'Dining Tables (Indoor & Outdoor)', 'Accommodates 6 guests comfortably inside or on the ocean lanai', 0, 28),
+(1, 'Kitchen and dining', 'Gas Cooking Range', 'Multi-burner gas cooking range for island meals', 0, 24),
+(1, 'Kitchen and dining', 'Microwave', 'Countertop microwave for convenient reheating and meals', 0, 25),
+(1, 'Kitchen and dining', 'Drip Coffee Maker & Supplies', 'Coffee maker with complimentary organic starter coffee', 0, 26),
+(1, 'Kitchen and dining', 'Handcrafted Wooden Breakfast Island', 'Comfortable wooden breakfast counter island with bar seating', 0, 27),
+(1, 'Kitchen and dining', 'Blender & Citrus Juicer', 'Perfect for preparing fresh tropical smoothies and cocktails', 0, 28),
+(1, 'Kitchen and dining', 'Chef\'s Knife Set & Cookware', 'Stainless pans, baking trays, wine glasses, and champagne flutes', 0, 29),
+(1, 'Kitchen and dining', 'Dining Tables (Indoor & Outdoor)', 'Accommodates 6 guests comfortably inside or on the ocean lanai', 0, 30),
 
 (1, 'Outdoor', 'Propane Gas BBQ Grill', 'High-output stainless barbecue with grilling utensils provided', 0, 29),
 (1, 'Outdoor', 'Double Daybed & Chaise Loungers', 'Comfortable cushioned outdoor sunbathing furniture', 0, 30),

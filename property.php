@@ -7,7 +7,7 @@
 declare(strict_types=1);
 
 $activePage = 'property';
-$pageTitle = 'The Property & Rooms | The Love Shack — Savaneta, Aruba';
+$pageTitle = 'The Property & Rooms | The Love Shack Aruba';
 $pageDescription = 'Discover the spaces, rooms, private freshwater swimming pool, and luxury amenities at The Love Shack in Savaneta, Aruba. 3 en-suite bedrooms, sleeps 6 guests.';
 
 require_once __DIR__ . '/includes/header.php';
@@ -26,10 +26,10 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
       <div class="page-banner-bg" role="img" aria-label="The Love Shack Villa Background"></div>
       <div class="page-banner-overlay"></div>
       <div class="page-banner-content">
-        <span class="eyebrow light center">ARCHITECTURAL SPOTLIGHT</span>
+        <span class="eyebrow light center">SAVANETA, ARUBA</span>
         <h1>Secluded beachfront <em>spaces.</em></h1>
         <p>
-          Discover the thoughtfully curated spaces, secluded freshwater pool, and oceanfront comforts that make The Love Shack Aruba's premier private hideaway.
+          Discover the thoughtfully curated spaces, secluded freshwater pool, and oceanfront comforts that make The Love Shack, Aruba's premier private hideaway.
         </p>
       </div>
     </section>
@@ -39,7 +39,7 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
       <div class="prop-subnav-container">
         <a href="#overview" class="subnav-pill">Overview</a>
         <a href="#gallery" class="subnav-pill">Full Gallery</a>
-        <a href="#rooms" class="subnav-pill">Bedrooms & Suites</a>
+        <a href="#accommodations" class="subnav-pill">Bedrooms & Suites</a>
         <a href="#bathrooms" class="subnav-pill">Bathrooms & Facilities</a>
         <a href="#amenities" class="subnav-pill">Amenities</a>
         <a href="#highlights" class="subnav-pill">Highlights</a>
@@ -48,46 +48,51 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
       </div>
     </nav>
 
-    <!-- Specifications Quick Bar -->
-    <section class="prop-specs-bar-wrap wrap" aria-label="Villa Key Metrics">
-      <div class="specs-bar">
-        <div class="specs-item">
-          <span class="specs-label">BEDROOMS</span>
-          <span class="specs-val"><?= (int)($property['bedrooms'] ?? 3) ?> En-Suite Suites</span>
+    <!-- Property Specifications Floating Strip -->
+    <section class="wrap" aria-label="Property Specifications">
+      <div class="property-specs-bar">
+        <div class="spec-item">
+          <strong><?= (int)($property['bedrooms'] ?? 3) ?> Bedrooms</strong>
+          <span>King &amp; Queen Suites</span>
         </div>
-        <div class="specs-item">
-          <span class="specs-label">BATHROOMS</span>
-          <span class="specs-val"><?= (int)($property['bathrooms'] ?? 3) ?> Full Baths</span>
+        <div class="spec-item">
+          <strong><?= (int)($property['bathrooms'] ?? 3) ?> Bathrooms</strong>
+          <span>Private En-Suite Baths</span>
         </div>
-        <div class="specs-item">
-          <span class="specs-label">CAPACITY</span>
-          <span class="specs-val">Sleeps <?= (int)($property['max_guests'] ?? 6) ?> Guests</span>
+        <div class="spec-item">
+          <strong><?= (int)($property['max_guests'] ?? 6) ?> Guests</strong>
+          <span>Maximum Capacity</span>
         </div>
-        <div class="specs-item">
-          <span class="specs-label">FRESHWATER POOL</span>
-          <span class="specs-val">100% Private Pool</span>
+        <div class="spec-item">
+          <strong>Private Pool</strong>
+          <span>Freshwater Oasis</span>
         </div>
-        <div class="specs-item">
-          <span class="specs-label">BEACHFRONT</span>
-          <span class="specs-val">Direct Ocean Sand</span>
+        <div class="spec-item">
+          <strong>Direct Beach</strong>
+          <span>Comandeurs Bay Key</span>
         </div>
       </div>
     </section>
 
-    <!-- Architectural Narrative & Story -->
-    <section class="story-section wrap" aria-label="Villa Design Story">
-      <div class="story-grid">
-        <div class="story-content">
-          <span class="eyebrow">DESIGN PHILOSOPHY</span>
+    <!-- ====================================================================
+         1. ARCHITECTURAL DESIGN & STORY
+         ==================================================================== -->
+    <section class="wrap intro-section" style="padding-top: 20px;" aria-label="Villa Design Story">
+      <div class="intro-grid">
+        <div class="intro-content">
+          <span class="eyebrow">ARCHITECTURAL DESIGN</span>
           <h2>Where open-air ease meets <em>timeless refinement.</em></h2>
           <p>
             <?= nl2br(htmlspecialchars($property['intro_content'] ?? 'The Love Shack was created as an unpretentious luxury retreat where indoors and outdoors blend seamlessly.')) ?>
           </p>
+          <p>
+            Whether you are gathering for breakfast around the wooden breakfast island, relaxing in the open-plan living room with natural rattan seating and soothing ocean wave murals, or stepping directly outside to your private freshwater pool, every detail has been shaped for effortless island living.
+          </p>
           
           <div class="story-highlights">
             <div class="story-highlight-item">
-              <strong>Private Pool & Ocean Sun Deck</strong>
-              <p>Step directly from your private bedroom terrace onto cool Aruban tiles and into your secluded swimming pool.</p>
+              <strong>Private Freshwater Pool</strong>
+              <p>Step directly onto cool Aruban tiles and into your secluded swimming pool, sheltered by lush tropical gardens.</p>
             </div>
             <div class="story-highlight-item">
               <strong>Authentic Savaneta Setting</strong>
@@ -96,9 +101,13 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
           </div>
         </div>
 
-        <div class="story-media">
-          <div class="story-image-wrap">
-            <img src="<?= htmlspecialchars($property['hero_image'] ?? 'assets/images/temporary-hero.jpg') ?>" alt="The Love Shack private swimming pool and garden patio">
+        <div class="intro-visual arch-visual">
+          <div class="intro-image-frame arch-frame">
+            <img src="assets/images/architectural-design.jpg" alt="The Love Shack Aruba architectural interior featuring handcrafted wooden dining table, open-plan living room, rattan furniture, and blue wave mural">
+          </div>
+          <div class="intro-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Open-Plan Living &amp; Dining
           </div>
         </div>
       </div>
@@ -134,36 +143,82 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
     <!-- ====================================================================
          3. BEDROOMS AND ACCOMMODATION DETAILS
          ==================================================================== -->
-    <section class="rooms-section wrap" id="rooms" aria-label="Suites and Bedrooms">
+    <section class="rooms-section wrap" id="accommodations" aria-label="Suites and Bedrooms">
+      <span id="rooms" style="position: absolute; scroll-margin-top: 115px;"></span>
       <div class="section-header center">
         <span class="eyebrow center">PRIVATE ACCOMMODATIONS</span>
-        <h2>Three private <em>sanctuary suites.</em></h2>
-        <p>Each suite is designed with its own private en-suite bathroom, quiet air conditioning, and luxury linens.</p>
+        <h2>Three private <em>bedrooms &amp; suites.</em></h2>
+        <p>Three serene private bedrooms, each with its own dedicated bathroom, quiet air conditioning, and luxury coastal appointments.</p>
       </div>
 
       <div class="rooms-grid">
-        <?php foreach ($rooms as $room): ?>
-          <div class="room-card">
-            <div class="room-thumb">
-              <img src="<?= htmlspecialchars($room['image_url'] ?? 'assets/images/temporary-hero.jpg') ?>" alt="<?= htmlspecialchars($room['name']) ?>">
-              <span class="room-type-tag"><?= htmlspecialchars($room['suite_type']) ?></span>
+        <?php foreach ($rooms as $index => $room): ?>
+          <?php 
+            $roomPhotos = !empty($room['photos']) ? $room['photos'] : [
+              ['url' => $room['image_url'] ?? '', 'caption' => $room['name']]
+            ];
+            $roomKey = strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', $room['name']));
+            $photoCount = count($roomPhotos);
+          ?>
+          <article class="room-card">
+            <div class="bedroom-carousel" data-room="<?= htmlspecialchars($roomKey) ?>">
+              <div class="bedroom-carousel-slides">
+                <?php foreach ($roomPhotos as $pIdx => $p): ?>
+                  <div class="bedroom-slide <?= $pIdx === 0 ? 'active' : '' ?>" data-index="<?= $pIdx ?>">
+                    <img src="<?= htmlspecialchars($p['url']) ?>" alt="<?= htmlspecialchars($p['caption'] ?? ($room['name'] . ' at The Love Shack Aruba')) ?>" loading="lazy">
+                  </div>
+                <?php endforeach; ?>
+              </div>
+
+              <!-- Room Name Overlay Badge -->
+              <span class="bedroom-name-badge"><?= htmlspecialchars($room['name']) ?></span>
+
+              <!-- Photos Count / View Photos Button -->
+              <button type="button" class="bedroom-photos-btn" aria-label="View all <?= $photoCount ?> photos of <?= htmlspecialchars($room['name']) ?>">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                <span><?= $photoCount ?> Photos</span>
+              </button>
+
+              <!-- Carousel Navigation Arrows -->
+              <button type="button" class="bedroom-carousel-nav prev" aria-label="Previous photo of <?= htmlspecialchars($room['name']) ?>">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button type="button" class="bedroom-carousel-nav next" aria-label="Next photo of <?= htmlspecialchars($room['name']) ?>">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+
+              <!-- Carousel Dot Indicators -->
+              <div class="bedroom-carousel-dots" aria-hidden="true">
+                <?php for ($d = 0; $d < $photoCount; $d++): ?>
+                  <span class="dot <?= $d === 0 ? 'active' : '' ?>"></span>
+                <?php endfor; ?>
+              </div>
             </div>
-            <div class="room-details">
-              <h3><?= htmlspecialchars($room['name']) ?></h3>
-              <p><?= htmlspecialchars($room['description']) ?></p>
+            <div class="room-info">
+              <div>
+                <span class="room-tag"><?= htmlspecialchars($room['suite_type'] ?? ('BEDROOM 0' . ($index + 1))) ?></span>
+                <h3><?= htmlspecialchars($room['name']) ?></h3>
+                <p><?= htmlspecialchars($room['description']) ?></p>
+              </div>
               
               <ul class="room-specs-list">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"></path></svg>
-                  <span><?= htmlspecialchars($room['bed_configuration']) ?></span>
-                </li>
+                <?php if (!empty($room['bed_configuration'])): ?>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"></path></svg>
+                    <span><?= htmlspecialchars($room['bed_configuration']) ?></span>
+                  </li>
+                <?php endif; ?>
                 <li>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6h6M9 10h6M5 14h14a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg>
-                  <span><?= htmlspecialchars($room['bathroom_details']) ?></span>
+                  <span><?= htmlspecialchars($room['bathroom_details'] ?? 'Private En-Suite Bathroom') ?></span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8M12 8v8"></path></svg>
+                  <span><?= htmlspecialchars($room['feature_3'] ?? 'Quiet Air Conditioning') ?></span>
                 </li>
               </ul>
             </div>
-          </div>
+          </article>
         <?php endforeach; ?>
       </div>
     </section>
@@ -378,7 +433,7 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
         <div>
           <span class="eyebrow">HOUSE POLICIES</span>
           <h3>Staying at The Love Shack</h3>
-          <p>We invite you to relax and treat our sanctuary as your private island home. Please review our basic stay standards.</p>
+          <p>We invite you to relax and treat our home as your private island villa. Please review our basic stay standards.</p>
         </div>
         <div class="rules-list">
           <div class="rule-box">
@@ -405,7 +460,7 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
           <div class="rule-box">
             <span class="rule-num">04</span>
             <div class="rule-text">
-              <strong>Non-Smoking Sanctuary</strong>
+              <strong>Non-Smoking Villa</strong>
               <p>Smoking is strictly prohibited inside all indoor suites and living quarters.</p>
             </div>
           </div>

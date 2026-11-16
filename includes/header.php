@@ -15,7 +15,7 @@ $activePage = $activePage ?? 'home';
 
 // Ensure production pages always use .php
 $ext = '.php';
-$roomsLink = ($activePage === 'home') ? '#rooms' : 'property.php#rooms';
+$roomsLink = ($activePage === 'home') ? '#rooms' : 'property.php#accommodations';
 $galleryLink = ($activePage === 'home') ? '#gallery' : 'property.php#gallery';
 $amenitiesLink = ($activePage === 'home') ? '#amenities' : 'property.php#amenities';
 $locationLink = ($activePage === 'home') ? '#location' : 'property.php#location';
@@ -40,7 +40,7 @@ $locationLink = ($activePage === 'home') ? '#location' : 'property.php#location'
   <!-- Floating Luxury Navigation Bar -->
   <div class="header-wrapper">
     <header class="header">
-      <a class="logo" href="index<?= $ext ?>" aria-label="The Love Shack Homepage"><?= htmlspecialchars($settings['site_title'] ?? 'The Love Shack') ?></a>
+      <a class="logo" href="index<?= $ext ?>" aria-label="The Love Shack Aruba Homepage"><?= htmlspecialchars($settings['site_title'] ?? 'The Love Shack Aruba') ?></a>
       
       <button class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

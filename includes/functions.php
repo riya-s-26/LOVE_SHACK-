@@ -43,7 +43,7 @@ function format_date_luxury(string $dateStr): string {
 
 function get_site_settings(): array {
     $defaultSettings = [
-        'site_title'           => 'The Love Shack',
+        'site_title'           => 'The Love Shack Aruba',
         'site_tagline'         => 'Luxury Beachfront Sanctuary · Savaneta, Aruba',
         'concierge_email'      => 'concierge@loveshackaruba.com',
         'concierge_phone'      => '+297 580 0000',
@@ -79,13 +79,14 @@ function get_site_settings(): array {
 function get_property_details(string $slug = 'the-love-shack'): array {
     $fallback = [
         'id'                => 1,
-        'name'              => 'The Love Shack',
+        'name'              => 'The Love Shack Aruba',
         'slug'              => 'the-love-shack',
         'tagline'           => 'Barefoot luxury beachfront villa with private freshwater pool',
         'hero_heading'      => 'Your beachfront escape in Aruba.',
         'hero_description'  => 'An intimate beachfront hideaway where barefoot island living meets understated elegance. Wake to gentle Caribbean waves and step directly from your private pool terrace onto secluded Aruban sands.',
+        'beach_hero_image'  => 'assets/images/beach-hero.jpg',
         'hero_image'        => 'assets/images/temporary-hero.jpg',
-        'intro_badge'       => 'THE SANCTUARY · ARUBA',
+        'intro_badge'       => 'THE LOVE SHACK · ARUBA',
         'intro_title'       => 'Barefoot luxury on Aruba\'s peaceful southern coast.',
         'intro_content'     => "Tucked along the peaceful coastline of Savaneta, The Love Shack redefines island ease. Designed for travelers seeking quiet luxury, generous open-air living spaces, and the soothing sounds of gentle Caribbean tides.\r\n\r\nUnlike the bustling high-rise resort strip in the north, Savaneta offers untouched authentic island charm, calm clear turquoise shallows, and some of Aruba's most celebrated waterfront seafood restaurants just moments away.",
         'bedrooms'          => 3,
@@ -112,28 +113,52 @@ function get_property_details(string $slug = 'the-love-shack'): array {
 function get_rooms(int $propertyId = 1): array {
     $fallback = [
         [
-            'name' => 'Master Ocean Suite',
-            'suite_type' => 'Primary Oceanfront Suite',
-            'description' => 'Expansive primary sanctuary boasting direct sliding door access to the lanai pool deck, custom king bed frame, and wake-up views of turquoise Caribbean shallows.',
-            'bed_configuration' => 'King Bed with Organic Linens',
-            'bathroom_details' => 'En-suite Dual Vanity & Rain Shower',
-            'image_url' => 'assets/images/temporary-hero.jpg',
+            'name' => 'Sea Esta',
+            'suite_type' => 'BEDROOM 01',
+            'description' => 'Spacious primary suite featuring a plush king-size bed, private en-suite bathroom with walk-in rainfall shower, quiet climate control, and thoughtful coastal touches.',
+            'bed_configuration' => 'King-size Bed',
+            'bathroom_details' => 'Private En-Suite Bathroom',
+            'feature_3' => 'Quiet Air Conditioning',
+            'image_url' => 'assets/images/rooms/sea-esta-1.jpg',
+            'photos' => [
+                ['url' => 'assets/images/rooms/sea-esta-1.jpg', 'caption' => 'Sea Esta — King Bedroom Suite at The Love Shack Aruba'],
+                ['url' => 'assets/images/rooms/sea-esta-2.jpg', 'caption' => 'Sea Esta — Private En-Suite Bathroom with Rainfall Shower'],
+                ['url' => 'assets/images/rooms/sea-esta-3.jpg', 'caption' => 'Sea Esta — King Bed and Tropical Coastal Decor'],
+                ['url' => 'assets/images/rooms/sea-esta-4.jpg', 'caption' => 'Sea Esta — Bedroom Architecture and Finishes'],
+                ['url' => 'assets/images/rooms/sea-esta-5.jpg', 'caption' => 'Sea Esta — Custom Wardrobe and Vanity Area'],
+                ['url' => 'assets/images/rooms/sea-esta-6.jpg', 'caption' => 'Sea Esta — Ambient Lighting and Modern Comforts'],
+            ],
         ],
         [
-            'name' => 'Garden Palm Suite',
-            'suite_type' => 'Secluded Garden Suite',
-            'description' => 'Nestled overlooking tropical palm foliage. Features quiet air conditioning, blackout shades, and an airy coastal aesthetic for peaceful island slumber.',
-            'bed_configuration' => 'Queen Bed with Pillowtop Mattress',
-            'bathroom_details' => 'Private En-suite Bathroom & Stone Basin',
-            'image_url' => 'assets/images/temporary-pool.jpg',
+            'name' => 'Sea Gem',
+            'suite_type' => 'BEDROOM 02',
+            'description' => 'Peaceful guest bedroom appointed with a comfortable queen-size bed, private en-suite bathroom, quiet air conditioning, and a restful island ambiance.',
+            'bed_configuration' => 'Queen-size Bed',
+            'bathroom_details' => 'Private En-Suite Bathroom',
+            'feature_3' => 'Quiet Air Conditioning',
+            'image_url' => 'assets/images/rooms/sea-gem-1.jpg',
+            'photos' => [
+                ['url' => 'assets/images/rooms/sea-gem-1.jpg', 'caption' => 'Sea Gem — Queen Bedroom Suite at The Love Shack Aruba'],
+                ['url' => 'assets/images/rooms/sea-gem-2.jpg', 'caption' => 'Sea Gem — Dedicated Private Bathroom'],
+                ['url' => 'assets/images/rooms/sea-gem-3.jpg', 'caption' => 'Sea Gem — Bedroom Window and Coastal Dresser'],
+                ['url' => 'assets/images/rooms/sea-gem-4.jpg', 'caption' => 'Sea Gem — Room Perspective and Island Styling'],
+                ['url' => 'assets/images/rooms/sea-gem-5.jpg', 'caption' => 'Sea Gem — Restful Island Atmosphere'],
+            ],
         ],
         [
-            'name' => 'Lagoon Breeze Suite',
-            'suite_type' => 'Flexible Guest Suite',
-            'description' => 'Flexible luxury bedroom suite adaptable for couples, families, or accompanying friends. Steps from the private indoor courtyard and outdoor shower.',
-            'bed_configuration' => 'Two Twin Beds or Unified King',
-            'bathroom_details' => 'En-suite Bath with Natural Stone Accents',
-            'image_url' => 'assets/images/temporary-beach.jpg',
+            'name' => 'Bedroom 3',
+            'suite_type' => 'BEDROOM 03',
+            'description' => 'Serene private bedroom featuring a king-size bed, dedicated private full bathroom with marble tile finishes, quiet air conditioning, and ample storage.',
+            'bed_configuration' => 'King-size Bed',
+            'bathroom_details' => 'Dedicated Full Bathroom',
+            'feature_3' => 'Marble Tile Finishes',
+            'image_url' => 'assets/images/rooms/bedroom-3-1.jpg',
+            'photos' => [
+                ['url' => 'assets/images/rooms/bedroom-3-1.jpg', 'caption' => 'Bedroom 3 — King Bedroom at The Love Shack Aruba'],
+                ['url' => 'assets/images/rooms/bedroom-3-2.jpg', 'caption' => 'Bedroom 3 — Spacious Bathroom with Marble Tile'],
+                ['url' => 'assets/images/rooms/bedroom-3-3.jpg', 'caption' => 'Bedroom 3 — Window Light and Interior Space'],
+                ['url' => 'assets/images/rooms/bedroom-3-4.jpg', 'caption' => 'Bedroom 3 — Dresser Storage and Accents'],
+            ],
         ],
     ];
 
@@ -208,18 +233,57 @@ function get_amenities_grouped(int $propertyId = 1): array {
     ];
 
     if (!$pdo) {
-        // Fallback popular list
+        // Fallback comprehensive list
         $grouped['Popular'] = [
             ['name' => 'Private Freshwater Pool', 'description' => 'Exclusive deep swimming pool with sun loungers'],
             ['name' => 'Direct Beach Access', 'description' => 'Immediate steps from patio onto quiet Savaneta sand'],
             ['name' => 'High-Speed Wi-Fi', 'description' => 'Fast internet throughout villa and pool patio'],
             ['name' => 'Air Conditioning', 'description' => 'Independent climate control in all bedrooms and living areas'],
-            ['name' => 'Fully Equipped Kitchen', 'description' => 'Gas range, stainless refrigerator, microwave, and cookware'],
+            ['name' => 'Fully Equipped Kitchen', 'description' => 'Gas cooking range, stainless refrigerator, microwave, and cookware'],
             ['name' => 'Free Private Parking', 'description' => 'Secure gated on-premise parking for up to 2 vehicles'],
             ['name' => '3 Private En-Suite Bathrooms', 'description' => 'Dedicated bathroom for every bedroom with hot water'],
             ['name' => 'Outdoor Rain Shower', 'description' => 'Rinse off under warm Caribbean trade winds after beach dips'],
-            ['name' => 'Oceanview Covered Lanai', 'description' => 'Shaded veranda dining table and lounge seating'],
+            ['name' => 'Covered Dining Lanai', 'description' => 'Shaded veranda dining table and lounge seating'],
             ['name' => 'Complimentary Beach Gear', 'description' => 'Beach chairs, beach towels, cooler, and snorkel sets'],
+        ];
+        $grouped['Bathroom'] = [
+            ['name' => 'Hot Water & Rain Showers', 'description' => 'Consistent pressure and warm water in all 3 suites'],
+            ['name' => 'Organic Bath Amenities', 'description' => 'Eco-friendly shampoo, conditioner, body wash, and soaps'],
+            ['name' => 'Hair Dryers in Every Bathroom', 'description' => 'Professional grade blow dryers provided'],
+            ['name' => 'Plush Towel Sets', 'description' => 'Egyptian cotton bath towels, hand towels, and face cloths'],
+        ];
+        $grouped['Bedroom and laundry'] = [
+            ['name' => 'Comfortable Beds & Linens', 'description' => 'Quality mattresses with breathable organic cotton sheets'],
+            ['name' => 'In-Unit Washer & Dryer', 'description' => 'Washing machine and dryer with complimentary detergent'],
+            ['name' => 'Blackout Drapes & Shades', 'description' => 'Custom room-darkening shades for restorative sleep'],
+            ['name' => 'Wardrobe & Wooden Hangers', 'description' => 'Generous closet storage and luggage racks in all rooms'],
+            ['name' => 'Iron & Ironing Board', 'description' => 'Steam iron and full-size pressing board'],
+        ];
+        $grouped['Entertainment'] = [
+            ['name' => 'Smart HD Flat Screens', 'description' => 'Equipped with streaming capabilities'],
+            ['name' => 'Bluetooth Sound System', 'description' => 'Portable high-fidelity speaker for relaxing pool listening'],
+            ['name' => 'Board Games & Reading Books', 'description' => 'Curated books, card decks, and family games'],
+        ];
+        $grouped['Kitchen and dining'] = [
+            ['name' => 'Refrigerator with Freezer', 'description' => 'Full-size refrigerator with freezer and ice tray'],
+            ['name' => 'Gas Cooking Range', 'description' => 'Multi-burner gas range for island cooking'],
+            ['name' => 'Microwave', 'description' => 'Countertop microwave for convenient reheating and meals'],
+            ['name' => 'Drip Coffee Maker', 'description' => 'Fresh drip coffee maker with complimentary organic starter coffee'],
+            ['name' => 'Cookware, Pots & Pans', 'description' => 'Skillet set, cooking pots, chef knives, and baking sheet'],
+            ['name' => 'Wooden Breakfast Island', 'description' => 'Handcrafted wooden breakfast island with comfortable counter seating'],
+            ['name' => 'Blender for Island Cocktails', 'description' => 'Perfect for whipping up fresh smoothies and tropical drinks'],
+        ];
+        $grouped['Outdoor'] = [
+            ['name' => 'Propane Gas BBQ Grill', 'description' => 'Barbecue grill with grilling utensils provided'],
+            ['name' => 'Sun Loungers & Umbrellas', 'description' => 'Comfortable poolside sunbathing loungers and parasols'],
+            ['name' => 'Covered Dining Lanai', 'description' => 'Shaded dining veranda seating comfortably outdoors'],
+            ['name' => 'Private Enclosed Courtyard', 'description' => 'Lush tropical perimeter landscaping for complete privacy'],
+        ];
+        $grouped['Parking and additional facilities'] = [
+            ['name' => 'Secure Gated Driveway', 'description' => 'Gated access with private guest entry'],
+            ['name' => 'Dedicated Local Host', 'description' => 'On-island assistance for recommendations and provisioning'],
+            ['name' => 'Keyless Digital Check-in', 'description' => 'Custom keypad entry code active for your reservation'],
+            ['name' => 'First Aid Kit & Smoke Alarms', 'description' => 'Equipped safety devices and fire extinguisher on site'],
         ];
         return $grouped;
     }

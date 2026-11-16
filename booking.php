@@ -7,7 +7,7 @@
 declare(strict_types=1);
 
 $activePage = 'booking';
-$pageTitle = 'Book Your Stay | The Love Shack — Savaneta, Aruba';
+$pageTitle = 'Book Your Stay | The Love Shack Aruba';
 $pageDescription = 'Reserve your private luxury villa in Savaneta, Aruba. Direct booking inquiry for The Love Shack beachfront property with private freshwater pool.';
 
 require_once __DIR__ . '/includes/header.php';

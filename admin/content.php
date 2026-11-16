@@ -151,7 +151,7 @@ $property = get_property_details();
     </div>
 
     <div class="admin-form-group">
-      <label for="intro_title">Introduction Title (The Sanctuary · Aruba)</label>
+      <label for="intro_title">Introduction Title (Savaneta · Aruba)</label>
       <input type="text" id="intro_title" name="intro_title" value="<?= htmlspecialchars($property['intro_title'] ?? '') ?>" required>
     </div>
 

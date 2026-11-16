@@ -112,12 +112,12 @@ if ($pdo) {
 
       <div class="admin-form-group">
         <label for="name">Amenity Name *</label>
-        <input type="text" id="name" name="name" placeholder="e.g. Nespresso Coffee Bar" required>
+        <input type="text" id="name" name="name" placeholder="e.g. Drip Coffee Maker" required>
       </div>
 
       <div class="admin-form-group">
         <label for="description">Short Description / Specification</label>
-        <input type="text" id="description" name="description" placeholder="e.g. Complimentary organic starter pods provided">
+        <input type="text" id="description" name="description" placeholder="e.g. Complimentary organic starter coffee provided">
       </div>
     </div>
 
