@@ -4531,6 +4531,10 @@ html.intro-already-seen .intro-overlay {
   margin-top: 10px;
 }
 
+.the-space-grid .intro-image-frame {
+  aspect-ratio: 3 / 2;
+}
+
 /* Guest Access Section */
 .guest-access-section {
   padding: 40px 0 60px;
