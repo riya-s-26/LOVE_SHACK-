@@ -3249,6 +3249,13 @@ div[id] {
   margin-bottom: 8px;
 }
 
+.form-group label .required-asterisk,
+.required-asterisk {
+  color: #dc2626;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -4369,5 +4376,143 @@ div[id] {
   .reveal {
     opacity: 1 !important;
     transform: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   24. FULL-SCREEN LUXURY BRAND INTRO SCREEN (First Session Visit)
+   -------------------------------------------------------------------------- */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #061926;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.intro-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-overlay.dismissed,
+html.intro-already-seen .intro-overlay {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Background image with subtle cinematic drift */
+.intro-bg {
+  position: absolute;
+  top: -4%;
+  left: -4%;
+  width: 108%;
+  height: 108%;
+  background-image: url('../images/beach-hero.jpg');
+  background-size: cover;
+  background-position: center 38%;
+  background-repeat: no-repeat;
+  animation: introBgDrift 4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  will-change: transform;
+}
+
+@keyframes introBgDrift {
+  0% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+/* Atmospheric luxury backdrop vignette */
+.intro-overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(10, 38, 58, 0.22) 0%, rgba(6, 25, 38, 0.52) 65%, rgba(4, 18, 28, 0.78) 100%);
+  pointer-events: none;
+}
+
+/* Centered brand content */
+.intro-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+/* Exact Brand Name Wordmark in Bodoni Moda */
+.intro-brand-title {
+  font-family: var(--font-logo);
+  font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 4px 28px rgba(0, 16, 32, 0.5), 0 1px 4px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transform: scale(0.92) translateY(8px);
+  filter: blur(4px);
+  animation: introBrandReveal 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes introBrandReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(8px);
+    filter: blur(4px);
+  }
+  45% {
+    opacity: 0.9;
+    filter: blur(0.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.0) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .intro-brand-title {
+    font-size: clamp(2.1rem, 8.5vw, 3.2rem);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .intro-bg {
+    animation: none !important;
+    transform: none !important;
+  }
+  .intro-brand-title {
+    animation: introBrandSimpleFade 0.6s ease-out 0.2s forwards !important;
+    filter: none !important;
+    transform: none !important;
+  }
+  @keyframes introBrandSimpleFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
   }
 }
