@@ -93,6 +93,7 @@ html {
   scroll-padding-top: 100px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -4396,14 +4397,28 @@ div[id] {
   background-color: #061926;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.9s cubic-bezier(0.22, 1, 0.36, 1);
   cursor: pointer;
+  contain: strict;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .intro-overlay.fade-out {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.intro-overlay.fade-out .intro-brand-title {
+  opacity: 0;
+  transform: translate3d(0, -8px, 0) scale(1.015);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.intro-overlay.fade-out .intro-bg {
+  transform: translate3d(0, 0, 0) scale3d(1.035, 1.035, 1);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .intro-overlay.dismissed,
@@ -4417,24 +4432,28 @@ html.intro-already-seen .intro-overlay {
 /* Background image with subtle cinematic drift */
 .intro-bg {
   position: absolute;
-  top: -4%;
-  left: -4%;
-  width: 108%;
-  height: 108%;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
   background-image: url('../images/beach-hero.jpg');
   background-size: cover;
   background-position: center 38%;
   background-repeat: no-repeat;
-  animation: introBgDrift 4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1);
+  animation: introBgDrift 4.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-origin: center center;
 }
 
 @keyframes introBgDrift {
   0% {
-    transform: scale(1.06);
+    transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1);
   }
   100% {
-    transform: scale(1.0);
+    transform: translate3d(0, 0, 0) scale3d(1.01, 1.01, 1);
   }
 }
 
@@ -4469,26 +4488,21 @@ html.intro-already-seen .intro-overlay {
   padding: 0;
   text-shadow: 0 4px 28px rgba(0, 16, 32, 0.5), 0 1px 4px rgba(0, 0, 0, 0.35);
   opacity: 0;
-  transform: scale(0.92) translateY(8px);
-  filter: blur(4px);
-  animation: introBrandReveal 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
-  will-change: transform, opacity, filter;
+  transform: translate3d(0, 14px, 0) scale(0.97);
+  animation: introBrandReveal 1.35s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 @keyframes introBrandReveal {
   0% {
     opacity: 0;
-    transform: scale(0.92) translateY(8px);
-    filter: blur(4px);
-  }
-  45% {
-    opacity: 0.9;
-    filter: blur(0.5px);
+    transform: translate3d(0, 14px, 0) scale(0.97);
   }
   100% {
     opacity: 1;
-    transform: scale(1.0) translateY(0);
-    filter: blur(0);
+    transform: translate3d(0, 0, 0) scale(1.0);
   }
 }
 
@@ -4508,7 +4522,6 @@ html.intro-already-seen .intro-overlay {
   }
   .intro-brand-title {
     animation: introBrandSimpleFade 0.6s ease-out 0.2s forwards !important;
-    filter: none !important;
     transform: none !important;
   }
   @keyframes introBrandSimpleFade {

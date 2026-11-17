@@ -50,9 +50,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "hidden";
 
     let dismissed = false;
+    let autoDismissTimer = null;
+
     const dismissIntro = () => {
       if (dismissed) return;
       dismissed = true;
+      if (autoDismissTimer) {
+        clearTimeout(autoDismissTimer);
+        autoDismissTimer = null;
+      }
 
       introOverlay.classList.add("fade-out");
 
@@ -64,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         introOverlay.classList.add("dismissed");
         introOverlay.style.display = "none";
         document.body.style.overflow = "";
-      }, 850);
+      }, 900);
     };
 
     // User can click or press key to smoothly enter early
@@ -77,9 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Transition automatically after brand reveal completes
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const autoDismissDelay = prefersReducedMotion ? 1600 : 2600;
+    const autoDismissDelay = prefersReducedMotion ? 1200 : 2500;
 
-    setTimeout(dismissIntro, autoDismissDelay);
+    autoDismissTimer = setTimeout(dismissIntro, autoDismissDelay);
   };
 
   initSiteIntro();
@@ -201,9 +207,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // ------------------------------------------------------------------------
   // 3. Scroll Reveal Animations (with prefers-reduced-motion support)
   // ------------------------------------------------------------------------
-  const revealElements = document.querySelectorAll(
-    ".reveal, .intro-visual, .intro-content, .experience-card, .gallery-item, .amenity-category-card, .review-card, .location-info, .map-visual-card, .room-card, .rule-box"
-  );
+  const revealElements = Array.from(document.querySelectorAll(
+    ".reveal, .intro-section .intro-visual, .intro-section .intro-content, .experience-card, .gallery-item, .amenity-category-card, .review-card, .location-info, .map-visual-card, .room-card, .rule-box"
+  )).filter(el => !el.closest("#siteIntroOverlay"));
 
   revealElements.forEach(el => el.classList.add("reveal"));
 
