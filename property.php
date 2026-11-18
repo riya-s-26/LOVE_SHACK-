@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 $activePage = 'property';
 $pageTitle = 'The Property & Rooms | The Love Shack Aruba';
-$pageDescription = 'Discover the spaces, rooms, private freshwater swimming pool, and luxury amenities at The Love Shack in Savaneta, Aruba. 3 en-suite bedrooms, sleeps 6 guests.';
+$pageDescription = 'Discover the spaces, rooms, private freshwater swimming pool, and luxury amenities at The Love Shack in Savaneta, Aruba. 3 private bedrooms, sleeps 6 guests.';
 
 require_once __DIR__ . '/includes/header.php';
 
@@ -57,7 +57,7 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
         </div>
         <div class="spec-item">
           <strong><?= (int)($property['bathrooms'] ?? 3) ?> Bathrooms</strong>
-          <span>Private En-Suite Baths</span>
+          <span>1 En-Suite &amp; 2 Across Hall</span>
         </div>
         <div class="spec-item">
           <strong><?= (int)($property['max_guests'] ?? 6) ?> Guests</strong>
@@ -148,7 +148,7 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
       <div class="section-header center">
         <span class="eyebrow center">PRIVATE ACCOMMODATIONS</span>
         <h2>Three private <em>bedrooms &amp; suites.</em></h2>
-        <p>Three serene private bedrooms, each with its own dedicated bathroom, quiet air conditioning, and luxury coastal appointments.</p>
+        <p>Three serene private bedrooms with quiet air conditioning and luxury coastal appointments—Sea Esta features a private attached en-suite bathroom, while the other two bedrooms have bathrooms located directly across the hall.</p>
       </div>
 
       <div class="rooms-grid">
@@ -210,7 +210,7 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
                 <?php endif; ?>
                 <li>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6h6M9 10h6M5 14h14a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg>
-                  <span><?= htmlspecialchars($room['bathroom_details'] ?? 'Private En-Suite Bathroom') ?></span>
+                  <span><?= htmlspecialchars($room['bathroom_details'] ?? 'Dedicated Full Bathroom') ?></span>
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8M12 8v8"></path></svg>
@@ -228,9 +228,9 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
          ==================================================================== -->
     <section class="bathrooms-section wrap" id="bathrooms" aria-label="Bathrooms and Facilities">
       <div class="section-header center">
-        <span class="eyebrow center">EN-SUITE SANCTUARIES</span>
+        <span class="eyebrow center">BATHROOM FACILITIES</span>
         <h2>Bathrooms & <em>personal care.</em></h2>
-        <p>Every bedroom enjoys its own dedicated private full bathroom, plus a refreshing outdoor poolside rinse shower.</p>
+        <p>Sea Esta enjoys a private en-suite bathroom, while Sea Gem and Seascape have dedicated bathrooms located directly across the hall, plus a refreshing outdoor poolside rinse shower.</p>
       </div>
 
       <div class="bathrooms-grid">
@@ -252,10 +252,10 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
           <div class="bath-icon-box">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6h6M9 10h6M5 14h14a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg>
           </div>
-          <h3>Guest En-Suite Bathrooms (2)</h3>
-          <p>Two private guest bathrooms, each adjacent to its corresponding suite with refreshing rainfall showerheads and warm water.</p>
+          <h3>Hallway Guest Bathrooms (2)</h3>
+          <p>Two full guest bathrooms located directly across the hall from Sea Gem and Seascape, featuring modern rainfall showers and warm water.</p>
           <ul class="bath-feature-list">
-            <li>Private en-suite access</li>
+            <li>Located directly across the hall</li>
             <li>Modern rain shower</li>
             <li>Hair dryers & vanity lighting</li>
             <li>Fresh cotton towels daily</li>
