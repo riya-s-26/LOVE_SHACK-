@@ -151,11 +151,11 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
             </li>
             <li>
               <span class="benefit-dot"></span>
-              <span>Immediate beach access steps from your covered outdoor lanai</span>
+              <span>Immediate beach access steps from your covered outdoor veranda</span>
             </li>
             <li>
               <span class="benefit-dot"></span>
-              <span>3 private en-suite suites accommodating up to 6 discerning guests</span>
+              <span>3 private bedrooms accommodating up to 6 discerning guests</span>
             </li>
             <li>
               <span class="benefit-dot"></span>
@@ -178,10 +178,14 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
       <div class="gallery-header-row">
         <div>
           <span class="eyebrow">PROPERTY SHOWCASE</span>
-          <h2>Intimate moments, <em>unhurried luxury.</em></h2>
+          <h2>Picture yourself <em>here.</em></h2>
         </div>
-        <a class="btn btn-outline" href="property.php#gallery">
-          Explore All Property Views ↗
+        <a class="btn-text-link" href="property.php#gallery">
+          Explore Property Views
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
         </a>
       </div>
 
@@ -210,7 +214,7 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
           </div>
           <div class="strip-text">
             <strong><?= (int)($property['bedrooms'] ?? 3) ?> Bedrooms</strong>
-            <span>All En-Suite Baths</span>
+            <span>1 En-Suite &amp; 2 Full Baths</span>
           </div>
         </div>
 
@@ -240,7 +244,7 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
           </div>
           <div class="strip-text">
             <strong>Private Pool</strong>
-            <span>Freshwater & Lanai</span>
+            <span>Freshwater &amp; Veranda</span>
           </div>
         </div>
 
@@ -279,7 +283,7 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
               </svg>
             </div>
             <h3>Slow Island Mornings</h3>
-            <p>Start your day with artisan coffee on the sun-drenched lanai, listening to calm morning waters and birdsong.</p>
+            <p>Start your day with artisan coffee on the sun-drenched veranda, listening to calm morning waters and birdsong.</p>
           </div>
         </article>
 

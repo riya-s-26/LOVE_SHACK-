@@ -75,7 +75,7 @@ if ($pdo) {
 <div class="admin-header-row">
   <div>
     <h1>Property Amenities Management</h1>
-    <p>Configure verified property facilities categorized into the 7 Airbnb-inspired groups.</p>
+    <p>Configure verified property facilities categorized into the 7 property amenity groups.</p>
   </div>
 </div>
 

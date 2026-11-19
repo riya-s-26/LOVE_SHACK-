@@ -17,13 +17,13 @@ $adminUser = $_SESSION['admin_name'] ?? 'Administrator';
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?= htmlspecialchars($adminTitle ?? 'Admin Dashboard') ?> | The Love Shack Management</title>
+  <title><?= htmlspecialchars($adminTitle ?? 'Admin Dashboard') ?> | The Love Shack Aruba Management</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="../assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.3">
   <style>
     /* Admin Area Clean Executive Dashboard Styles */
     body.admin-body {
@@ -288,7 +288,7 @@ $adminUser = $_SESSION['admin_name'] ?? 'Administrator';
 
   <nav class="admin-navbar">
     <div class="admin-brand">
-      <a class="logo" href="dashboard.php"><?= htmlspecialchars($settings['site_title'] ?? 'The Love Shack') ?></a>
+      <a class="logo" href="dashboard.php"><?= htmlspecialchars($settings['site_title'] ?? 'The Love Shack Aruba') ?></a>
       <span class="admin-brand-tag">Admin Console</span>
     </div>
 

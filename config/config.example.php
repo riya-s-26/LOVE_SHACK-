@@ -21,6 +21,6 @@ return [
     'app' => [
         'env'      => 'development', // 'development' or 'production'
         'base_url' => '',            // Leave empty for auto-detection or set e.g. 'http://localhost/LOVE-SHACK'
-        'site_name'=> 'The Love Shack',
+        'site_name'=> 'The Love Shack Aruba',
     ]
 ];

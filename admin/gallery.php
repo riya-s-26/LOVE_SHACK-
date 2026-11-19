@@ -101,7 +101,7 @@ if ($pdo) {
       <div class="admin-form-group">
         <label for="category">Category *</label>
         <select id="category" name="category" required>
-          <option value="Exterior">Exterior & Lanai</option>
+          <option value="Exterior">Exterior & Veranda</option>
           <option value="Pool & Garden">Pool & Garden</option>
           <option value="Beach & Ocean">Beach & Ocean</option>
           <option value="Suites & Rooms">Suites & Rooms</option>

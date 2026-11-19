@@ -35,7 +35,7 @@ CREATE TABLE `site_settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `site_settings` (`setting_key`, `setting_value`, `setting_group`, `description`) VALUES
-('site_title', 'The Love Shack', 'general', 'Website brand name'),
+('site_title', 'The Love Shack Aruba', 'general', 'Website brand name'),
 ('site_tagline', 'Luxury Beachfront Sanctuary · Savaneta, Aruba', 'general', 'Brand subtitle'),
 ('concierge_email', 'concierge@loveshackaruba.com', 'contact', 'Provisional concierge email'),
 ('concierge_phone', '+297 580 0000', 'contact', 'Provisional phone / WhatsApp'),
@@ -117,9 +117,9 @@ CREATE TABLE `gallery_images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `gallery_images` (`property_id`, `title`, `caption`, `category`, `image_url`, `display_order`, `is_featured`) VALUES
-(1, 'Oceanfront Lanai & Pool', 'Direct beachfront swimming pool with sun lounger terrace and sunset ocean view', 'Exterior', 'assets/images/temporary-hero.jpg', 1, 1),
-(1, 'Private Freshwater Pool', 'Shaded palm terrace, open-air sun deck and tropical garden sanctuary', 'Pool & Garden', 'assets/images/temporary-pool.jpg', 2, 1),
-(1, 'Savaneta Caribbean Beach', 'Gentle turquoise shallows steps from your private villa gates', 'Beach & Ocean', 'assets/images/temporary-beach.jpg', 3, 1);
+(1, 'Savaneta Beachfront Sunset', 'Private beachfront lounge and illuminated palm trees along the Savaneta shoreline at sunset', 'Beachfront & Sunset', 'assets/images/showcase-1.jpg', 1, 1),
+(1, 'Twilight Pool & Palapa Oasis', 'Freshwater swimming pool with dolphin mosaic, romantic heart chair, and palapa cabana at twilight', 'Pool & Cabana', 'assets/images/showcase-2.jpg', 2, 1),
+(1, 'Poolside Dining Veranda', 'Covered dining veranda with custom table setting and champagne overlooking the private pool', 'Alfresco Dining', 'assets/images/showcase-3.jpg', 3, 1);
 
 -- ----------------------------------------------------------------------------
 -- 5. Table: amenities
@@ -144,9 +144,9 @@ INSERT INTO `amenities` (`property_id`, `category`, `name`, `description`, `is_p
 (1, 'Popular', 'Air Conditioning', 'Independent climate control in all bedrooms and living areas', 1, 4),
 (1, 'Popular', 'Fully Equipped Kitchen', 'Gas range, stainless refrigerator, microwave, and cookware', 1, 5),
 (1, 'Popular', 'Free Private Parking', 'Secure gated on-premise parking for up to 2 vehicles', 1, 6),
-(1, 'Popular', '3 Private En-Suite Bathrooms', 'Dedicated bathroom for every bedroom with hot water', 1, 7),
+(1, 'Popular', '3 Private Bathrooms', '1 master en-suite and 2 full bathrooms located directly across the hall', 1, 7),
 (1, 'Popular', 'Outdoor Rain Shower', 'Rinse off under warm Caribbean trade winds after beach dips', 1, 8),
-(1, 'Popular', 'Oceanview Covered Lanai', 'Shaded veranda dining table and lounge seating', 1, 9),
+(1, 'Popular', 'Oceanview Covered Veranda', 'Shaded veranda dining table and lounge seating', 1, 9),
 (1, 'Popular', 'Complimentary Beach Gear', 'Beach chairs, beach towels, cooler, and snorkel sets', 1, 10),
 
 (1, 'Bathroom', 'Hot Water & Rain Showers', 'Consistent pressure and warm water in all 3 suites', 0, 11),
@@ -171,7 +171,7 @@ INSERT INTO `amenities` (`property_id`, `category`, `name`, `description`, `is_p
 (1, 'Kitchen and dining', 'Handcrafted Wooden Breakfast Island', 'Comfortable wooden breakfast counter island with bar seating', 0, 27),
 (1, 'Kitchen and dining', 'Blender & Citrus Juicer', 'Perfect for preparing fresh tropical smoothies and cocktails', 0, 28),
 (1, 'Kitchen and dining', 'Chef\'s Knife Set & Cookware', 'Stainless pans, baking trays, wine glasses, and champagne flutes', 0, 29),
-(1, 'Kitchen and dining', 'Dining Tables (Indoor & Outdoor)', 'Accommodates 6 guests comfortably inside or on the ocean lanai', 0, 30),
+(1, 'Kitchen and dining', 'Dining Tables (Indoor & Outdoor)', 'Accommodates 6 guests comfortably inside or on the ocean veranda', 0, 30),
 
 (1, 'Outdoor', 'Propane Gas BBQ Grill', 'High-output stainless barbecue with grilling utensils provided', 0, 29),
 (1, 'Outdoor', 'Double Daybed & Chaise Loungers', 'Comfortable cushioned outdoor sunbathing furniture', 0, 30),
@@ -181,7 +181,8 @@ INSERT INTO `amenities` (`property_id`, `category`, `name`, `description`, `is_p
 (1, 'Parking and additional facilities', 'Secure Gated Driveway', 'Motorized gate access with private guest key fob', 0, 33),
 (1, 'Parking and additional facilities', 'Dedicated Local Host Concierge', 'On-island assistance for recommendations and provisioning', 0, 34),
 (1, 'Parking and additional facilities', 'Keyless Digital Check-in', 'Custom secure keypad entry code active for your reservation', 0, 35),
-(1, 'Parking and additional facilities', 'First Aid Kit & Smoke Alarms', 'Fully equipped safety devices and fire extinguisher on site', 0, 36);
+(1, 'Parking and additional facilities', 'Beach Tent, Floats & Kids\' Toys', 'Shade beach tent, water floats, and kids\' beach toys provided', 0, 36),
+(1, 'Parking and additional facilities', 'First Aid Kit & Smoke Alarms', 'Fully equipped safety devices and fire extinguisher on site', 0, 37);
 
 -- ----------------------------------------------------------------------------
 -- 6. Table: reviews
@@ -266,7 +267,7 @@ CREATE TABLE `additional_services` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `additional_services` (`category`, `name`, `description`, `image_url`, `price`, `pricing_type`, `display_order`) VALUES
-('Dining Extras', 'Private Aruban Chef Dinner', 'Three-course custom seaside dinner prepared fresh on your pool lanai by a private local Aruban chef.', 'assets/images/temporary-hero.jpg', 180.00, 'per_stay', 1),
+('Dining Extras', 'Private Aruban Chef Dinner', 'Three-course custom seaside dinner prepared fresh on your pool veranda by a private local Aruban chef.', 'assets/images/temporary-hero.jpg', 180.00, 'per_stay', 1),
 ('Dining Extras', 'Caribbean Seafood BBQ Provisioning Basket', 'Fresh catch red snapper, jumbo shrimp, Caribbean marinades, plantains, and charcoal essentials delivered for your patio BBQ.', 'assets/images/temporary-pool.jpg', 95.00, 'per_stay', 2),
 ('Dining Extras', 'Daily Fresh Tropical Breakfast Basket', 'Freshly baked Dutch pastries, local fruits, Aruban jams, artisanal cheeses, and farm-fresh eggs delivered to your door.', 'assets/images/temporary-beach.jpg', 45.00, 'per_stay', 3),
 

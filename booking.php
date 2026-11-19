@@ -423,7 +423,7 @@ foreach ($services as $svc) {
             </li>
             <li>
               <span class="inclusion-dot"></span>
-              <span>Direct beachfront access steps from lanai</span>
+              <span>Direct beachfront access steps from veranda</span>
             </li>
             <li>
               <span class="inclusion-dot"></span>

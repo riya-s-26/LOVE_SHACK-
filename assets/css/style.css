@@ -55,7 +55,7 @@
   --color-border-light: rgba(216, 234, 235, 0.65);
 
   /* Typography System */
-  --font-logo: 'Bodoni Moda', 'Didot', 'Bodoni MT', Georgia, serif;
+  --font-logo: 'Pacifico', cursive, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Cormorant Garamond', 'Garamond', Georgia, serif;
   --font-body: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-ui: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -378,15 +378,15 @@ h1 em, h2 em, h3 em {
   border-color: rgba(220, 235, 235, 1);
 }
 
-/* Brand Wordmark in Bodoni Moda ("The Love Shack Aruba") */
+/* Brand Wordmark in Pacifico ("The Love Shack Aruba") */
 .logo {
   font-family: var(--font-logo);
   font-size: 1.85rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--color-logo); /* Deep Ocean Blue logo text */
   text-decoration: none;
-  line-height: 1;
+  line-height: 1.15;
   display: flex;
   align-items: center;
   text-transform: none;
@@ -395,18 +395,19 @@ h1 em, h2 em, h3 em {
 
 .header .logo {
   font-family: var(--font-logo);
-  font-size: clamp(1.35rem, 1.8vw, 1.85rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.25rem, 1.7vw, 1.7rem);
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--color-logo); /* Deep Ocean Blue logo text */
   background: transparent;
   padding: 0;
   border-radius: 0;
   box-shadow: none;
-  line-height: 1;
+  line-height: 1.15;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  white-space: nowrap;
   transition: opacity var(--transition-fast), color var(--transition-fast);
 }
 
@@ -1272,6 +1273,10 @@ h1 em, h2 em, h3 em {
   transition: transform var(--transition-smooth);
 }
 
+.gallery-grid .gallery-item:nth-child(2) img {
+  object-position: center 60%;
+}
+
 .gallery-overlay {
   position: absolute;
   inset: 0;
@@ -1309,7 +1314,7 @@ h1 em, h2 em, h3 em {
 }
 
 /* --------------------------------------------------------------------------
-   AIRBNB-INSPIRED 5-PHOTO PROPERTY SHOWCASE MOSAIC
+   LUXURY 5-PHOTO PROPERTY SHOWCASE MOSAIC
    -------------------------------------------------------------------------- */
 .airbnb-mosaic-gallery {
   display: grid;
@@ -1629,7 +1634,7 @@ h1 em, h2 em, h3 em {
   flex-shrink: 0;
 }
 
-/* Airbnb-Inspired Popular Amenities Featured Preview Grid */
+/* Curated Popular Amenities Featured Preview Grid */
 .amenities-popular-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -1701,7 +1706,7 @@ h1 em, h2 em, h3 em {
   margin-top: 10px;
 }
 
-/* Full Amenities Modal (Airbnb Property Detail Experience) */
+/* Full Amenities Modal */
 .amenities-modal {
   position: fixed;
   inset: 0;
@@ -1978,7 +1983,7 @@ h1 em, h2 em, h3 em {
 }
 
 /* --------------------------------------------------------------------------
-   14. GUEST REVIEWS / TESTIMONIALS SECTION (AIRBNB VERIFIED GUEST REFERENCE)
+   14. GUEST REVIEWS / TESTIMONIALS SECTION (VERIFIED GUEST REVIEWS)
    -------------------------------------------------------------------------- */
 .reviews-section {
   background-color: var(--color-bg-aqua);
@@ -1987,7 +1992,7 @@ h1 em, h2 em, h3 em {
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Airbnb-Inspired Rating Summary Header */
+/* Verified Rating Summary Header */
 .reviews-rating-summary {
   background: var(--color-white);
   border: 1px solid var(--color-border);
@@ -2340,7 +2345,9 @@ h1 em, h2 em, h3 em {
 /* Brand Column */
 .footer-brand .logo {
   color: var(--color-white);
-  font-size: 2.1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0;
   margin-bottom: 16px;
 }
 
@@ -4030,8 +4037,9 @@ div[id] {
   }
 
   .header .logo {
-    font-size: 1.55rem;
+    font-size: clamp(1.15rem, 4.2vw, 1.45rem);
     padding: 0;
+    white-space: nowrap;
   }
 
   .menu-btn {
@@ -4289,7 +4297,7 @@ div[id] {
 /* Mobile Small (390px and below) */
 @media (max-width: 480px) {
   .logo {
-    font-size: 1.6rem;
+    font-size: 1.25rem;
   }
 
   .hero {
@@ -4476,13 +4484,13 @@ html.intro-already-seen .intro-overlay {
   pointer-events: none;
 }
 
-/* Exact Brand Name Wordmark in Bodoni Moda */
+/* Exact Brand Name Wordmark in Pacifico */
 .intro-brand-title {
   font-family: var(--font-logo);
   font-size: clamp(2.4rem, 6.5vw, 5.2rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.15;
   color: #ffffff;
   margin: 0;
   padding: 0;
@@ -4509,8 +4517,8 @@ html.intro-already-seen .intro-overlay {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .intro-brand-title {
-    font-size: clamp(2.1rem, 8.5vw, 3.2rem);
-    letter-spacing: -0.02em;
+    font-size: clamp(1.85rem, 7.5vw, 2.8rem);
+    letter-spacing: 0;
   }
 }
 
@@ -4632,201 +4640,16 @@ html.intro-already-seen .intro-overlay {
   flex-shrink: 0;
 }
 
-/* Other Things to Note Section */
-.other-notes-section {
-  padding: 10px 0 70px;
-}
-
-.other-notes-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 44px 48px;
-  box-shadow: var(--shadow-sm);
-}
-
-.other-notes-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  padding-bottom: 22px;
-  border-bottom: 1px solid var(--color-border-light);
-  margin-bottom: 24px;
-}
-
-.other-notes-header h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 3.2vw, 2.6rem);
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-top: 6px;
-  line-height: 1.15;
-}
-
-.notes-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--color-aqua);
-  color: var(--color-secondary);
-  border: 1px solid var(--color-border);
-  padding: 8px 16px;
-  border-radius: var(--radius-pill);
-  font-family: var(--font-ui);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  flex-shrink: 0;
-}
-
-.notes-tag svg {
-  width: 14px;
-  height: 14px;
-}
-
-.other-notes-intro p {
-  font-family: var(--font-body);
-  font-size: 1.02rem;
-  line-height: 1.8;
-  color: var(--color-text-body);
-  margin-bottom: 16px;
-}
-
-.notes-block {
-  margin-top: 28px;
-  padding-top: 24px;
-  border-top: 1px solid var(--color-border-light);
-}
-
-.notes-block h3 {
-  font-family: var(--font-heading);
-  font-size: 1.55rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: 18px;
-  letter-spacing: -0.01em;
-}
-
-.fee-comparison-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.fee-model-box {
-  background: var(--color-bg-aqua);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 22px 24px;
-  position: relative;
-}
-
-.fee-model-box.fee-model-new {
-  border-color: rgba(13, 139, 153, 0.45);
-  background: linear-gradient(135deg, var(--color-aqua) 0%, rgba(255, 255, 255, 0.95) 100%);
-  box-shadow: 0 4px 16px rgba(13, 139, 153, 0.06);
-}
-
-.fee-model-badge {
-  display: inline-block;
-  font-family: var(--font-ui);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
-  padding: 4px 12px;
-  margin-bottom: 12px;
-}
-
-.fee-model-badge.highlight {
-  color: var(--color-secondary);
-  border-color: var(--color-secondary);
-  background: rgba(13, 139, 153, 0.1);
-}
-
-.fee-model-box h4 {
-  font-family: var(--font-ui);
-  font-size: 0.98rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 8px;
-}
-
-.fee-model-box p {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  line-height: 1.68;
-  color: var(--color-text-body);
-  margin: 0;
-}
-
-.impact-items-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.impact-item {
-  display: flex;
-  gap: 14px;
-  align-items: baseline;
-  background: var(--color-bg-aqua);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-sm);
-  padding: 16px 20px;
-}
-
-.impact-label {
-  font-family: var(--font-ui);
-  font-size: 0.86rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  white-space: nowrap;
-  letter-spacing: 0.02em;
-  min-width: 110px;
-}
-
-.impact-item p {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  line-height: 1.68;
-  color: var(--color-text-body);
-  margin: 0;
-}
-
 /* Responsive adjustments */
 @media (max-width: 900px) {
   .guest-access-grid {
     grid-template-columns: 1fr;
     gap: 36px;
   }
-  .fee-comparison-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
 }
 
 @media (max-width: 768px) {
-  .guest-access-card,
-  .other-notes-card {
+  .guest-access-card {
     padding: 30px 22px;
-  }
-  .other-notes-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .impact-item {
-    flex-direction: column;
-    gap: 6px;
-  }
-  .impact-label {
-    min-width: auto;
   }
 }

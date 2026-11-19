@@ -179,24 +179,24 @@ function get_rooms(int $propertyId = 1): array {
 function get_gallery_images(int $propertyId = 1, bool $featuredOnly = false): array {
     $fallback = [
         [
-            'title' => 'Oceanfront Villa & Freshwater Pool Sanctuary',
-            'caption' => 'Private beachfront swimming pool with sun lounger terrace and sunset ocean view',
-            'category' => 'Villa Exterior & Pool',
-            'image_url' => 'assets/images/temporary-hero.jpg',
+            'title' => 'Savaneta Beachfront Sunset',
+            'caption' => 'Private beachfront lounge and illuminated palm trees along the Savaneta shoreline at sunset',
+            'category' => 'Beachfront & Sunset',
+            'image_url' => 'assets/images/showcase-1.jpg',
             'is_crop' => false,
         ],
         [
-            'title' => 'Freshwater Pool Sanctuary',
-            'caption' => 'Private swimming pool nestled in a tropical Aruban garden setting',
-            'category' => 'Pool Terrace',
-            'image_url' => 'assets/images/temporary-pool.jpg',
+            'title' => 'Twilight Pool & Palapa Oasis',
+            'caption' => 'Freshwater swimming pool with dolphin mosaic, romantic heart chair, and palapa cabana at twilight',
+            'category' => 'Pool & Cabana',
+            'image_url' => 'assets/images/showcase-2.jpg',
             'is_crop' => false,
         ],
         [
-            'title' => 'Savaneta Caribbean Beach',
-            'caption' => 'Direct access to calm, crystal-clear turquoise waters and soft sand',
-            'category' => 'Beachfront',
-            'image_url' => 'assets/images/temporary-beach.jpg',
+            'title' => 'Poolside Dining Veranda',
+            'caption' => 'Covered dining veranda with custom table setting and champagne overlooking the private pool',
+            'category' => 'Alfresco Dining',
+            'image_url' => 'assets/images/showcase-3.jpg',
             'is_crop' => false,
         ],
     ];
@@ -218,6 +218,29 @@ function get_gallery_images(int $propertyId = 1, bool $featuredOnly = false): ar
         error_log("Error fetching gallery images: " . $e->getMessage());
         return $fallback;
     }
+}
+
+function get_property_showcase_images(): array {
+    return [
+        [
+            'title' => 'Savaneta Beachfront Sunset',
+            'caption' => 'Private beachfront lounge and illuminated palm trees along the Savaneta shoreline at sunset',
+            'category' => 'Beachfront & Sunset',
+            'image_url' => 'assets/images/property-showcase-1.jpg',
+        ],
+        [
+            'title' => 'Sunset Pool & Cabana Oasis',
+            'caption' => 'Freshwater swimming pool with dolphin mosaic, shaded palapa cabana, and sunset Caribbean sky',
+            'category' => 'Pool & Cabana',
+            'image_url' => 'assets/images/property-showcase-2.jpg',
+        ],
+        [
+            'title' => 'Poolside Dining Veranda',
+            'caption' => 'Covered dining veranda with custom coastal table setting and champagne overlooking the private pool',
+            'category' => 'Alfresco Dining',
+            'image_url' => 'assets/images/property-showcase-3.jpg',
+        ],
+    ];
 }
 
 function get_amenities_grouped(int $propertyId = 1): array {
@@ -243,7 +266,7 @@ function get_amenities_grouped(int $propertyId = 1): array {
             ['name' => 'Free Private Parking', 'description' => 'Secure gated on-premise parking for up to 2 vehicles'],
             ['name' => '3 Private Bathrooms', 'description' => '1 attached master en-suite and 2 full bathrooms located directly across the hall'],
             ['name' => 'Outdoor Rain Shower', 'description' => 'Rinse off under warm Caribbean trade winds after beach dips'],
-            ['name' => 'Covered Dining Lanai', 'description' => 'Shaded veranda dining table and lounge seating'],
+            ['name' => 'Covered Dining Veranda', 'description' => 'Shaded veranda dining table and lounge seating'],
             ['name' => 'Complimentary Beach Gear', 'description' => 'Beach chairs, beach towels, cooler, and snorkel sets'],
         ];
         $grouped['Bathroom'] = [
@@ -276,13 +299,14 @@ function get_amenities_grouped(int $propertyId = 1): array {
         $grouped['Outdoor'] = [
             ['name' => 'Propane Gas BBQ Grill', 'description' => 'Barbecue grill with grilling utensils provided'],
             ['name' => 'Sun Loungers & Umbrellas', 'description' => 'Comfortable poolside sunbathing loungers and parasols'],
-            ['name' => 'Covered Dining Lanai', 'description' => 'Shaded dining veranda seating comfortably outdoors'],
+            ['name' => 'Covered Dining Veranda', 'description' => 'Shaded dining veranda seating comfortably outdoors'],
             ['name' => 'Private Enclosed Courtyard', 'description' => 'Lush tropical perimeter landscaping for complete privacy'],
         ];
         $grouped['Parking and additional facilities'] = [
             ['name' => 'Secure Gated Driveway', 'description' => 'Gated access with private guest entry'],
             ['name' => 'Dedicated Local Host', 'description' => 'On-island assistance for recommendations and provisioning'],
             ['name' => 'Keyless Digital Check-in', 'description' => 'Custom keypad entry code active for your reservation'],
+            ['name' => 'Beach Tent, Floats & Kids\' Toys', 'description' => 'Shade beach tent, water floats, and kids\' beach toys provided'],
             ['name' => 'First Aid Kit & Smoke Alarms', 'description' => 'Equipped safety devices and fire extinguisher on site'],
         ];
         return $grouped;
@@ -402,7 +426,7 @@ function get_additional_services(?string $category = null): array {
             'id' => 1,
             'category' => 'Dining Extras',
             'name' => 'Private Aruban Chef Dinner',
-            'description' => 'Three-course custom seaside dinner prepared fresh on your pool lanai by a private local Aruban chef.',
+            'description' => 'Three-course custom seaside dinner prepared fresh on your pool veranda by a private local Aruban chef.',
             'image_url' => 'assets/images/temporary-hero.jpg',
             'price' => 180.00,
             'pricing_type' => 'per_stay',

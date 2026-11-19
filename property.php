@@ -14,7 +14,7 @@ require_once __DIR__ . '/includes/header.php';
 
 $property = get_property_details();
 $rooms = get_rooms((int)($property['id'] ?? 1));
-$gallery = get_gallery_images((int)($property['id'] ?? 1));
+$gallery = get_property_showcase_images();
 $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
 ?>
 
@@ -337,14 +337,14 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
           <div class="experience-card-inner">
             <span class="experience-num">02</span>
             <h3>Direct Beach Sand</h3>
-            <p>Step directly from your covered outdoor lanai onto soft Aruban sand and into calm Caribbean turquoise waters.</p>
+            <p>Step directly from your covered outdoor veranda onto soft Aruban sand and into calm Caribbean turquoise waters.</p>
           </div>
         </div>
 
         <div class="experience-card">
           <div class="experience-card-inner">
             <span class="experience-num">03</span>
-            <h3>Covered Dining Lanai</h3>
+            <h3>Covered Dining Veranda</h3>
             <p>Alfresco oceanfront dining table seating up to 8 guests with outdoor ceiling fans and sunset views every evening.</p>
           </div>
         </div>

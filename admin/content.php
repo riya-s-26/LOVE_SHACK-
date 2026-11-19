@@ -100,7 +100,7 @@ $property = get_property_details();
     <div class="admin-grid-2">
       <div class="admin-form-group">
         <label for="site_title">Website Title</label>
-        <input type="text" id="site_title" name="site_title" value="<?= htmlspecialchars($settings['site_title'] ?? 'The Love Shack') ?>" required>
+        <input type="text" id="site_title" name="site_title" value="<?= htmlspecialchars($settings['site_title'] ?? 'The Love Shack Aruba') ?>" required>
       </div>
 
       <div class="admin-form-group">

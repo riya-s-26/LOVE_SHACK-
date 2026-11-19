@@ -81,7 +81,7 @@ $ext = '.php';
       </div>
 
       <div class="footer-bottom">
-        <span>© <span id="year"><?= date('Y') ?></span> <?= htmlspecialchars($settings['site_title'] ?? 'The Love Shack') ?>. All rights reserved. Aruba Vacation Rental.</span>
+        <span>© <span id="year"><?= date('Y') ?></span> <?= htmlspecialchars($settings['site_title'] ?? 'The Love Shack Aruba') ?>. All rights reserved. Aruba Vacation Rental.</span>
         <div class="footer-bottom-links">
           <span>Made for slow days by the sea.</span>
         </div>

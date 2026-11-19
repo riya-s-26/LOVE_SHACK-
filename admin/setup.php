@@ -66,13 +66,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin Setup | The Love Shack</title>
+  <title>Admin Setup | The Love Shack Aruba</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&family=Montserrat:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&family=Montserrat:wght@500;600;700&family=Lato:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="../assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.3">
   <style>
     body {
       background: #f4f8f8;
@@ -127,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
   <div class="setup-card">
-    <a class="logo" href="../index.php" style="margin-bottom: 12px; font-size: 1.6rem; color: var(--color-primary);">The Love Shack</a>
+    <a class="logo" href="../index.php" style="margin-bottom: 12px; font-size: 1.6rem; color: var(--color-primary);">The Love Shack Aruba</a>
     <h1>Administrator Setup</h1>
     <p>Configure custom administrative credentials for the host console. Passwords are encrypted using PHP BCRYPT hashing.</p>
 
