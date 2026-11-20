@@ -2297,32 +2297,27 @@ h3 em {
 /* --------------------------------------------------------------------------
    15. DISTINCTIVE LUXURY BOOKING CTA SECTION (NO FLAT SOLID BLOCKS)
    -------------------------------------------------------------------------- */
-.booking-cta-section {
+.booking-cta-section,
+section.booking-cta-section {
   position: relative;
   padding: 110px 0;
-  background-color: #FFFFFF;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  background-image: none !important;
   color: #1e3844;
   overflow: hidden;
 }
 
-/* Layered Photography Background */
-.cta-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('../images/temporary-hero.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.12;
-  filter: saturate(1.1);
+/* Layered Photography Background - Removed to ensure pure white CTA background */
+.cta-bg,
+.booking-cta-section .cta-bg {
+  display: none !important;
 }
 
-/* Atmospheric Pure White Overlay */
-.cta-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.96) 0%,
-      rgba(255, 255, 255, 0.92) 100%);
+/* Atmospheric Overlay - Removed to eliminate any blue gradient tint */
+.cta-overlay,
+.booking-cta-section .cta-overlay {
+  display: none !important;
 }
 
 /* Decorative Coastal Rings */
