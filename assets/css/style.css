@@ -2238,7 +2238,7 @@ h1 em, h2 em, h3 em {
 .booking-cta-section {
   position: relative;
   padding: 110px 0;
-  background-color: var(--color-primary-dark);
+  background-color: #0ab8ee; /* Mid-Sea Azure sampled from reference image */
   color: var(--color-white);
   overflow: hidden;
 }
@@ -2250,26 +2250,25 @@ h1 em, h2 em, h3 em {
   background-image: url('../images/temporary-hero.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.22;
+  opacity: 0.16;
   filter: saturate(1.2);
 }
 
-/* Rich Deep Ocean Gradient Overlay */
+/* Rich Azure Ocean Overlay */
 .cta-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(15, 55, 71, 0.95) 0%,
-    rgba(22, 78, 99, 0.88) 60%,
-    rgba(49, 157, 160, 0.65) 100%
+    rgba(10, 184, 238, 0.90) 0%,
+    rgba(4, 130, 226, 0.88) 100%
   );
 }
 
 /* Decorative Coastal Rings */
 .cta-ring {
   position: absolute;
-  border: 1px solid rgba(13, 139, 153, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -2296,24 +2295,31 @@ h1 em, h2 em, h3 em {
   text-align: center;
 }
 
+.booking-cta-section .eyebrow.light {
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 30, 60, 0.2);
+}
+
 .booking-cta-section h2 {
   color: var(--color-white);
   margin-bottom: 20px;
+  text-shadow: 0 2px 8px rgba(0, 30, 60, 0.2);
 }
 
 .booking-cta-section h2 em,
 .booking-cta-content h2 em,
 .cta-content h2 em {
-  color: #5eead4; /* Luminous Caribbean turquoise accent */
+  color: #ffffff;
   font-style: italic;
   font-weight: 400;
 }
 
 .booking-cta-section p {
-  color: #d8eeef;
+  color: #ffffff;
   font-size: 1.15rem;
   max-width: 620px;
   margin: 0 auto 38px;
+  text-shadow: 0 1px 3px rgba(0, 30, 60, 0.18);
 }
 
 .cta-buttons {
@@ -2322,6 +2328,31 @@ h1 em, h2 em, h3 em {
   justify-content: center;
   gap: 18px;
   flex-wrap: wrap;
+}
+
+.booking-cta-section .btn-teal {
+  background-color: #ffffff;
+  color: #0482e2;
+  box-shadow: 0 8px 24px rgba(0, 30, 60, 0.2);
+}
+
+.booking-cta-section .btn-teal:hover {
+  background-color: #f0f8ff;
+  color: #0266b3;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 30, 60, 0.3);
+}
+
+.booking-cta-section .btn-glass {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+}
+
+.booking-cta-section .btn-glass:hover {
+  background: #ffffff;
+  color: #0482e2;
+  border-color: #ffffff;
 }
 
 /* --------------------------------------------------------------------------
