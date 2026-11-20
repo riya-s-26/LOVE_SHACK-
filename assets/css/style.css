@@ -2238,8 +2238,8 @@ h1 em, h2 em, h3 em {
 .booking-cta-section {
   position: relative;
   padding: 110px 0;
-  background-color: #0b2f3d; /* Deep Twilight Ocean — Luxury Beachfront Sanctuary */
-  color: var(--color-white);
+  background-color: #eaf6f7; /* Caribbean Seafoam & Crystal Aqua */
+  color: #1e3844;
   overflow: hidden;
 }
 
@@ -2250,25 +2250,25 @@ h1 em, h2 em, h3 em {
   background-image: url('../images/temporary-hero.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.18;
-  filter: saturate(1.15);
+  opacity: 0.12;
+  filter: saturate(1.1);
 }
 
-/* Atmospheric Twilight Marine Gradient Overlay */
+/* Atmospheric Seafoam & Crystal Aqua Gradient Overlay */
 .cta-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(11, 47, 61, 0.94) 0%,
-    rgba(7, 39, 53, 0.96) 100%
+    rgba(234, 246, 247, 0.94) 0%,
+    rgba(216, 240, 243, 0.92) 100%
   );
 }
 
 /* Decorative Coastal Rings */
 .cta-ring {
   position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(13, 139, 153, 0.18);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -2296,24 +2296,24 @@ h1 em, h2 em, h3 em {
 }
 
 .booking-cta-section .eyebrow.light {
-  color: #a5e3e8;
+  color: var(--color-secondary);
 }
 
 .booking-cta-section h2 {
-  color: var(--color-white);
+  color: var(--color-primary);
   margin-bottom: 20px;
 }
 
 .booking-cta-section h2 em,
 .booking-cta-content h2 em,
 .cta-content h2 em {
-  color: #14b8a6; /* Vibrant Tropical Turquoise Accent */
+  color: var(--color-secondary); /* Vibrant Caribbean Turquoise Accent */
   font-style: italic;
   font-weight: 400;
 }
 
 .booking-cta-section p {
-  color: #c5dfe3;
+  color: var(--color-text-body);
   font-size: 1.15rem;
   max-width: 620px;
   margin: 0 auto 38px;
@@ -2330,36 +2330,38 @@ h1 em, h2 em, h3 em {
 .booking-cta-section .btn-teal {
   background-color: var(--color-secondary);
   color: var(--color-white);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(13, 139, 153, 0.28);
 }
 
 .booking-cta-section .btn-teal:hover {
   background-color: var(--color-secondary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 28px rgba(13, 139, 153, 0.38);
 }
 
 .booking-cta-section .btn-glass {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--color-white);
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  background: var(--color-white);
+  color: var(--color-primary);
+  border: 1.5px solid #b5e3e8;
+  box-shadow: var(--shadow-sm);
 }
 
 .booking-cta-section .btn-glass:hover {
-  background: rgba(255, 255, 255, 0.95);
-  color: #0b2f3d;
-  border-color: var(--color-white);
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
 }
 
 /* --------------------------------------------------------------------------
    16. REDESIGNED LUXURY FOOTER (NO BORING FLAT TWO-BLOCKS)
    -------------------------------------------------------------------------- */
 .footer {
-  background-color: #0b2f3d; /* Deep Twilight Ocean — Sophisticated Luxury Grounding */
-  color: #c5dfe3;
+  background-color: #eaf6f7; /* Caribbean Seafoam & Crystal Aqua Foundation */
+  color: var(--color-text-body);
   padding: 85px 0 35px;
   position: relative;
-  border-top: 3px solid rgba(13, 139, 153, 0.4);
+  border-top: 2px solid #b2e3e8;
 }
 
 .footer-grid {
@@ -2371,7 +2373,7 @@ h1 em, h2 em, h3 em {
 
 /* Brand Column */
 .footer-brand .logo {
-  color: var(--color-white);
+  color: var(--color-primary);
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: 0;
@@ -2379,7 +2381,7 @@ h1 em, h2 em, h3 em {
 }
 
 .footer-brand p {
-  color: #c5dfe3;
+  color: var(--color-text-body);
   font-size: 0.95rem;
   line-height: 1.8;
   max-width: 320px;
@@ -2394,7 +2396,7 @@ h1 em, h2 em, h3 em {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.16em;
-  color: #14b8a6;
+  color: var(--color-secondary);
   text-transform: uppercase;
 }
 
@@ -2410,7 +2412,7 @@ h1 em, h2 em, h3 em {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-white);
+  color: var(--color-primary);
   margin-bottom: 22px;
   display: block;
 }
@@ -2425,33 +2427,34 @@ h1 em, h2 em, h3 em {
   font-family: var(--font-ui);
   font-size: 0.84rem;
   font-weight: 500;
-  color: #b2d4d9;
+  color: #1a4554;
   transition: all var(--transition-fast);
   display: inline-block;
 }
 
 .footer-links a:hover {
-  color: #14b8a6;
+  color: var(--color-secondary);
   transform: translateX(3px);
 }
 
 /* Concierge / Booking Prompt Column */
 .footer-cta-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--color-white);
+  border: 1px solid #d0ecf0;
   border-radius: var(--radius-md);
   padding: 26px 24px;
+  box-shadow: 0 10px 30px rgba(12, 62, 82, 0.05);
 }
 
 .footer-cta-card h4 {
   font-size: 1.15rem;
-  color: var(--color-white);
+  color: var(--color-primary);
   margin-bottom: 8px;
 }
 
 .footer-cta-card p {
   font-size: 0.85rem;
-  color: #c5dfe3;
+  color: var(--color-text-muted);
   margin-bottom: 18px;
   line-height: 1.6;
 }
@@ -2462,38 +2465,38 @@ h1 em, h2 em, h3 em {
   gap: 10px;
   font-family: var(--font-ui);
   font-size: 0.8rem;
-  color: #c5dfe3;
+  color: var(--color-text-body);
   margin-bottom: 8px;
 }
 
 .footer-contact-item svg {
   width: 14px;
   height: 14px;
-  color: #14b8a6;
+  color: var(--color-secondary);
 }
 
 .footer .btn-teal {
   background-color: var(--color-secondary);
   color: var(--color-white);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(13, 139, 153, 0.28);
 }
 
 .footer .btn-teal:hover {
   background-color: var(--color-secondary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 28px rgba(13, 139, 153, 0.38);
 }
 
 /* Footer Bottom Bar */
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid #d2ecf0;
   padding-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: var(--font-ui);
   font-size: 0.78rem;
-  color: #8dafb3;
+  color: var(--color-text-muted);
   letter-spacing: 0.03em;
 }
 
@@ -2503,7 +2506,7 @@ h1 em, h2 em, h3 em {
 }
 
 .footer-bottom-links a:hover {
-  color: var(--color-white);
+  color: var(--color-primary);
 }
 
 /* --------------------------------------------------------------------------
