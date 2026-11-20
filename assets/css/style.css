@@ -2328,11 +2328,11 @@ h1 em, h2 em, h3 em {
    16. REDESIGNED LUXURY FOOTER (NO BORING FLAT TWO-BLOCKS)
    -------------------------------------------------------------------------- */
 .footer {
-  background-color: #0d323f; /* Sophisticated deep midnight ocean */
-  color: #c9e0e3;
+  background-color: #0482e2; /* Mid-Sea Azure sampled from reference image */
+  color: #f0f8ff;
   padding: 85px 0 35px;
   position: relative;
-  border-top: 3px solid var(--color-secondary);
+  border-top: 3px solid rgba(255, 255, 255, 0.35);
 }
 
 .footer-grid {
@@ -2352,7 +2352,7 @@ h1 em, h2 em, h3 em {
 }
 
 .footer-brand p {
-  color: #a8cbcf;
+  color: #e1f3ff;
   font-size: 0.95rem;
   line-height: 1.8;
   max-width: 320px;
@@ -2367,7 +2367,7 @@ h1 em, h2 em, h3 em {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.16em;
-  color: var(--color-secondary);
+  color: #ffffff;
   text-transform: uppercase;
 }
 
@@ -2398,20 +2398,20 @@ h1 em, h2 em, h3 em {
   font-family: var(--font-ui);
   font-size: 0.84rem;
   font-weight: 500;
-  color: #b5d5d8;
+  color: #e1f3ff;
   transition: all var(--transition-fast);
   display: inline-block;
 }
 
 .footer-links a:hover {
-  color: var(--color-secondary);
+  color: var(--color-white);
   transform: translateX(3px);
 }
 
 /* Concierge / Booking Prompt Column */
 .footer-cta-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--radius-md);
   padding: 26px 24px;
 }
@@ -2424,7 +2424,7 @@ h1 em, h2 em, h3 em {
 
 .footer-cta-card p {
   font-size: 0.85rem;
-  color: #a4c9cc;
+  color: #e1f3ff;
   margin-bottom: 18px;
   line-height: 1.6;
 }
@@ -2435,26 +2435,39 @@ h1 em, h2 em, h3 em {
   gap: 10px;
   font-family: var(--font-ui);
   font-size: 0.8rem;
-  color: #c9e0e3;
+  color: #ffffff;
   margin-bottom: 8px;
 }
 
 .footer-contact-item svg {
   width: 14px;
   height: 14px;
-  color: var(--color-secondary);
+  color: #ffffff;
+}
+
+.footer .btn-teal {
+  background-color: #ffffff;
+  color: #0482e2;
+  box-shadow: 0 8px 24px rgba(0, 30, 60, 0.2);
+}
+
+.footer .btn-teal:hover {
+  background-color: #f0f8ff;
+  color: #0266b3;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 30, 60, 0.3);
 }
 
 /* Footer Bottom Bar */
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: var(--font-ui);
   font-size: 0.78rem;
-  color: #8dafb3;
+  color: #d2edff;
   letter-spacing: 0.03em;
 }
 
