@@ -4695,3 +4695,147 @@ html.intro-already-seen .intro-overlay {
     padding: 30px 22px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   SEA GLASS ISLAND SHOWCASE GALLERY
+   -------------------------------------------------------------------------- */
+.seaglass-section {
+  padding: 10px 0 70px;
+}
+
+.seaglass-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 36px;
+}
+
+.seaglass-header .eyebrow {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.seaglass-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.6vw, 2.9rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.15;
+  margin: 0 0 14px;
+}
+
+.seaglass-header p {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--color-text-body);
+  margin: 0 auto;
+}
+
+.seaglass-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.seaglass-grid .gallery-item {
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-aqua);
+  position: relative;
+  cursor: pointer;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.seaglass-grid .gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.seaglass-grid .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform var(--transition-smooth);
+}
+
+.seaglass-grid .gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.seaglass-grid .gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 62, 82, 0) 35%,
+    rgba(12, 62, 82, 0.88) 100%
+  );
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.seaglass-grid .gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.seaglass-grid .gallery-tag {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a7f3d0;
+  margin-bottom: 5px;
+}
+
+.seaglass-grid .gallery-caption {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 1.3;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .seaglass-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seaglass-section {
+    padding: 10px 0 45px;
+  }
+  .seaglass-header {
+    margin-bottom: 24px;
+    text-align: left;
+  }
+  .seaglass-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .seaglass-grid .gallery-item {
+    aspect-ratio: 4 / 3;
+  }
+  .seaglass-grid .gallery-overlay {
+    opacity: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(12, 62, 82, 0) 45%,
+      rgba(12, 62, 82, 0.88) 100%
+    );
+    padding: 16px;
+  }
+}
