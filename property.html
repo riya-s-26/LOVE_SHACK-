@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="assets/css/style.css?v=2.7">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.8">
 </head>
 <body>
 
@@ -556,36 +556,39 @@
         </p>
       </div>
 
-      <div class="seaglass-grid">
-        <div class="gallery-item" data-caption="Sea Glass Island Treasures · Vibrant ocean-tumbled green, amber, and cobalt sea glass pebbles discovered along the shore">
-          <img src="assets/images/seaglass-treasures.jpg" alt="Colorful ocean-tumbled Aruban sea glass pebbles on the beach" loading="lazy">
-          <div class="gallery-overlay">
-            <span class="gallery-tag">Island Beachcombing</span>
-            <p class="gallery-caption">Sea Glass Treasures</p>
-          </div>
+      <!-- Layered Editorial Photo Collage -->
+      <div class="seaglass-collage-canvas">
+        <div class="seaglass-bg-wrap">
+          <img src="assets/images/seaglass-bg.jpg" alt="Pristine white sand Caribbean beach and turquoise lagoon waters in Savaneta Aruba" class="seaglass-bg-img" loading="lazy">
+          <div class="seaglass-bg-overlay"></div>
         </div>
 
-        <div class="gallery-item" data-caption="Lagoon Reef Waters · Calm turquoise shallows and natural rock formations ideal for kayaking and snorkeling">
-          <img src="assets/images/seaglass-waters.jpg" alt="Natural rock formations and turquoise lagoon waters leading to Sea Glass Island" loading="lazy">
-          <div class="gallery-overlay">
-            <span class="gallery-tag">Lagoon Reef</span>
-            <p class="gallery-caption">Crystal Waters & Reef</p>
+        <div class="seaglass-floating-group">
+          <!-- Floating Card 1: Sea Glass Island Treasures -->
+          <div class="gallery-item seaglass-card seaglass-card-1" data-caption="Sea Glass Island Treasures · Vibrant ocean-tumbled green, amber, and cobalt sea glass pebbles discovered along the shore">
+            <img src="assets/images/seaglass-treasures.jpg" alt="Colorful ocean-tumbled Aruban sea glass pebbles on the beach" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Island Beachcombing</span>
+              <p class="gallery-caption">Sea Glass Treasures</p>
+            </div>
           </div>
-        </div>
 
-        <div class="gallery-item" data-caption="Pristine Caribbean Shores · Soft powder white sand and gentle turquoise surf in Savaneta">
-          <img src="assets/images/seaglass-beach.jpg" alt="Pristine white sand beach curving along turquoise Caribbean water" loading="lazy">
-          <div class="gallery-overlay">
-            <span class="gallery-tag">Untouched Coast</span>
-            <p class="gallery-caption">White Sand Shoreline</p>
+          <!-- Floating Card 2: Lagoon Reef Waters -->
+          <div class="gallery-item seaglass-card seaglass-card-2" data-caption="Lagoon Reef Waters · Calm turquoise shallows and natural rock formations ideal for kayaking and snorkeling">
+            <img src="assets/images/seaglass-waters.jpg" alt="Natural rock formations and turquoise lagoon waters leading to Sea Glass Island" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Lagoon Reef</span>
+              <p class="gallery-caption">Crystal Waters & Reef</p>
+            </div>
           </div>
-        </div>
 
-        <div class="gallery-item" data-caption="Seaside Villa Terrace · Lush tropical blooms, swaying palms, and beachfront loungers overlooking the sea">
-          <img src="assets/images/seaglass-terrace.jpg" alt="Tropical beachfront patio with coral hibiscus flowers and oceanfront loungers" loading="lazy">
-          <div class="gallery-overlay">
-            <span class="gallery-tag">Island Living</span>
-            <p class="gallery-caption">Beachfront Terrace</p>
+          <!-- Floating Card 3: Authentic Sea Glass Discoveries -->
+          <div class="gallery-item seaglass-card seaglass-card-3" data-caption="Authentic Sea Glass Discoveries · Colorful collection of ocean-tumbled sea glass pieces gathered on Sea Glass Island">
+            <img src="assets/images/seaglass-collection.jpg" alt="Colorful collection of authentic tumbled sea glass pieces displayed along an arm on an Aruban beach" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Island Treasures</span>
+              <p class="gallery-caption">Sea Glass Collection</p>
+            </div>
           </div>
         </div>
       </div>

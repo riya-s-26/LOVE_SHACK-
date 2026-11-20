@@ -4776,7 +4776,7 @@ html.intro-already-seen .intro-overlay {
 }
 
 /* --------------------------------------------------------------------------
-   SEA GLASS ISLAND SHOWCASE GALLERY
+   SEA GLASS ISLAND SHOWCASE — LAYERED PHOTO COLLAGE
    -------------------------------------------------------------------------- */
 .seaglass-section {
   padding: 10px 0 70px;
@@ -4810,84 +4810,227 @@ html.intro-already-seen .intro-overlay {
   margin: 0 auto;
 }
 
-.seaglass-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+/* Layered Collage Canvas Container */
+.seaglass-collage-canvas {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(12, 62, 82, 0.12);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
 }
 
-.seaglass-grid .gallery-item {
+/* Background Photograph Wrap */
+.seaglass-bg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.seaglass-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.seaglass-collage-canvas:hover .seaglass-bg-img {
+  transform: scale(1.04);
+}
+
+/* Subtle Coastal Vignette to make foreground pop */
+.seaglass-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 62, 82, 0.08) 0%,
+    rgba(12, 62, 82, 0.24) 100%
+  );
+  pointer-events: none;
+}
+
+/* Floating Foreground Cards Group */
+.seaglass-floating-group {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+}
+
+/* Base Floating Card */
+.seaglass-card {
+  position: relative;
+  flex: 0 0 310px;
+  width: 310px;
   aspect-ratio: 3 / 4;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-border);
-  background-color: var(--color-bg-aqua);
-  position: relative;
+  background: var(--color-white);
+  padding: 8px; /* Elegant white editorial polaroid border */
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 20px 45px rgba(12, 62, 82, 0.26);
   cursor: pointer;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s ease,
+              z-index 0.1s;
 }
 
-.seaglass-grid .gallery-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-}
-
-.seaglass-grid .gallery-item img {
+.seaglass-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  border-radius: calc(var(--radius-md) - 6px);
   display: block;
-  transition: transform var(--transition-smooth);
+  transition: transform 0.4s ease;
 }
 
-.seaglass-grid .gallery-item:hover img {
-  transform: scale(1.05);
+/* Card 1: Left Card - Tilted Slightly Left, Layered Under Center */
+.seaglass-card-1 {
+  z-index: 2;
+  transform: translateX(36px) translateY(12px) rotate(-3.5deg);
 }
 
-.seaglass-grid .gallery-overlay {
+/* Card 2: Center Hero Card - Raised Higher & Centered Front */
+.seaglass-card-2 {
+  z-index: 4;
+  transform: translateY(-16px) scale(1.06);
+  box-shadow: 0 26px 55px rgba(12, 62, 82, 0.32);
+}
+
+/* Card 3: Right Card - Tilted Slightly Right, Layered Under Center */
+.seaglass-card-3 {
+  z-index: 3;
+  transform: translateX(-36px) translateY(14px) rotate(3.5deg);
+}
+
+/* Interactive Floating Hover States */
+.seaglass-card:hover {
+  z-index: 10 !important;
+  box-shadow: 0 32px 65px rgba(12, 62, 82, 0.42);
+}
+
+.seaglass-card-1:hover {
+  transform: translateX(10px) translateY(-8px) rotate(-0.5deg) scale(1.08);
+}
+
+.seaglass-card-2:hover {
+  transform: translateY(-24px) scale(1.1);
+}
+
+.seaglass-card-3:hover {
+  transform: translateX(-10px) translateY(-8px) rotate(0.5deg) scale(1.08);
+}
+
+.seaglass-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Captions and overlays on floating cards */
+.seaglass-card .gallery-overlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg,
-      rgba(12, 62, 82, 0) 35%,
-      rgba(12, 62, 82, 0.88) 100%);
+  inset: 8px;
+  border-radius: calc(var(--radius-md) - 6px);
+  background: linear-gradient(
+    180deg,
+    rgba(12, 62, 82, 0) 45%,
+    rgba(12, 62, 82, 0.88) 100%
+  );
   opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 22px;
+  padding: 18px;
   transition: opacity var(--transition-base);
   pointer-events: none;
 }
 
-.seaglass-grid .gallery-item:hover .gallery-overlay {
+.seaglass-card:hover .gallery-overlay {
   opacity: 1;
 }
 
-.seaglass-grid .gallery-tag {
+.seaglass-card .gallery-tag {
   font-family: var(--font-ui);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #a7f3d0;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  display: block;
 }
 
-.seaglass-grid .gallery-caption {
+.seaglass-card .gallery-caption {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--color-white);
   line-height: 1.3;
   margin: 0;
 }
 
-@media (max-width: 900px) {
-  .seaglass-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .seaglass-collage-canvas {
+    min-height: 520px;
+    padding: 50px 24px;
+  }
+  .seaglass-card {
+    flex: 0 0 260px;
+    width: 260px;
+  }
+  .seaglass-card-1 {
+    transform: translateX(25px) translateY(8px) rotate(-2.5deg);
+  }
+  .seaglass-card-2 {
+    transform: translateY(-10px) scale(1.04);
+  }
+  .seaglass-card-3 {
+    transform: translateX(-25px) translateY(10px) rotate(2.5deg);
+  }
+}
+
+@media (max-width: 820px) {
+  .seaglass-collage-canvas {
+    min-height: auto;
+    padding: 36px 16px;
+    flex-direction: column;
+  }
+  .seaglass-floating-group {
+    flex-direction: column;
+    gap: 18px;
+    max-width: 420px;
+  }
+  .seaglass-card {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 4 / 3;
+    transform: none !important;
+    box-shadow: 0 12px 30px rgba(12, 62, 82, 0.22);
+  }
+  .seaglass-card:hover {
+    transform: translateY(-4px) !important;
+  }
+  .seaglass-card .gallery-overlay {
+    opacity: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(12, 62, 82, 0) 50%,
+      rgba(12, 62, 82, 0.85) 100%
+    );
   }
 }
 
@@ -4895,26 +5038,16 @@ html.intro-already-seen .intro-overlay {
   .seaglass-section {
     padding: 10px 0 45px;
   }
-
   .seaglass-header {
     margin-bottom: 24px;
     text-align: left;
   }
-
-  .seaglass-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+  .seaglass-collage-canvas {
+    padding: 24px 12px;
+    border-radius: var(--radius-md);
   }
-
-  .seaglass-grid .gallery-item {
-    aspect-ratio: 4 / 3;
-  }
-
-  .seaglass-grid .gallery-overlay {
-    opacity: 1;
-    background: linear-gradient(180deg,
-        rgba(12, 62, 82, 0) 45%,
-        rgba(12, 62, 82, 0.88) 100%);
-    padding: 16px;
+  .seaglass-card {
+    max-width: 100%;
+    padding: 6px;
   }
 }
