@@ -11,47 +11,78 @@
      CARIBBEAN BEACHFRONT COLOUR PALETTE (Aruba Shoreline Inspired)
      ========================================================================== */
   /* Ocean Blue Palette */
-  --color-primary: #0C3E52;          /* Deep Caribbean Ocean Blue: Major headings, anchors */
-  --color-primary-dark: #072735;     /* Midnight Ocean: Deep navy footers & high-contrast elements */
-  --color-primary-light: #165670;    /* Caribbean Horizon Blue */
-  
+  --color-primary: #0C3E52;
+  /* Deep Caribbean Ocean Blue: Major headings, anchors */
+  --color-primary-dark: #072735;
+  /* Midnight Ocean: Deep navy footers & high-contrast elements */
+  --color-primary-light: #165670;
+  /* Caribbean Horizon Blue */
+
   /* Turquoise & Interactive Accents */
-  --color-secondary: #0D8B99;        /* Vibrant Caribbean Turquoise: Primary interactive buttons, icons, highlights */
-  --color-secondary-hover: #086F7B;  /* Deep Turquoise on hover */
-  --color-secondary-soft: rgba(13, 139, 153, 0.12); /* Soft turquoise tint */
-  --color-turquoise-bright: #14B8A6; /* Bright Tropical Turquoise */
+  --color-secondary: #0D8B99;
+  /* Vibrant Caribbean Turquoise: Primary interactive buttons, icons, highlights */
+  --color-secondary-hover: #086F7B;
+  /* Deep Turquoise on hover */
+  --color-secondary-soft: rgba(13, 139, 153, 0.12);
+  /* Soft turquoise tint */
+  --color-turquoise-bright: #14B8A6;
+  /* Bright Tropical Turquoise */
 
   /* Aqua & Soft Sky Blue Accents */
-  --color-aqua: #E8F7F8;             /* Light Crystal Aqua for tags and alternating backgrounds */
-  --color-aqua-soft: #F2FBFC;        /* Gentle Aqua Tint */
-  --color-sky-blue: #BAE6FD;         /* Soft Sky Blue */
-  --color-sky-soft: #F0F9FF;         /* Whisper Sky Tint */
+  --color-aqua: #E8F7F8;
+  /* Light Crystal Aqua for tags and alternating backgrounds */
+  --color-aqua-soft: #F2FBFC;
+  /* Gentle Aqua Tint */
+  --color-sky-blue: #BAE6FD;
+  /* Soft Sky Blue */
+  --color-sky-soft: #F0F9FF;
+  /* Whisper Sky Tint */
 
   /* Subtle Sandy Beige (Aruban Shoreline) */
-  --color-sand: #EADBCE;             /* Natural Island Sand */
-  --color-sand-light: #F7F4EE;       /* Subtle Warm Sand Off-White */
-  --color-sand-border: #E5DACF;      /* Delicate Sand Border */
-  --color-sand-accent: #C7B299;      /* Refined Sand Accent */
+  --color-sand: #EADBCE;
+  /* Natural Island Sand */
+  --color-sand-light: #F7F4EE;
+  /* Subtle Warm Sand Off-White */
+  --color-sand-border: #E5DACF;
+  /* Delicate Sand Border */
+  --color-sand-accent: #C7B299;
+  /* Refined Sand Accent */
 
   /* Navigation & Header Colors */
-  --color-header-bg: rgba(255, 255, 255, 0.95); /* Crisp white floating panel */
-  --color-logo: #0C3E52;             /* Deep Ocean Blue logo text */
-  --color-logo-hover: #0D8B99;       /* Turquoise on logo hover */
-  --color-nav-link: #134B60;         /* Ocean blue navigation links */
-  --color-nav-link-hover: #0D8B99;   /* Turquoise navigation hover */
-  --color-nav-underline: #0D8B99;    /* Turquoise active indicator underline */
-  --color-nav-btn: #0D8B99;          /* Turquoise Check Availability button */
-  --color-nav-btn-hover: #09727D;    /* Deep turquoise hover */
-  --color-teal-cta: #0D8B99;         /* Backward-compatible alias for primary CTA */
-  --color-teal-cta-hover: #09727D;   /* Backward-compatible alias */
+  --color-header-bg: rgba(255, 255, 255, 0.95);
+  /* Crisp white floating panel */
+  --color-logo: #0C3E52;
+  /* Deep Ocean Blue logo text */
+  --color-logo-hover: #0D8B99;
+  /* Turquoise on logo hover */
+  --color-nav-link: #134B60;
+  /* Ocean blue navigation links */
+  --color-nav-link-hover: #0D8B99;
+  /* Turquoise navigation hover */
+  --color-nav-underline: #0D8B99;
+  /* Turquoise active indicator underline */
+  --color-nav-btn: #0D8B99;
+  /* Turquoise Check Availability button */
+  --color-nav-btn-hover: #09727D;
+  /* Deep turquoise hover */
+  --color-teal-cta: #0D8B99;
+  /* Backward-compatible alias for primary CTA */
+  --color-teal-cta-hover: #09727D;
+  /* Backward-compatible alias */
 
   /* Neutral Backgrounds & Crisp Readable Text */
-  --color-bg-aqua: #F4FAFB;          /* Soft Aqua White: Light alternating section backgrounds */
-  --color-white: #FFFFFF;            /* Pure Crisp White */
-  --color-offwhite: #F8FBFC;         /* Clean Coastal Off-White */
-  --color-text-body: #1E3844;        /* Deep Slate: Readable, comfortable paragraph body text */
-  --color-text-muted: #53707D;       /* Slate Ocean Gray: Secondary captions and subtitles */
-  --color-border: #D8EAEB;           /* Delicate ocean-sand border tone */
+  --color-bg-aqua: #F4FAFB;
+  /* Soft Aqua White: Light alternating section backgrounds */
+  --color-white: #FFFFFF;
+  /* Pure Crisp White */
+  --color-offwhite: #F8FBFC;
+  /* Clean Coastal Off-White */
+  --color-text-body: #1E3844;
+  /* Deep Slate: Readable, comfortable paragraph body text */
+  --color-text-muted: #53707D;
+  /* Slate Ocean Gray: Secondary captions and subtitles */
+  --color-border: #D8EAEB;
+  /* Delicate ocean-sand border tone */
   --color-border-light: rgba(216, 234, 235, 0.65);
 
   /* Typography System */
@@ -82,7 +113,9 @@
 /* --------------------------------------------------------------------------
    2. BASE RESET & ACCESSIBILITY
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -118,7 +151,10 @@ a {
   transition: color var(--transition-fast);
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: inherit;
 }
@@ -137,7 +173,10 @@ button, input, select, textarea {
 /* --------------------------------------------------------------------------
    3. TYPOGRAPHY HIERARCHY
    -------------------------------------------------------------------------- */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   color: var(--color-primary);
   font-weight: 600;
@@ -180,7 +219,9 @@ p:last-child {
 }
 
 /* Natural Editorial Serif Italics: Warm, human, and timeless (no forced artificial colors) */
-h1 em, h2 em, h3 em {
+h1 em,
+h2 em,
+h3 em {
   font-style: italic;
   font-weight: 400;
   color: inherit;
@@ -348,7 +389,8 @@ h1 em, h2 em, h3 em {
   right: 0;
   z-index: 1000;
   padding: 0 20px;
-  pointer-events: none; /* Allows clicks outside navbar to pass through */
+  pointer-events: none;
+  /* Allows clicks outside navbar to pass through */
   transition: all var(--transition-base);
 }
 
@@ -358,7 +400,8 @@ h1 em, h2 em, h3 em {
   margin: 0 auto;
   height: 74px;
   padding: 0 28px;
-  background: rgba(255, 255, 255, 0.95); /* Clean white / soft off-white panel */
+  background: rgba(255, 255, 255, 0.95);
+  /* Clean white / soft off-white panel */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(220, 235, 235, 0.85);
@@ -384,7 +427,8 @@ h1 em, h2 em, h3 em {
   font-size: 1.85rem;
   font-weight: 400;
   letter-spacing: 0;
-  color: var(--color-logo); /* Deep Ocean Blue logo text */
+  color: var(--color-logo);
+  /* Deep Ocean Blue logo text */
   text-decoration: none;
   line-height: 1.15;
   display: flex;
@@ -398,7 +442,8 @@ h1 em, h2 em, h3 em {
   font-size: clamp(1.25rem, 1.7vw, 1.7rem);
   font-weight: 400;
   letter-spacing: 0;
-  color: var(--color-logo); /* Deep Ocean Blue logo text */
+  color: var(--color-logo);
+  /* Deep Ocean Blue logo text */
   background: transparent;
   padding: 0;
   border-radius: 0;
@@ -434,7 +479,8 @@ h1 em, h2 em, h3 em {
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: var(--color-nav-link); /* Ocean blue navigation links */
+  color: var(--color-nav-link);
+  /* Ocean blue navigation links */
   padding: 8px 0;
   position: relative;
   transition: opacity var(--transition-fast), color var(--transition-fast);
@@ -449,7 +495,8 @@ h1 em, h2 em, h3 em {
 /* Active Page Indicator */
 .nav a.current,
 .nav a.current:not(.nav-cta) {
-  color: var(--color-primary); /* Deep ocean blue active text */
+  color: var(--color-primary);
+  /* Deep ocean blue active text */
   font-weight: 700;
 }
 
@@ -461,7 +508,8 @@ h1 em, h2 em, h3 em {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--color-nav-underline); /* Turquoise active underline */
+  background-color: var(--color-nav-underline);
+  /* Turquoise active underline */
   border-radius: 2px;
 }
 
@@ -473,7 +521,8 @@ h1 em, h2 em, h3 em {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background-color: var(--color-nav-btn); /* Vibrant Caribbean Turquoise */
+  background-color: var(--color-nav-btn);
+  /* Vibrant Caribbean Turquoise */
   color: var(--color-white) !important;
   padding: 12px 22px;
   border-radius: var(--radius-pill);
@@ -534,7 +583,8 @@ h1 em, h2 em, h3 em {
   stroke-width: 2;
   stroke: var(--color-primary);
   display: block;
-  pointer-events: none; /* Allows click to cleanly register on button */
+  pointer-events: none;
+  /* Allows click to cleanly register on button */
 }
 
 .menu-btn .icon-close {
@@ -583,21 +633,24 @@ h1 em, h2 em, h3 em {
 }
 
 @keyframes heroDrift {
-  0% { transform: scale(1.0); }
-  100% { transform: scale(1.04); }
+  0% {
+    transform: scale(1.0);
+  }
+
+  100% {
+    transform: scale(1.04);
+  }
 }
 
 /* Subtle Coastal Ocean Gradient Overlay (Allows Beach Photo to Shine Vibrantly) */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(7, 39, 53, 0.42) 0%,
-    rgba(12, 62, 82, 0.18) 35%,
-    rgba(7, 39, 53, 0.35) 70%,
-    rgba(7, 39, 53, 0.60) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(7, 39, 53, 0.42) 0%,
+      rgba(12, 62, 82, 0.18) 35%,
+      rgba(7, 39, 53, 0.35) 70%,
+      rgba(7, 39, 53, 0.60) 100%);
   z-index: 2;
 }
 
@@ -657,7 +710,8 @@ h1 em, h2 em, h3 em {
 .hero h1 em {
   font-style: italic;
   font-weight: 400;
-  color: #c8f5ff; /* Soft luminous tropical aqua-sky */
+  color: #c8f5ff;
+  /* Soft luminous tropical aqua-sky */
   text-shadow: 0 2px 20px rgba(7, 39, 53, 0.85);
 }
 
@@ -709,7 +763,8 @@ h1 em, h2 em, h3 em {
   transition: all var(--transition-base);
 }
 
-.hero-search-bar:hover, .hero-search-bar:focus-within {
+.hero-search-bar:hover,
+.hero-search-bar:focus-within {
   background: rgba(255, 255, 255, 1);
   box-shadow: 0 20px 50px rgba(7, 39, 53, 0.28);
 }
@@ -825,7 +880,8 @@ h1 em, h2 em, h3 em {
 .amenity-strip-section {
   position: relative;
   z-index: 10;
-  margin-top: -46px; /* Pulls up slightly over hero */
+  margin-top: -46px;
+  /* Pulls up slightly over hero */
   margin-bottom: 60px;
 }
 
@@ -1130,9 +1186,9 @@ h1 em, h2 em, h3 em {
   cursor: pointer;
   /* Smooth 280ms transition across background, border, transform, and shadow */
   transition: background-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1);
+    border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .experience-card-inner {
@@ -1193,7 +1249,8 @@ h1 em, h2 em, h3 em {
 /* Hover Interaction across ALL 3 cards: Smooth Teal Transition (280ms) */
 .experience-card:hover,
 .experience-card:focus-within {
-  background-color: #135461; /* Rich ocean teal */
+  background-color: #135461;
+  /* Rich ocean teal */
   border-color: #135461;
   transform: translateY(-6px);
   box-shadow: 0 18px 42px rgba(19, 84, 97, 0.3);
@@ -1280,11 +1337,9 @@ h1 em, h2 em, h3 em {
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(22, 78, 99, 0) 30%,
-    rgba(22, 78, 99, 0.88) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(22, 78, 99, 0) 30%,
+      rgba(22, 78, 99, 0.88) 100%);
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -1376,11 +1431,9 @@ h1 em, h2 em, h3 em {
 .mosaic-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(22, 78, 99, 0) 35%,
-    rgba(22, 78, 99, 0.85) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(22, 78, 99, 0) 35%,
+      rgba(22, 78, 99, 0.85) 100%);
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -1755,6 +1808,7 @@ h1 em, h2 em, h3 em {
     transform: translateY(24px) scale(0.98);
     opacity: 0;
   }
+
   to {
     transform: translateY(0) scale(1);
     opacity: 1;
@@ -2108,7 +2162,8 @@ h1 em, h2 em, h3 em {
 .review-stars {
   display: flex;
   gap: 4px;
-  color: #e09848; /* Warm gold star tone */
+  color: #e09848;
+  /* Warm gold star tone */
   margin-bottom: 14px;
 }
 
@@ -2201,8 +2256,15 @@ h1 em, h2 em, h3 em {
 }
 
 @keyframes reviewsFadeIn {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Reviews Action Center */
@@ -2238,7 +2300,7 @@ h1 em, h2 em, h3 em {
 .booking-cta-section {
   position: relative;
   padding: 110px 0;
-  background-color: #eaf6f7; /* Caribbean Seafoam & Crystal Aqua */
+  background-color: #FFFFFF;
   color: #1e3844;
   overflow: hidden;
 }
@@ -2254,15 +2316,13 @@ h1 em, h2 em, h3 em {
   filter: saturate(1.1);
 }
 
-/* Atmospheric Seafoam & Crystal Aqua Gradient Overlay */
+/* Atmospheric Pure White Overlay */
 .cta-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(234, 246, 247, 0.94) 0%,
-    rgba(216, 240, 243, 0.92) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.92) 100%);
 }
 
 /* Decorative Coastal Rings */
@@ -2307,7 +2367,8 @@ h1 em, h2 em, h3 em {
 .booking-cta-section h2 em,
 .booking-cta-content h2 em,
 .cta-content h2 em {
-  color: var(--color-secondary); /* Vibrant Caribbean Turquoise Accent */
+  color: var(--color-secondary);
+  /* Vibrant Caribbean Turquoise Accent */
   font-style: italic;
   font-weight: 400;
 }
@@ -2357,7 +2418,8 @@ h1 em, h2 em, h3 em {
    16. REDESIGNED LUXURY FOOTER (NO BORING FLAT TWO-BLOCKS)
    -------------------------------------------------------------------------- */
 .footer {
-  background-color: #eaf6f7; /* Caribbean Seafoam & Crystal Aqua Foundation */
+  background-color: #eaf6f7;
+  /* Caribbean Seafoam & Crystal Aqua Foundation */
   color: var(--color-text-body);
   padding: 85px 0 35px;
   position: relative;
@@ -2533,11 +2595,9 @@ h1 em, h2 em, h3 em {
 .page-banner-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 55, 71, 0.85) 0%,
-    rgba(22, 78, 99, 0.82) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(15, 55, 71, 0.85) 0%,
+      rgba(22, 78, 99, 0.82) 100%);
 }
 
 .page-banner-content {
@@ -2569,6 +2629,7 @@ div[id] {
 }
 
 @media (max-width: 991px) {
+
   #accommodations,
   #rooms,
   .rooms-section,
@@ -3271,7 +3332,7 @@ div[id] {
   margin-bottom: 8px;
 }
 
-.form-card > p {
+.form-card>p {
   color: var(--color-text-muted);
   margin-bottom: 32px;
   font-size: 0.98rem;
@@ -3601,8 +3662,15 @@ div[id] {
 }
 
 @keyframes stepFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Service Add-on Cards */
@@ -3763,7 +3831,9 @@ div[id] {
 }
 
 @keyframes spin {
-  100% { transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .booking-ref-pill {
@@ -3798,7 +3868,7 @@ div[id] {
   margin-bottom: 18px;
 }
 
-.contact-info-panel > p {
+.contact-info-panel>p {
   font-size: 1.05rem;
   margin-bottom: 34px;
 }
@@ -3954,11 +4024,11 @@ div[id] {
   .header {
     padding: 0 20px;
   }
-  
+
   .nav {
     gap: 22px;
   }
-  
+
   .hero-search-bar {
     grid-template-columns: 1fr 1fr;
     gap: 14px;
@@ -4413,7 +4483,10 @@ div[id] {
    23. ACCESSIBILITY: REDUCED MOTION SUPPORT
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -4502,6 +4575,7 @@ html.intro-already-seen .intro-overlay {
   0% {
     transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1);
   }
+
   100% {
     transform: translate3d(0, 0, 0) scale3d(1.01, 1.01, 1);
   }
@@ -4550,6 +4624,7 @@ html.intro-already-seen .intro-overlay {
     opacity: 0;
     transform: translate3d(0, 14px, 0) scale(0.97);
   }
+
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1.0);
@@ -4570,13 +4645,20 @@ html.intro-already-seen .intro-overlay {
     animation: none !important;
     transform: none !important;
   }
+
   .intro-brand-title {
     animation: introBrandSimpleFade 0.6s ease-out 0.2s forwards !important;
     transform: none !important;
   }
+
   @keyframes introBrandSimpleFade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
   }
 }
 
@@ -4770,11 +4852,9 @@ html.intro-already-seen .intro-overlay {
 .seaglass-grid .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(12, 62, 82, 0) 35%,
-    rgba(12, 62, 82, 0.88) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(12, 62, 82, 0) 35%,
+      rgba(12, 62, 82, 0.88) 100%);
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -4818,24 +4898,26 @@ html.intro-already-seen .intro-overlay {
   .seaglass-section {
     padding: 10px 0 45px;
   }
+
   .seaglass-header {
     margin-bottom: 24px;
     text-align: left;
   }
+
   .seaglass-grid {
     grid-template-columns: 1fr;
     gap: 14px;
   }
+
   .seaglass-grid .gallery-item {
     aspect-ratio: 4 / 3;
   }
+
   .seaglass-grid .gallery-overlay {
     opacity: 1;
-    background: linear-gradient(
-      180deg,
-      rgba(12, 62, 82, 0) 45%,
-      rgba(12, 62, 82, 0.88) 100%
-    );
+    background: linear-gradient(180deg,
+        rgba(12, 62, 82, 0) 45%,
+        rgba(12, 62, 82, 0.88) 100%);
     padding: 16px;
   }
 }
