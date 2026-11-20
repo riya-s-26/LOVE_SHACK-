@@ -2495,12 +2495,14 @@ section.booking-cta-section {
 }
 
 /* Concierge / Booking Prompt Column */
-.footer-cta-card {
-  background: transparent;
+.footer-cta-card,
+.footer .footer-cta-card {
+  background: #eaf6f7 !important;
+  background-color: #eaf6f7 !important;
   border: 1px solid #d0ecf0;
   border-radius: var(--radius-md);
   padding: 26px 24px;
-  box-shadow: 0 10px 30px rgba(12, 62, 82, 0.05);
+  box-shadow: none;
 }
 
 .footer-cta-card h4 {

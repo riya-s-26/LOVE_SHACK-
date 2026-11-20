@@ -55,7 +55,7 @@ $ext = '.php';
         </div>
 
         <!-- Direct Host Contact Card -->
-        <div class="footer-cta-card">
+        <div class="footer-cta-card" style="background-color: #eaf6f7; background: #eaf6f7; box-shadow: none;">
           <h4>Reserve Direct</h4>
           <p>Connect with our Aruba concierge for personalized requests, airport transfers, and private bookings.</p>
           
