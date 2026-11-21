@@ -339,17 +339,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // Step Transition Controller
     const goToStep = (stepNum) => {
       document.querySelectorAll(".booking-step-pane").forEach(pane => pane.classList.remove("active"));
-      const targetPane = document.getElementById(`paneStep${stepNum}`);
+      const targetPane = document.getElementById(typeof stepNum === 'string' && stepNum.startsWith('pane') ? stepNum : `paneStep${stepNum}`);
       if (targetPane) targetPane.classList.add("active");
+
+      // Determine numeric step for 1-5 progress bar indicators: Step 3b is part of Step 3
+      const numericStep = (stepNum === '3b' || stepNum === 3.5) ? 3 : (typeof stepNum === 'number' ? stepNum : parseInt(stepNum, 10) || 1);
 
       // Update Step Indicators
       for (let i = 1; i <= 5; i++) {
         const ind = document.getElementById(`stepIndicator${i}`);
         if (!ind) continue;
         ind.classList.remove("active", "completed");
-        if (i < stepNum) {
+        if (i < numericStep) {
           ind.classList.add("completed");
-        } else if (i === stepNum) {
+        } else if (i === numericStep) {
           ind.classList.add("active");
         }
       }
@@ -497,12 +500,26 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Step 2 buttons
+    // Step 2 buttons: BACK -> NEXT -> SKIP EXTRAS
     const btnBackToStep1 = document.getElementById("btnBackToStep1");
     if (btnBackToStep1) btnBackToStep1.addEventListener("click", () => goToStep(1));
 
     const btnGoToStep3 = document.getElementById("btnGoToStep3");
     if (btnGoToStep3) btnGoToStep3.addEventListener("click", () => goToStep(3));
+
+    const btnSkipExtrasFromStep2 = document.getElementById("btnSkipExtrasFromStep2");
+    if (btnSkipExtrasFromStep2) {
+      btnSkipExtrasFromStep2.addEventListener("click", () => {
+        // Skip all optional extras directly from Step 2 to Step 4
+        const allCards = document.querySelectorAll(".service-addon-card");
+        allCards.forEach(card => {
+          const cb = card.querySelector(".service-checkbox");
+          if (cb) cb.checked = false;
+        });
+        recalculateExtras();
+        goToStep(4);
+      });
+    }
 
     // ------------------------------------------------------------------------
     // STEP 3: Customise Your Stay (Extras Selection)
@@ -512,15 +529,17 @@ document.addEventListener("DOMContentLoaded", () => {
       state.services = [];
       let totalExtras = 0;
 
-      serviceCards.forEach(card => {
+      const currentServiceCards = document.querySelectorAll(".service-addon-card");
+      currentServiceCards.forEach(card => {
         const checkbox = card.querySelector(".service-checkbox");
         if (checkbox && checkbox.checked) {
           card.classList.add("selected");
-          const sId = parseInt(card.getAttribute("data-service-id"), 10) || 0;
+          const sId = card.getAttribute("data-service-id") || "";
           const sName = card.getAttribute("data-service-name") || "Custom Service";
           const sPrice = parseFloat(card.getAttribute("data-service-price")) || 0;
+          const sDisplay = card.getAttribute("data-service-display") || (sPrice > 0 ? `+$${sPrice.toFixed(2)}` : "Price on request");
           totalExtras += sPrice;
-          state.services.push({ id: sId, name: sName, price: sPrice, qty: 1 });
+          state.services.push({ id: sId, name: sName, price: sPrice, display: sDisplay });
         } else {
           card.classList.remove("selected");
         }
@@ -542,30 +561,45 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
+    // Helper to uncheck all optional extras and skip directly to Step 4
+    const skipAllExtrasToStep4 = () => {
+      const allCards = document.querySelectorAll(".service-addon-card");
+      allCards.forEach(card => {
+        const cb = card.querySelector(".service-checkbox");
+        if (cb) cb.checked = false;
+      });
+      recalculateExtras();
+      goToStep(4);
+    };
+
+    // Step 3 Navigation (Original Add-ons Screen): BACK -> NEXT -> SKIP EXTRAS
     const btnBackToStep2 = document.getElementById("btnBackToStep2");
     if (btnBackToStep2) btnBackToStep2.addEventListener("click", () => goToStep(2));
 
+    const btnGoToStep3b = document.getElementById("btnGoToStep3b");
+    if (btnGoToStep3b) btnGoToStep3b.addEventListener("click", () => goToStep("3b"));
+
+    const btnSkipExtrasFromStep3 = document.getElementById("btnSkipExtrasFromStep3");
+    if (btnSkipExtrasFromStep3) btnSkipExtrasFromStep3.addEventListener("click", skipAllExtrasToStep4);
+
     const btnSkipExtras = document.getElementById("btnSkipExtras");
-    if (btnSkipExtras) {
-      btnSkipExtras.addEventListener("click", () => {
-        // Uncheck all extras when skipping
-        serviceCards.forEach(card => {
-          const cb = card.querySelector(".service-checkbox");
-          if (cb) cb.checked = false;
-        });
-        recalculateExtras();
-        goToStep(4);
-      });
-    }
+    if (btnSkipExtras) btnSkipExtras.addEventListener("click", skipAllExtrasToStep4);
+
+    // Step 3B Navigation (Additional Services & Island Experiences Screen): BACK -> NEXT -> SKIP EXTRAS
+    const btnBackToStep3 = document.getElementById("btnBackToStep3");
+    if (btnBackToStep3) btnBackToStep3.addEventListener("click", () => goToStep(3));
 
     const btnGoToStep4 = document.getElementById("btnGoToStep4");
     if (btnGoToStep4) btnGoToStep4.addEventListener("click", () => goToStep(4));
 
+    const btnSkipExtrasFromStep3b = document.getElementById("btnSkipExtrasFromStep3b");
+    if (btnSkipExtrasFromStep3b) btnSkipExtrasFromStep3b.addEventListener("click", skipAllExtrasToStep4);
+
     // ------------------------------------------------------------------------
     // STEP 4: Guest Details Validation
     // ------------------------------------------------------------------------
-    const btnBackToStep3 = document.getElementById("btnBackToStep3");
-    if (btnBackToStep3) btnBackToStep3.addEventListener("click", () => goToStep(3));
+    const btnBackFromStep4 = document.getElementById("btnBackFromStep4");
+    if (btnBackFromStep4) btnBackFromStep4.addEventListener("click", () => goToStep("3b"));
 
     const btnGoToStep5 = document.getElementById("btnGoToStep5");
     if (btnGoToStep5) {
@@ -648,7 +682,7 @@ document.addEventListener("DOMContentLoaded", () => {
           revSvcList.innerHTML = state.services.map(s => `
             <div class="review-row">
               <span>${s.name}</span>
-              <strong>+$${s.price.toFixed(2)}</strong>
+              <strong>${s.display ? s.display : (s.price > 0 ? `+$${s.price.toFixed(2)}` : 'Price on request')}</strong>
             </div>
           `).join("");
         } else if (revSvcBox) {
