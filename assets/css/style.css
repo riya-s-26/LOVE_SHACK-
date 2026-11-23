@@ -5167,6 +5167,26 @@ div[id] {
   overflow-wrap: break-word;
 }
 
+.explore-dist-pill {
+  align-self: flex-start;
+  background: var(--color-aqua);
+  border: 1px solid #bfe3e7;
+  color: var(--color-primary);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.70rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.explore-dist-pill svg {
+  color: var(--color-secondary);
+  flex-shrink: 0;
+}
+
 .explore-card-desc {
   font-size: 0.85rem;
   line-height: 1.6;
