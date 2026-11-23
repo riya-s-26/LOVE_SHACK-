@@ -693,6 +693,25 @@ function create_booking_request(array $data): array {
     $notes = sanitize_input($data['notes'] ?? '');
     $selectedServices = $data['services'] ?? [];
 
+    // Support nested JSON payload from interactive booking engine
+    if (isset($data['guest']) && is_array($data['guest'])) {
+        $firstName = sanitize_input($data['guest']['firstName'] ?? $data['guest']['first_name'] ?? $firstName);
+        $lastName = sanitize_input($data['guest']['lastName'] ?? $data['guest']['last_name'] ?? $lastName);
+        $email = filter_var($data['guest']['email'] ?? $email, FILTER_VALIDATE_EMAIL);
+        $phone = sanitize_input($data['guest']['phone'] ?? $phone);
+        $country = sanitize_input($data['guest']['country'] ?? $country);
+        $notes = sanitize_input($data['guest']['specialRequests'] ?? $data['guest']['special_requests'] ?? $data['guest']['notes'] ?? $notes);
+    }
+    if (isset($data['accommodation']) && is_array($data['accommodation'])) {
+        $checkin = $data['accommodation']['checkin'] ?? $checkin;
+        $checkout = $data['accommodation']['checkout'] ?? $checkout;
+        $adults = (int)($data['accommodation']['adults'] ?? $adults);
+        $children = (int)($data['accommodation']['children'] ?? $children);
+    }
+    if (isset($data['conciergeServices']) && is_array($data['conciergeServices'])) {
+        $selectedServices = $data['conciergeServices'];
+    }
+
     if (empty($firstName) || empty($lastName)) {
         return ['success' => false, 'error' => 'Please provide both first and last name.'];
     }
