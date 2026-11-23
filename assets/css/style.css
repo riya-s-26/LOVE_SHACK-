@@ -5175,7 +5175,7 @@ div[id] {
   gap: 6px;
 }
 
-/* Beyond the Shoreline Featured 2-Image Showcase */
+/* Beyond the Shoreline Featured 4-Image Showcase (2x2 Grid) */
 .beyond-shoreline-showcase {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -5191,7 +5191,7 @@ div[id] {
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
   cursor: pointer;
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
 }
@@ -5213,6 +5213,13 @@ div[id] {
 
 .beyond-shoreline-card:hover img {
   transform: scale(1.03);
+}
+
+@media (max-width: 992px) {
+  .beyond-shoreline-showcase {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }
 
 @media (max-width: 768px) {
