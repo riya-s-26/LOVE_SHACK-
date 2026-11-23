@@ -5175,6 +5175,54 @@ div[id] {
   gap: 6px;
 }
 
+/* Beyond the Shoreline Featured 2-Image Showcase */
+.beyond-shoreline-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 12px;
+  margin-bottom: 40px;
+}
+
+.beyond-shoreline-card {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.beyond-shoreline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-secondary);
+}
+
+.beyond-shoreline-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.beyond-shoreline-card:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .beyond-shoreline-showcase {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+}
+
 /* Island Experience Cards */
 .explore-exp-grid {
   display: grid;
