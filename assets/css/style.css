@@ -5068,9 +5068,10 @@ div[id] {
   align-items: stretch;
 }
 
-/* Reduced gap when Property Showcase directly follows Beaches */
-.beach-cards-section + .gallery-section {
-  padding-top: 45px;
+/* Balanced transition when Property Showcase follows preceding sections */
+.beach-cards-section + .gallery-section,
+.amenity-strip-section + .gallery-section {
+  padding-top: 50px;
 }
 
 .explore-beach-card,
@@ -5293,7 +5294,8 @@ div[id] {
     margin-bottom: 20px;
   }
 
-  .beach-cards-section + .gallery-section {
+  .beach-cards-section + .gallery-section,
+  .amenity-strip-section + .gallery-section {
     padding-top: 36px;
   }
 
@@ -5309,7 +5311,8 @@ div[id] {
     margin-bottom: 16px;
   }
 
-  .beach-cards-section + .gallery-section {
+  .beach-cards-section + .gallery-section,
+  .amenity-strip-section + .gallery-section {
     padding-top: 28px;
   }
 
