@@ -5068,9 +5068,7 @@ div[id] {
 }
 
 .explore-beach-card,
-.explore-beach-card.gallery-item,
-.explore-beach-card:first-child,
-.explore-beach-card.gallery-item:first-child {
+.explore-beach-card:first-child {
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -5099,6 +5097,7 @@ div[id] {
   overflow: hidden;
   display: block;
   flex-shrink: 0;
+  cursor: default;
 }
 
 .explore-card-img-wrap img {
@@ -5108,6 +5107,7 @@ div[id] {
   object-position: center;
   display: block;
   transition: transform 0.4s ease;
+  cursor: default;
 }
 
 .explore-beach-card:hover .explore-card-img-wrap img {
