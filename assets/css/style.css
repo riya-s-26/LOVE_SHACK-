@@ -5135,9 +5135,41 @@ div[id] {
 .explore-card-title {
   font-family: var(--font-heading);
   font-size: 1.65rem;
-  color: var(--color-primary);
-  margin: 0 0 10px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 10px 0 16px;
   line-height: 1.25;
+  padding: 22px 20px;
+  border-radius: var(--radius-sm);
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  text-shadow: 0 2px 10px rgba(7, 39, 53, 0.85);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(12, 62, 82, 0.12);
+  display: flex;
+  align-items: center;
+}
+
+.explore-card-title-arashi {
+  background: linear-gradient(rgba(12, 62, 82, 0.45), rgba(7, 39, 53, 0.65)), url('../images/explore/beach-title-arashi.jpg') center/cover no-repeat;
+}
+
+.explore-card-title-baby {
+  background: linear-gradient(rgba(12, 62, 82, 0.45), rgba(7, 39, 53, 0.65)), url('../images/explore/beach-title-baby.jpg') center/cover no-repeat;
+}
+
+.explore-card-title-eagle {
+  background: linear-gradient(rgba(12, 62, 82, 0.45), rgba(7, 39, 53, 0.65)), url('../images/explore/beach-title-eagle.jpg') center/cover no-repeat;
+}
+
+.explore-card-title-palm {
+  background: linear-gradient(rgba(12, 62, 82, 0.45), rgba(7, 39, 53, 0.65)), url('../images/explore/beach-title-palm.jpg') center/cover no-repeat;
+}
+
+.explore-card-title-mangel-halto {
+  background: linear-gradient(rgba(12, 62, 82, 0.45), rgba(7, 39, 53, 0.65)), url('../images/explore/beach-title-mangel-halto.jpg') center/cover no-repeat;
 }
 
 .explore-card-desc {
