@@ -1479,8 +1479,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".gallery-item, .mosaic-primary, .mosaic-card, [data-lightbox]").forEach(item => {
 
-      // Exclude massage section items - image click / lightbox disabled strictly for massage section
-      if (item.closest(".massage-section") || item.classList.contains("massage-item")) {
+      // Exclude massage section and island experiences items - lightbox disabled strictly for these sections
+      if (
+        item.closest(".massage-section") || item.classList.contains("massage-item") ||
+        item.closest("#island-experiences") || item.closest('[aria-label="Aruba Island Experiences"]') ||
+        item.closest(".beyond-shoreline-showcase") || item.classList.contains("beyond-shoreline-card") ||
+        item.closest(".explore-exp-grid") || item.classList.contains("explore-exp-card")
+      ) {
         return;
       }
 
@@ -1508,6 +1513,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const massageSection = document.getElementById("massage") || document.querySelector(".massage-section");
     if (massageSection) {
       massageSection.querySelectorAll(".massage-item, .massage-item img, .massage-item .gallery-overlay").forEach(el => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      });
+    }
+
+    // Explicitly prevent click events on Island Experiences section images or cards
+    const islandExpSection = document.getElementById("island-experiences") || document.querySelector('[aria-label="Aruba Island Experiences"]');
+    if (islandExpSection) {
+      islandExpSection.querySelectorAll(".beyond-shoreline-card, .beyond-shoreline-card img, .explore-exp-card, .explore-exp-img, .explore-exp-img img").forEach(el => {
         el.addEventListener("click", (e) => {
           e.preventDefault();
           e.stopPropagation();

@@ -5368,7 +5368,8 @@ div[id] {
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   aspect-ratio: 16 / 10;
-  cursor: pointer;
+  cursor: default !important;
+  user-select: none;
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
 }
 
@@ -5385,6 +5386,8 @@ div[id] {
   object-position: center;
   display: block;
   transition: transform 0.4s ease;
+  cursor: default !important;
+  pointer-events: none;
 }
 
 .beyond-shoreline-card:hover img {
@@ -5462,6 +5465,8 @@ div[id] {
   transition: transform 0.28s ease, box-shadow 0.28s ease;
   display: flex;
   flex-direction: column;
+  cursor: default !important;
+  user-select: none;
 }
 
 .explore-exp-card:hover {
@@ -5474,6 +5479,13 @@ div[id] {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   transition: transform 0.35s ease;
+  cursor: default !important;
+  pointer-events: none;
+}
+
+.explore-exp-img img {
+  cursor: default !important;
+  pointer-events: none;
 }
 
 .explore-exp-card:hover .explore-exp-img {
