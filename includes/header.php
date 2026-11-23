@@ -37,34 +37,6 @@ $locationLink = ($activePage === 'home') ? '#location' : 'property.php#location'
 </head>
 <body>
 
-<?php if ($activePage === 'home'): ?>
-  <!-- Full-Screen Luxury Brand Intro Screen (Session First-Visit) -->
-  <div id="siteIntroOverlay" class="intro-overlay" aria-hidden="true">
-    <div class="intro-bg" role="img" aria-label="Caribbean ocean and beach in Aruba"></div>
-    <div class="intro-overlay-backdrop"></div>
-    <div class="intro-content">
-      <h1 class="intro-brand-title">The Love Shack Aruba</h1>
-    </div>
-  </div>
-  <script>
-    // Immediate pre-render check: dismiss intro only if not a page reload and already seen in this session
-    try {
-      var isReload = false;
-      var navEntries = window.performance && performance.getEntriesByType ? performance.getEntriesByType('navigation') : null;
-      if (navEntries && navEntries.length > 0) {
-        isReload = (navEntries[0].type === 'reload');
-      } else if (window.performance && performance.navigation) {
-        isReload = (performance.navigation.type === 1);
-      }
-      var hasSeenIntro = sessionStorage.getItem('love_shack_intro_viewed') === 'true';
-      if (!isReload && hasSeenIntro) {
-        var ov = document.getElementById('siteIntroOverlay');
-        if (ov) { ov.style.display = 'none'; ov.classList.add('dismissed'); }
-      }
-    } catch (e) {}
-  </script>
-<?php endif; ?>
-
   <!-- Floating Luxury Navigation Bar -->
   <div class="header-wrapper">
     <header class="header">

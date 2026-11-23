@@ -5,108 +5,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // ------------------------------------------------------------------------
-  // 0. Full-Screen Luxury Brand Intro Animation
-  //    - Plays on initial session open
-  //    - Replays on homepage refresh (F5 / browser reload)
-  //    - Suppressed on internal page navigation & returning to Home via links
-  // ------------------------------------------------------------------------
-  const initSiteIntro = () => {
-    const introOverlay = document.getElementById("siteIntroOverlay");
-    if (!introOverlay) return;
-
-    // Detect if current page load is a user refresh/reload
-    const isReload = (() => {
-      try {
-        const navEntries = window.performance && performance.getEntriesByType ? performance.getEntriesByType("navigation") : null;
-        if (navEntries && navEntries.length > 0) {
-          return navEntries[0].type === "reload";
-        }
-        if (window.performance && performance.navigation) {
-          return performance.navigation.type === 1; // TYPE_RELOAD
-        }
-      } catch (e) {}
-      return false;
-    })();
-
-    // Check if user has already seen intro in this session
-    const hasSeenIntro = (() => {
-      try {
-        return sessionStorage.getItem("love_shack_intro_viewed") === "true";
-      } catch (e) {
-        return false;
-      }
-    })();
-
-    // Skip intro when navigating internally within an active session
-    if (!isReload && hasSeenIntro) {
-      introOverlay.classList.add("dismissed");
-      introOverlay.style.display = "none";
-      return;
-    }
-
-    // Play intro (first session visit OR homepage reload)
-    introOverlay.classList.remove("dismissed", "fade-out");
-    introOverlay.style.display = "";
-    document.body.style.overflow = "hidden";
-
-    let dismissed = false;
-    let autoDismissTimer = null;
-
-    const dismissIntro = () => {
-      if (dismissed) return;
-      dismissed = true;
-      if (autoDismissTimer) {
-        clearTimeout(autoDismissTimer);
-        autoDismissTimer = null;
-      }
-
-      introOverlay.classList.add("fade-out");
-
-      try {
-        sessionStorage.setItem("love_shack_intro_viewed", "true");
-      } catch (e) {}
-
-      setTimeout(() => {
-        introOverlay.classList.add("dismissed");
-        introOverlay.style.display = "none";
-        document.body.style.overflow = "";
-      }, 900);
-    };
-
-    // User can click or press key to smoothly enter early
-    introOverlay.addEventListener("click", dismissIntro);
-    document.addEventListener("keydown", (e) => {
-      if (!dismissed && (e.key === "Escape" || e.key === "Enter" || e.key === " ")) {
-        dismissIntro();
-      }
-    }, { once: true });
-
-    // Transition automatically after brand reveal completes
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const autoDismissDelay = prefersReducedMotion ? 1200 : 2500;
-
-    autoDismissTimer = setTimeout(dismissIntro, autoDismissDelay);
-  };
-
-  initSiteIntro();
-
-  // Handle browser Back/Forward (bfcache) navigation
-  window.addEventListener("pageshow", (event) => {
-    if (event.persisted) {
-      const introOverlay = document.getElementById("siteIntroOverlay");
-      if (introOverlay) {
-        try {
-          if (sessionStorage.getItem("love_shack_intro_viewed") === "true") {
-            introOverlay.classList.add("dismissed");
-            introOverlay.style.display = "none";
-            document.body.style.overflow = "";
-          }
-        } catch (e) {}
-      }
-    }
-  });
-
-  // ------------------------------------------------------------------------
   // 1. Dynamic Copyright Year
   // ------------------------------------------------------------------------
   const yearEl = document.getElementById("year");
@@ -209,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ------------------------------------------------------------------------
   const revealElements = Array.from(document.querySelectorAll(
     ".reveal, .intro-section .intro-visual, .intro-section .intro-content, .experience-card, .gallery-item, .amenity-category-card, .review-card, .location-info, .map-visual-card, .room-card, .rule-box"
-  )).filter(el => !el.closest("#siteIntroOverlay"));
+  ));
 
   revealElements.forEach(el => el.classList.add("reveal"));
 
