@@ -5648,3 +5648,134 @@ div[id] {
     gap: 4px;
   }
 }
+
+
+/* ==========================================================================
+   25. OVERWATER MASSAGE & WELLNESS SECTION
+   ========================================================================== */
+.massage-section {
+  padding: 100px 0 110px;
+  background-color: var(--color-bg-aqua);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+
+.massage-mosaic-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.massage-grid-row {
+  display: grid;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.massage-row-2col {
+  grid-template-columns: 1.55fr 1fr;
+}
+
+.massage-row-2col-reverse {
+  grid-template-columns: 1fr 1.55fr;
+}
+
+.massage-row-3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.massage-row-2col .massage-item,
+.massage-row-2col-reverse .massage-item {
+  height: 410px;
+}
+
+.massage-row-3col .massage-item {
+  height: 275px;
+}
+
+.massage-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  aspect-ratio: auto !important;
+}
+
+.massage-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-secondary);
+}
+
+.massage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.massage-item:hover img {
+  transform: scale(1.035);
+}
+
+/* Tablet Responsive */
+@media (max-width: 991px) {
+  .massage-section {
+    padding: 75px 0 85px;
+  }
+  .massage-mosaic-grid {
+    gap: 18px;
+  }
+  .massage-grid-row {
+    gap: 18px;
+  }
+  .massage-row-2col,
+  .massage-row-2col-reverse {
+    grid-template-columns: 1fr 1fr;
+  }
+  .massage-row-2col .massage-item,
+  .massage-row-2col-reverse .massage-item {
+    height: 310px;
+  }
+  .massage-row-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .massage-row-3col .massage-item:last-child {
+    grid-column: span 2;
+  }
+  .massage-row-3col .massage-item {
+    height: 250px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .massage-section {
+    padding: 60px 0 65px;
+  }
+  .massage-mosaic-grid {
+    gap: 16px;
+  }
+  .massage-grid-row {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+  .massage-row-2col .massage-item,
+  .massage-row-2col-reverse .massage-item,
+  .massage-row-3col .massage-item {
+    height: 230px;
+  }
+  .massage-row-3col .massage-item:last-child {
+    grid-column: auto;
+  }
+  .massage-item-tall {
+    height: 300px !important;
+  }
+}
