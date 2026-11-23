@@ -5050,120 +5050,106 @@ div[id] {
   font-weight: 600;
 }
 
-/* Explore Aruba Beach Grid */
+/* Explore Aruba Beach Grid — Unified Equal-Height Card System */
 .explore-beach-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   margin-top: 36px;
   margin-bottom: 60px;
+  align-items: stretch;
 }
 
 .explore-beach-card {
-  position: relative;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 14px 36px rgba(7, 39, 53, 0.22);
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  min-height: 540px;
+  height: 100%;
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
-  isolation: isolate;
 }
 
 .explore-beach-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 22px 48px rgba(7, 39, 53, 0.36);
-  border-color: var(--color-teal-cta);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-secondary);
 }
 
-/* Subtle dark transparent overlay/gradient across the entire card background */
-.explore-beach-card::before {
-  content: '';
+.explore-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: #092c3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.explore-card-img-blur {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(6, 30, 42, 0.64) 0%,
-    rgba(6, 30, 42, 0.52) 35%,
-    rgba(5, 25, 36, 0.88) 100%
-  );
-  z-index: 1;
+  inset: -15px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(24px) brightness(0.65);
+  transform: scale(1.15);
+  opacity: 0.85;
   pointer-events: none;
-  transition: background 0.3s ease;
+  z-index: 1;
 }
 
-.explore-beach-card:hover::before {
-  background: linear-gradient(
-    180deg,
-    rgba(6, 30, 42, 0.56) 0%,
-    rgba(6, 30, 42, 0.44) 35%,
-    rgba(5, 25, 36, 0.84) 100%
-  );
+.explore-card-img-wrap img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.explore-card-arashi {
-  background-image: url('../images/explore/arashi-beach.jpg');
-}
-
-.explore-card-baby {
-  background-image: url('../images/explore/baby-beach.jpg');
-}
-
-.explore-card-eagle {
-  background-image: url('../images/explore/eagle-beach.jpg');
-}
-
-.explore-card-palm {
-  background-image: url('../images/explore/palm-beach.jpg');
-}
-
-.explore-card-mangel-halto {
-  background-image: url('../images/explore/mangel-halto-pilings.jpg');
+.explore-beach-card:hover .explore-card-img-wrap img {
+  transform: scale(1.02);
 }
 
 .explore-beach-body {
-  position: relative;
-  z-index: 2;
-  padding: 32px 28px 28px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   flex: 1;
+  background: var(--color-white);
 }
 
 .explore-card-tag {
-  font-size: 0.74rem;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #7ee0eb;
+  letter-spacing: 0.08em;
+  color: var(--color-secondary);
   margin-bottom: 6px;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
   display: block;
 }
 
 .explore-card-title {
   font-family: var(--font-heading);
-  font-size: 1.85rem;
+  font-size: 1.55rem;
   font-weight: 600;
-  color: #ffffff;
-  margin: 4px 0 12px;
+  color: var(--color-primary);
+  margin: 0 0 10px;
   line-height: 1.25;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .explore-dist-pill {
-  position: static;
   align-self: flex-start;
-  background: rgba(12, 62, 82, 0.82);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
+  background: var(--color-bg-aqua);
+  border: 1px solid #c2e7eb;
+  color: var(--color-primary);
   padding: 5px 12px;
   border-radius: 999px;
   font-size: 0.76rem;
@@ -5171,43 +5157,34 @@ div[id] {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 14px;
 }
 
 .explore-dist-pill svg {
-  color: #7ee0eb;
+  color: var(--color-secondary);
 }
 
 .explore-card-desc {
-  font-size: 0.94rem;
-  line-height: 1.65;
-  color: #f1f7f9;
-  margin-bottom: 20px;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85);
-  flex: 1;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text-body);
+  margin-bottom: 18px;
 }
 
 .explore-highlight-pills {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: auto;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  margin-bottom: 20px;
 }
 
 .explore-pill {
   font-size: 0.74rem;
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: var(--color-aqua);
+  color: var(--color-primary);
   padding: 4px 10px;
   border-radius: 999px;
   font-weight: 600;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .explore-dist-footer {
@@ -5219,7 +5196,7 @@ div[id] {
   gap: 6px;
 }
 
-/* Beach Card Action Buttons */
+/* Beach Card Action Buttons — Unified Baseline */
 .btn-sm {
   padding: 10px 18px;
   font-size: 0.75rem;
@@ -5233,9 +5210,9 @@ div[id] {
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: auto;
   padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid var(--color-border);
 }
 
 .explore-card-actions .btn {
@@ -5243,77 +5220,86 @@ div[id] {
   min-width: 120px;
   text-align: center;
   justify-content: center;
+  height: 42px;
+  box-sizing: border-box;
 }
 
-.explore-beach-card .btn-teal {
+.explore-card-actions .btn-teal {
   background-color: var(--color-secondary);
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(49, 157, 160, 0.28);
 }
 
-.explore-beach-card .btn-teal:hover {
+.explore-card-actions .btn-teal:hover {
   background-color: var(--color-secondary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(13, 139, 153, 0.45);
+  box-shadow: 0 8px 20px rgba(49, 157, 160, 0.38);
 }
 
-.explore-beach-card .btn-outline {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.explore-beach-card .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.95);
+.explore-card-actions .btn-outline {
+  background-color: var(--color-white);
   color: var(--color-primary);
-  border-color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
 }
 
-.explore-beach-card .btn-beach-loc {
+.explore-card-actions .btn-outline:hover {
+  background-color: var(--color-bg-aqua);
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.explore-card-actions .btn-beach-loc {
   flex: 1 1 100%;
+  width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(13, 139, 153, 0.88);
-  color: #ffffff;
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-secondary);
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
 }
 
-.explore-beach-card .btn-beach-loc svg {
+.explore-card-actions .btn-beach-loc svg {
   width: 15px;
   height: 15px;
-  color: #a5f3fc;
+  color: var(--color-secondary);
   flex-shrink: 0;
   transition: transform var(--transition-fast), color var(--transition-fast);
 }
 
-.explore-beach-card .btn-beach-loc:hover {
-  background-color: #0ea5e9;
-  color: #ffffff;
-  border-color: #ffffff;
+.explore-card-actions .btn-beach-loc:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border-color: var(--color-secondary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.5);
+  box-shadow: 0 8px 20px rgba(13, 139, 153, 0.32);
 }
 
-.explore-beach-card .btn-beach-loc:hover svg {
-  color: #ffffff;
+.explore-card-actions .btn-beach-loc:hover svg {
+  color: var(--color-white);
   transform: scale(1.15);
 }
 
-@media (max-width: 480px) {
-  .explore-beach-card .explore-card-actions .btn {
+@media (max-width: 1100px) {
+  .explore-beach-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .explore-beach-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .explore-card-actions .btn {
     flex: 1 1 100%;
     width: 100%;
   }
