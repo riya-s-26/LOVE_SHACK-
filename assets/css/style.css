@@ -5190,24 +5190,22 @@ div[id] {
   gap: 6px;
 }
 
-/* Beach Card Action Buttons — Website Brand Colors & Zero Overflow */
+/* Beach Card Action Buttons — View Location Button */
 .explore-card-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  display: flex;
   margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid var(--color-border);
 }
 
-.explore-card-actions .btn {
+.explore-card-actions .btn-beach-loc {
   box-sizing: border-box;
   min-width: 0;
   width: 100%;
-  min-height: 38px;
+  min-height: 40px;
   height: auto;
-  padding: 8px 10px;
-  font-size: 0.74rem;
+  padding: 8px 14px;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   border-radius: var(--radius-pill);
@@ -5219,79 +5217,29 @@ div[id] {
   line-height: 1.2;
   word-break: normal;
   overflow-wrap: break-word;
-  gap: 5px;
+  gap: 7px;
   text-decoration: none;
   cursor: pointer;
-  transition: all var(--transition-base);
-}
-
-.explore-card-actions .btn span {
-  display: inline-block;
-  line-height: 1.2;
-  white-space: normal;
-  word-break: normal;
-  overflow-wrap: break-word;
-}
-
-.explore-card-actions .btn svg {
-  flex-shrink: 0;
-  width: 13px;
-  height: 13px;
-  transition: transform var(--transition-fast), color var(--transition-fast);
-}
-
-.explore-card-actions .btn-book {
-  background-color: var(--color-secondary);
-  border: 1.5px solid var(--color-secondary);
-  color: var(--color-white);
-  box-shadow: 0 2px 8px rgba(13, 139, 153, 0.22);
-}
-
-.explore-card-actions .btn-book svg {
-  color: var(--color-white);
-  stroke: var(--color-white);
-}
-
-.explore-card-actions .btn-book:hover {
-  background-color: var(--color-secondary-hover);
-  border-color: var(--color-secondary-hover);
-  color: var(--color-white);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(13, 139, 153, 0.35);
-}
-
-.explore-card-actions .btn-details {
-  background-color: var(--color-white);
-  border: 1.5px solid var(--color-border);
-  color: var(--color-primary);
-  box-shadow: var(--shadow-sm);
-}
-
-.explore-card-actions .btn-details svg {
-  color: var(--color-secondary);
-  stroke: var(--color-secondary);
-}
-
-.explore-card-actions .btn-details:hover {
-  background-color: var(--color-bg-aqua);
-  border-color: var(--color-secondary);
-  color: var(--color-secondary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.explore-card-actions .btn-beach-loc {
-  grid-column: 1 / -1;
-  width: 100%;
   background-color: var(--color-bg-aqua);
   border: 1.5px solid #bce6eb;
   color: var(--color-primary);
   box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.explore-card-actions .btn-beach-loc span {
+  display: inline-block;
+  line-height: 1.2;
+  white-space: normal;
 }
 
 .explore-card-actions .btn-beach-loc svg {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
   color: var(--color-secondary);
   stroke: var(--color-secondary);
+  transition: transform var(--transition-fast), color var(--transition-fast);
 }
 
 .explore-card-actions .btn-beach-loc:hover {
@@ -5320,13 +5268,9 @@ div[id] {
     gap: 24px;
   }
 
-  .explore-card-actions {
-    grid-template-columns: 1fr;
-  }
-
-  .explore-card-actions .btn {
+  .explore-card-actions .btn-beach-loc {
     min-height: 42px;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     padding: 8px 12px;
   }
 }
