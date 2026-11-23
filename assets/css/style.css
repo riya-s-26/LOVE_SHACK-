@@ -5050,7 +5050,7 @@ div[id] {
   font-weight: 600;
 }
 
-/* Explore Aruba Beach Grid — 3 + 2 Centered System (Website Colors & Cover Images) */
+/* Explore Aruba Beach Grid — Balanced 6-Card 3-Column System */
 .beach-cards-section {
   max-width: 1400px !important;
   width: 94% !important;
@@ -5060,27 +5060,11 @@ div[id] {
 
 .explore-beach-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
   margin-top: 36px;
   margin-bottom: 60px;
   align-items: stretch;
-}
-
-/* Row 1: Exactly 3 cards (each spans 2 columns out of 6) */
-.explore-beach-card:nth-child(1),
-.explore-beach-card:nth-child(2),
-.explore-beach-card:nth-child(3) {
-  grid-column: span 2;
-}
-
-/* Row 2: Exactly 2 cards, centered horizontally beneath Row 1 */
-.explore-beach-card:nth-child(4) {
-  grid-column: 2 / span 2;
-}
-
-.explore-beach-card:nth-child(5) {
-  grid-column: 4 / span 2;
 }
 
 .explore-beach-card,
@@ -5096,6 +5080,7 @@ div[id] {
   flex-direction: column;
   height: 100%;
   min-width: 0;
+  grid-column: auto !important;
   aspect-ratio: auto !important;
   cursor: default;
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
@@ -5322,18 +5307,17 @@ div[id] {
   stroke: var(--color-white);
 }
 
+@media (max-width: 992px) {
+  .explore-beach-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
 @media (max-width: 680px) {
   .explore-beach-grid {
     grid-template-columns: 1fr;
     gap: 24px;
-  }
-
-  .explore-beach-card:nth-child(1),
-  .explore-beach-card:nth-child(2),
-  .explore-beach-card:nth-child(3),
-  .explore-beach-card:nth-child(4),
-  .explore-beach-card:nth-child(5) {
-    grid-column: auto !important;
   }
 
   .explore-card-actions {
