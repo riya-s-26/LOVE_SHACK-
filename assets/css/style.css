@@ -5454,6 +5454,7 @@ div[id] {
   gap: 28px;
   margin-top: 32px;
   margin-bottom: 50px;
+  align-items: start;
 }
 
 .explore-exp-card {
@@ -5467,6 +5468,11 @@ div[id] {
   flex-direction: column;
   cursor: default !important;
   user-select: none;
+  height: fit-content;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  aspect-ratio: 4 / 3;
 }
 
 .explore-exp-card:hover {
@@ -5476,11 +5482,15 @@ div[id] {
 
 .explore-exp-img {
   width: 100%;
+  height: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   transition: transform 0.35s ease;
   cursor: default !important;
   pointer-events: none;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .explore-exp-img img {
