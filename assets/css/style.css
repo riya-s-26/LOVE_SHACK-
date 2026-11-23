@@ -5333,20 +5333,26 @@ div[id] {
 }
 
 .beyond-shoreline-card-contain {
-  background: linear-gradient(180deg, #d4f0f6 0%, #e8f7fa 100%);
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #0b4b5d;
 }
 
 .beyond-shoreline-card-contain .beyond-shoreline-bg-blur {
   position: absolute;
-  inset: -15px;
+  inset: -20px;
+  background-image: url('../images/explore/aruba-flamingo-beach.jpg');
   background-size: cover;
   background-position: center;
-  filter: blur(20px) saturate(1.15) brightness(1.02);
-  opacity: 0.55;
-  transform: scale(1.1);
+  background-repeat: no-repeat;
+  filter: blur(12px);
+  -webkit-filter: blur(12px);
+  transform: scale(1.15);
+  opacity: 1;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -5357,6 +5363,11 @@ div[id] {
   height: 100%;
   object-fit: contain !important;
   object-position: center !important;
+  display: block;
+}
+
+.beyond-shoreline-card-contain:hover img {
+  transform: none;
 }
 
 @media (max-width: 992px) {
