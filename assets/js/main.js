@@ -1479,6 +1479,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".gallery-item, .mosaic-primary, .mosaic-card, [data-lightbox]").forEach(item => {
 
+      // Exclude massage section items - image click / lightbox disabled strictly for massage section
+      if (item.closest(".massage-section") || item.classList.contains("massage-item")) {
+        return;
+      }
+
       item.addEventListener("click", () => {
 
         const img = item.querySelector("img");
@@ -1498,6 +1503,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
     });
+
+    // Explicitly prevent click events on massage section images or cards
+    const massageSection = document.getElementById("massage") || document.querySelector(".massage-section");
+    if (massageSection) {
+      massageSection.querySelectorAll(".massage-item, .massage-item img, .massage-item .gallery-overlay").forEach(el => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      });
+    }
 
 
 
