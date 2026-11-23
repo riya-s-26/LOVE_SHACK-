@@ -281,11 +281,12 @@ document.addEventListener("DOMContentLoaded", () => {
           if (sumNights) sumNights.textContent = `${diffNights} Night${diffNights > 1 ? 's' : ''}`;
           
           state.accommodationTotal = diffNights * state.nightlyRate;
-          state.estimatedTotal = state.accommodationTotal + state.cleaningFee + state.servicesTotal;
+          state.servicesTotal = 0;
+          state.estimatedTotal = state.accommodationTotal + state.cleaningFee;
 
           if (sumTotal) sumTotal.textContent = `$${state.estimatedTotal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
           if (sumPricingSubcaption) {
-            sumPricingSubcaption.textContent = `$${state.nightlyRate}/nt × ${diffNights} nts + $${state.cleaningFee} cleaning${state.servicesTotal > 0 ? ` + $${state.servicesTotal} extras` : ''}`;
+            sumPricingSubcaption.textContent = `${state.nightlyRate}/nt × ${diffNights} nts + ${state.cleaningFee} cleaning${state.services.length > 0 ? ` (${state.services.length} concierge enquir${state.services.length > 1 ? 'ies' : 'y'})` : ''}`;
           }
         } else {
           if (sumNights) sumNights.textContent = "—";
@@ -409,7 +410,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnSkipExtrasFromStep2) {
       btnSkipExtrasFromStep2.addEventListener("click", () => {
         // Skip all optional extras directly from Step 2 to Step 4
-        const allCards = document.querySelectorAll(".service-addon-card");
+        const allCards = document.querySelectorAll(".service-addon-card, .service-addon-featured");
         allCards.forEach(card => {
           const cb = card.querySelector(".service-checkbox");
           if (cb) cb.checked = false;
@@ -422,29 +423,27 @@ document.addEventListener("DOMContentLoaded", () => {
     // ------------------------------------------------------------------------
     // STEP 3: Customise Your Stay (Extras Selection)
     // ------------------------------------------------------------------------
-    const serviceCards = document.querySelectorAll(".service-addon-card");
+    const serviceCards = document.querySelectorAll(".service-addon-card, .service-addon-featured");
     const recalculateExtras = () => {
       state.services = [];
-      let totalExtras = 0;
 
-      const currentServiceCards = document.querySelectorAll(".service-addon-card");
+      const currentServiceCards = document.querySelectorAll(".service-addon-card, .service-addon-featured");
       currentServiceCards.forEach(card => {
         const checkbox = card.querySelector(".service-checkbox");
         if (checkbox && checkbox.checked) {
           card.classList.add("selected");
           const sId = card.getAttribute("data-service-id") || "";
           const sName = card.getAttribute("data-service-name") || "Custom Service";
-          const sPrice = parseFloat(card.getAttribute("data-service-price")) || 0;
-          const sDisplay = card.getAttribute("data-service-display") || (sPrice > 0 ? `+$${sPrice.toFixed(2)}` : "Price on request");
-          totalExtras += sPrice;
-          state.services.push({ id: sId, name: sName, price: sPrice, display: sDisplay });
+          const sDisplay = card.getAttribute("data-service-display") || "Optional Enquiry";
+          // Strictly enquiry-only: price is always 0 in calculations
+          state.services.push({ id: sId, name: sName, price: 0, display: sDisplay });
         } else {
           card.classList.remove("selected");
         }
       });
 
-      state.servicesTotal = totalExtras;
-      state.estimatedTotal = state.accommodationTotal + state.cleaningFee + state.servicesTotal;
+      state.servicesTotal = 0; // Strictly enquiry only - zero charge added to total
+      state.estimatedTotal = state.accommodationTotal + state.cleaningFee;
       updateLiveSummaryCard();
     };
 

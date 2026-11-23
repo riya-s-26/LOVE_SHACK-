@@ -177,261 +177,145 @@ foreach ($services as $svc) {
             </div>
           </div>
 
-          <!-- STEP 3: Customise Your Stay -->
+          <!-- STEP 3: Customise Your Stay (Enquiry-Only Add-ons) -->
           <div class="booking-step-pane" id="paneStep3">
-            <span class="eyebrow">STEP 3 OF 5 · ENHANCE YOUR RETREAT</span>
+            <span class="eyebrow">STEP 3 OF 5 · BESPOKE ISLAND CONCIERGE</span>
             <h2>Customise Your Stay</h2>
-            <p>Select bespoke on-island services and amenities to personalize your Aruban retreat.</p>
+            <p>Select optional on-island services and experiences to personalize your Aruban retreat.</p>
 
-            <div id="servicesContainer">
-              <?php foreach ($groupedServices as $catName => $catItems): ?>
-                <div class="services-category-block">
-                  <div class="services-category-title">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                    <?= htmlspecialchars($catName) ?>
-                  </div>
-                  <div class="service-cards-list">
-                    <?php foreach ($catItems as $svc): ?>
-                      <label class="service-addon-card" data-service-id="<?= (int)$svc['id'] ?>" data-service-name="<?= htmlspecialchars($svc['name']) ?>" data-service-price="<?= (float)$svc['price'] ?>">
-                        <input type="checkbox" class="service-checkbox" value="<?= (int)$svc['id'] ?>" style="width: auto;">
-                        <div class="service-addon-info">
-                          <h4><?= htmlspecialchars($svc['name']) ?></h4>
-                          <p><?= htmlspecialchars($svc['description']) ?></p>
-                        </div>
-                        <div class="service-addon-pricing">
-                          <span class="service-price-tag">+$<?= number_format((float)$svc['price'], 2) ?></span>
-                          <small style="color: var(--color-text-muted); font-size: 0.72rem;"><?= htmlspecialchars(str_replace('_', ' ', $svc['pricing_type'] ?? 'per_stay')) ?></small>
-                        </div>
-                      </label>
-                    <?php endforeach; ?>
-                  </div>
-                </div>
-              <?php endforeach; ?>
+            <!-- Mandatory Client Notice Banner -->
+            <div class="concierge-enquiry-banner">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <p>These services are optional and are not confirmed or charged at this stage. Our concierge team will contact you to discuss availability, details and pricing.</p>
             </div>
 
-            <!-- Bottom Navigation: BACK -> NEXT -> SKIP EXTRAS -->
-            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px;">
-              <button type="button" class="btn btn-outline" id="btnBackToStep2" style="flex: 1;">
-                &larr; Back
-              </button>
-              <button type="button" class="btn btn-teal" id="btnGoToStep3b" style="flex: 1.5;">
-                Next &rarr;
-              </button>
-              <button type="button" class="btn btn-outline" id="btnSkipExtrasFromStep3" style="flex: 1.2;">
-                Skip Extras &rarr;
-              </button>
+            <!-- Primary 4 Client-Requested Add-ons (Prominently Featured with Photographs) -->
+            <div class="services-category-block">
+              <div class="services-category-title">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                Featured Optional Add-ons
+              </div>
+
+              <!-- 1. Additional Housekeeping -->
+              <label class="service-addon-featured service-addon-card" data-service-id="housekeeping" data-service-name="Additional Housekeeping" data-service-price="0" data-service-display="Optional Enquiry">
+                <input type="checkbox" class="service-checkbox" value="housekeeping">
+                <div class="service-addon-thumb">
+                  <img src="assets/images/rooms/sea-esta-1.jpg" alt="Villa bedroom suite for housekeeping" loading="lazy">
+                </div>
+                <div class="service-addon-details">
+                  <div class="service-addon-header">
+                    <h4>Additional Housekeeping</h4>
+                    <span class="service-enquiry-badge">Enquiry Only</span>
+                  </div>
+                  <p>Daily or mid-stay villa refresh, luxury linen changes, bathroom detailing, and fresh beach towel refresh during your stay.</p>
+                  <span class="service-addon-note">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    Custom frequency &amp; scheduling coordinated by concierge
+                  </span>
+                </div>
+              </label>
+
+              <!-- 2. Car Rental -->
+              <label class="service-addon-featured service-addon-card" data-service-id="car-rental" data-service-name="Car Rental" data-service-price="0" data-service-display="Optional Enquiry">
+                <input type="checkbox" class="service-checkbox" value="car-rental">
+                <div class="service-addon-thumb">
+                  <img src="assets/images/explore/divi-tree-beach.jpg" alt="Island exploration along Aruba coastline" loading="lazy">
+                </div>
+                <div class="service-addon-details">
+                  <div class="service-addon-header">
+                    <h4>Car Rental</h4>
+                    <span class="service-enquiry-badge">Enquiry Only</span>
+                  </div>
+                  <p>Seamless door-to-door vehicle delivery directly to The Love Shack. Choose from economical compact cars, rugged 4x4 SUVs, or multi-passenger vans.</p>
+                  <span class="service-addon-note">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    Direct villa drop-off &amp; flexible pickup
+                  </span>
+                </div>
+              </label>
+
+              <!-- 3. Private Massage -->
+              <label class="service-addon-featured service-addon-card" data-service-id="private-massage" data-service-name="Private Massage" data-service-price="0" data-service-display="Optional Enquiry">
+                <input type="checkbox" class="service-checkbox" value="private-massage">
+                <div class="service-addon-thumb">
+                  <img src="assets/images/services/private-massage-treatment.jpg" alt="Seaside private massage treatment at The Love Shack" loading="lazy">
+                </div>
+                <div class="service-addon-details">
+                  <div class="service-addon-header">
+                    <h4>Private Massage</h4>
+                    <span class="service-enquiry-badge">Enquiry Only</span>
+                  </div>
+                  <p>Restorative side-by-side couples massage, deep tissue, or Swedish therapy administered on your private ocean deck, shaded cabana, or calm lagoon shallows.</p>
+                  <span class="service-addon-note">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    Certified Aruban spa therapists at your villa
+                  </span>
+                </div>
+              </label>
+
+              <!-- 4. Private Chef -->
+              <label class="service-addon-featured service-addon-card" data-service-id="private-chef" data-service-name="Private Chef" data-service-price="0" data-service-display="Optional Enquiry">
+                <input type="checkbox" class="service-checkbox" value="private-chef">
+                <div class="service-addon-thumb">
+                  <img src="assets/images/architectural-design.jpg" alt="Gourmet dining experience at The Love Shack" loading="lazy">
+                </div>
+                <div class="service-addon-details">
+                  <div class="service-addon-header">
+                    <h4>Private Chef</h4>
+                    <span class="service-enquiry-badge">Enquiry Only</span>
+                  </div>
+                  <p>Exquisite three-course seaside dinner prepared fresh on your pool veranda by an acclaimed private Aruban chef. Fresh catch seafood, prime meats, or vegetarian tasting menus.</p>
+                  <span class="service-addon-note">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    Fully personalized menus and grocery provisioning
+                  </span>
+                </div>
+              </label>
             </div>
-          </div>
 
-          <!-- STEP 3B: Additional Services & Island Experiences Screen -->
-          <div class="booking-step-pane" id="paneStep3b">
-            <span class="eyebrow">ADDITIONAL SERVICES · ISLAND EXPERIENCES</span>
-            <h2>Additional Services &amp; Island Experiences</h2>
-            <p>Select bespoke on-island services, transportation, and excursions to personalize your Aruban retreat.</p>
-
-            <div id="additionalServicesContainer">
-              <!-- 1. Convenience & Transportation -->
-              <div class="services-category-block">
-                <div class="services-category-title">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
-                  1. Convenience &amp; Transportation
-                </div>
-                <div class="service-cards-list">
-                  <label class="service-addon-card" data-service-id="grocery-service" data-service-name="Grocery Service" data-service-price="50" data-service-display="+$50.00 / trip">
-                    <input type="checkbox" class="service-checkbox" value="grocery-service" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>Grocery Service</h4>
-                      <p>Pre-arrival pantry and refrigerator grocery stocking so your villa is completely refreshed and ready when you arrive.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">+$50.00</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per trip</small>
-                    </div>
-                  </label>
-
-                  <label class="service-addon-card" data-service-id="airport-pickup" data-service-name="Airport Pickup" data-service-price="40" data-service-display="+$40.00 / pickup">
-                    <input type="checkbox" class="service-checkbox" value="airport-pickup" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>Airport Pickup</h4>
-                      <p>Personalized greeting at Queen Beatrix International Airport (AUA) and direct, private transfer to The Love Shack in Savaneta.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">+$40.00</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per pickup</small>
-                    </div>
-                  </label>
-
-                  <label class="service-addon-card" data-service-id="private-driver" data-service-name="Private Driver" data-service-price="0" data-service-display="$30–$70 each way">
-                    <input type="checkbox" class="service-checkbox" value="private-driver" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>Private Driver</h4>
-                      <p>Dedicated island chauffeur for dinners, nightlife, shopping, or custom excursions across Aruba.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">$30–$70</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">each way (by dest./timing)</small>
-                    </div>
-                  </label>
-
-                  <label class="service-addon-card" data-service-id="car-van-rentals" data-service-name="Car and Van Rentals" data-service-price="0" data-service-display="Price on request">
-                    <input type="checkbox" class="service-checkbox" value="car-van-rentals" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>Car and Van Rentals</h4>
-                      <p>Door-to-door vehicle delivery directly to The Love Shack. Compact cars, 4x4 SUVs, and spacious passenger vans available.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">On Request</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">tailored vehicle rates</small>
-                    </div>
-                  </label>
-
-                  <label class="service-addon-card" data-service-id="daily-housekeeping" data-service-name="Daily Housekeeping" data-service-price="20" data-service-display="+$20.00 / hour">
-                    <input type="checkbox" class="service-checkbox" value="daily-housekeeping" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>Daily Housekeeping</h4>
-                      <p>Professional villa refresh, bed styling, fresh bath and beach towels, and kitchen tidying during your stay.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">+$20.00</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per hour</small>
-                    </div>
-                  </label>
-                </div>
+            <!-- Additional Island Experiences & Concierge (Also Strictly Enquiry Only) -->
+            <div class="services-category-block" style="margin-top: 24px;">
+              <div class="services-category-title">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                Additional Island Concierge Enquiries
               </div>
+              <div class="service-cards-list">
+                <label class="service-addon-card" data-service-id="grocery-stocking" data-service-name="Pre-Arrival Grocery Stocking" data-service-price="0" data-service-display="Optional Enquiry">
+                  <input type="checkbox" class="service-checkbox" value="grocery-stocking" style="width: auto;">
+                  <div class="service-addon-info">
+                    <h4>Pre-Arrival Grocery Stocking</h4>
+                    <p>Have your refrigerator and pantry stocked with your favorite wines, tropical fruits, snacks, and breakfast essentials upon arrival.</p>
+                  </div>
+                  <div class="service-addon-pricing">
+                    <span class="service-enquiry-badge">Enquiry</span>
+                  </div>
+                </label>
 
-              <!-- 2. Adventure & Activities -->
-              <div class="services-category-block">
-                <div class="services-category-title">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
-                  2. Adventure &amp; Activities
-                </div>
-                <div class="service-cards-list">
-                  <label class="service-addon-card" data-service-id="utv-rental-2" data-service-name="UTV Rental (2-Seater)" data-service-price="190" data-service-display="+$190.00 / 8 hrs">
-                    <input type="checkbox" class="service-checkbox" value="utv-rental-2" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>UTV Rental – 2-Seater</h4>
-                      <p>All-terrain 2-passenger utility vehicle for 8 hours of rugged exploration across Arikok National Park and the Natural Pool.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">+$190.00</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">8-hour rental</small>
-                    </div>
-                  </label>
+                <label class="service-addon-card" data-service-id="airport-transfer" data-service-name="VIP Airport Transfer" data-service-price="0" data-service-display="Optional Enquiry">
+                  <input type="checkbox" class="service-checkbox" value="airport-transfer" style="width: auto;">
+                  <div class="service-addon-info">
+                    <h4>VIP Airport Transfer</h4>
+                    <p>Personal greeting at Queen Beatrix Airport (AUA) and direct, comfortable private van transfer directly to the villa.</p>
+                  </div>
+                  <div class="service-addon-pricing">
+                    <span class="service-enquiry-badge">Enquiry</span>
+                  </div>
+                </label>
 
-                  <label class="service-addon-card" data-service-id="utv-rental-4" data-service-name="UTV Rental (4-Seater)" data-service-price="380" data-service-display="+$380.00 / 8 hrs">
-                    <input type="checkbox" class="service-checkbox" value="utv-rental-4" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>UTV Rental – 4-Seater</h4>
-                      <p>All-terrain 4-passenger utility vehicle for 8 hours of off-road family adventure, desert trails, and secret coastlines.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">+$380.00</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">8-hour rental</small>
-                    </div>
-                  </label>
-
-                  <label class="service-addon-card" data-service-id="guided-hiking" data-service-name="Guided Hiking Tours" data-service-price="50" data-service-display="+$50.00 / person">
-                    <input type="checkbox" class="service-checkbox" value="guided-hiking" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>Guided Hiking Tours</h4>
-                      <p>Private guided trail exploration through Arikok National Park, hidden sea caves, cactus valleys, and panoramic lookout summits.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">+$50.00</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per person</small>
-                    </div>
-                  </label>
-
-                  <label class="service-addon-card" data-service-id="fishing-charter" data-service-name="Private Fishing Charter" data-service-price="600" data-service-display="+$600.00 (up to 6)">
-                    <input type="checkbox" class="service-checkbox" value="fishing-charter" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>Private Fishing Charter</h4>
-                      <p>Private deep-sea offshore sportfishing charter with licensed captain, tackle, bait, ice, and drinks for up to 6 people.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">+$600.00</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">for up to 6 people</small>
-                    </div>
-                  </label>
-
-                  <label class="service-addon-card" data-service-id="photography" data-service-name="Professional Photography" data-service-price="0" data-service-display="Available on request">
-                    <input type="checkbox" class="service-checkbox" value="photography" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>Professional Photography</h4>
-                      <p>Golden-hour beach, villa, or couples photoshoot in Savaneta with professional editing and high-resolution digital gallery.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">On Request</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">bespoke session</small>
-                    </div>
-                  </label>
-                </div>
-              </div>
-
-              <!-- 3. Wellness & Relaxation -->
-              <div class="services-category-block">
-                <div class="services-category-title">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  3. Wellness &amp; Relaxation
-                </div>
-                <div class="service-cards-list">
-                  <label class="service-addon-card" data-service-id="beach-yoga" data-service-name="Beach Yoga" data-service-price="35" data-service-display="+$35.00 / person">
-                    <input type="checkbox" class="service-checkbox" value="beach-yoga" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>Beach Yoga</h4>
-                      <p>Private 1-hour mindfulness and gentle flow yoga session directly on the tranquil beach overlooking Comandeurs Bay.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">+$35.00</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per person (1 hour)</small>
-                    </div>
-                  </label>
-
-                  <label class="service-addon-card" data-service-id="poolside-massage" data-service-name="Poolside Massage" data-service-price="140" data-service-display="+$140.00 / person">
-                    <input type="checkbox" class="service-checkbox" value="poolside-massage" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>Poolside Massage</h4>
-                      <p>Relaxing 1-hour Swedish or deep-tissue massage administered on your private pool deck by certified Aruban spa therapists.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">+$140.00</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per person (1 hour)</small>
-                    </div>
-                  </label>
-
-                  <label class="service-addon-card" data-service-id="floating-massage" data-service-name="Serene Floating Massage" data-service-price="0" data-service-display="Available on request">
-                    <input type="checkbox" class="service-checkbox" value="floating-massage" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>Serene Floating Massage</h4>
-                      <p>Sensory aqua-cradle floating massage and water relaxation experience in the calm shallows of the lagoon or pool.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">On Request</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">bespoke aqua session</small>
-                    </div>
-                  </label>
-                </div>
-              </div>
-
-              <!-- 4. Dining & Special Experiences -->
-              <div class="services-category-block">
-                <div class="services-category-title">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-                  4. Dining &amp; Special Experiences
-                </div>
-                <div class="service-cards-list">
-                  <label class="service-addon-card" data-service-id="private-chef-experience" data-service-name="Private Chef Experience" data-service-price="0" data-service-display="$85–$140 per person">
-                    <input type="checkbox" class="service-checkbox" value="private-chef-experience" style="width: auto;">
-                    <div class="service-addon-info">
-                      <h4>Private Chef</h4>
-                      <p>Bespoke seaside dinner prepared fresh at the villa, including gourmet appetizers, fresh catch or tenderloin entree, and artisan dessert.</p>
-                    </div>
-                    <div class="service-addon-pricing">
-                      <span class="service-price-tag">$85–$140</span>
-                      <small style="color: var(--color-text-muted); font-size: 0.72rem;">per person (3 courses)</small>
-                    </div>
-                  </label>
-                </div>
+                <label class="service-addon-card" data-service-id="sailing-charter" data-service-name="Private Sunset Sailing Cruise" data-service-price="0" data-service-display="Optional Enquiry">
+                  <input type="checkbox" class="service-checkbox" value="sailing-charter" style="width: auto;">
+                  <div class="service-addon-info">
+                    <h4>Private Sunset Sailing Cruise</h4>
+                    <p>Charter a catamaran or sailboat for an unhurried sunset sail along the coast with open bar, bites, and reef snorkeling.</p>
+                  </div>
+                  <div class="service-addon-pricing">
+                    <span class="service-enquiry-badge">Enquiry</span>
+                  </div>
+                </label>
               </div>
             </div>
 
@@ -444,50 +328,24 @@ foreach ($services as $svc) {
                   <span class="info-badge">Included with your stay</span>
                 </div>
               </div>
-              <p>All guests enjoy complimentary, unlimited access to our ocean kayaks, stand-up paddleboards (SUP), and snorkeling gear (masks, snorkels &amp; fins) to explore Savaneta lagoon and Sea Glass Island at no additional charge.</p>
-            </div>
-
-            <!-- Arrival Information Requirements -->
-            <div class="booking-info-card arrival-info-card">
-              <div class="booking-info-header">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                <div>
-                  <h4>Arrival Information &amp; Pre-Stay Requirements</h4>
-                  <span class="info-badge requirement">Informational Requirement</span>
-                </div>
-              </div>
-              <ul class="arrival-requirements-list">
-                <li>
-                  <strong>WhatsApp Communication:</strong> Check-in details, villa gate access codes, and arrival directions are coordinated directly via WhatsApp (+297 580 0000). Please provide a WhatsApp-enabled phone number on the next step.
-                </li>
-                <li>
-                  <strong>Flight Number Details:</strong> We kindly request your arriving flight number and landing schedule so our on-island team can track delays and greet you right as you arrive.
-                </li>
-              </ul>
-            </div>
-
-            <!-- Outside Vendor Pricing Disclaimer -->
-            <div class="vendor-notice-banner">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-              <span><strong>Please Note:</strong> Outside vendor prices, vehicle rentals, and private activity rates are subject to seasonal supplier availability and may change. Your concierge will confirm final schedules and exact quotes directly with you.</span>
+              <p>All guests enjoy complimentary, unlimited access to our ocean kayaks, stand-up paddleboards (SUP), and snorkeling gear to explore Savaneta lagoon and Sea Glass Island at no additional charge.</p>
             </div>
 
             <!-- Bottom Navigation: BACK -> NEXT -> SKIP EXTRAS -->
             <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px;">
-              <button type="button" class="btn btn-outline" id="btnBackToStep3" style="flex: 1;">
+              <button type="button" class="btn btn-outline" id="btnBackToStep2" style="flex: 1;">
                 &larr; Back
               </button>
               <button type="button" class="btn btn-teal" id="btnGoToStep4" style="flex: 1.5;">
                 Next &rarr;
               </button>
-              <button type="button" class="btn btn-outline" id="btnSkipExtrasFromStep3b" style="flex: 1.2;">
+              <button type="button" class="btn btn-outline" id="btnSkipExtrasFromStep3" style="flex: 1.2;">
                 Skip Extras &rarr;
               </button>
             </div>
           </div>
-          </div>
 
-          <!-- STEP 4: Guest Details Form -->
+                    <!-- STEP 4: Guest Details Form -->
           <div class="booking-step-pane" id="paneStep4">
             <span class="eyebrow">STEP 4 OF 5 · GUEST DETAILS</span>
             <h2>Guest &amp; Contact Details</h2>

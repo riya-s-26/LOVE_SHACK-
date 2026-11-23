@@ -36,6 +36,7 @@ $ext = '.php';
           <ul class="footer-links">
             <li><a href="index.php">Home</a></li>
             <li><a href="property.php">The Property Overview</a></li>
+            <li><a href="explore-aruba.html">Explore Aruba</a></li>
             <li><a href="property.php#accommodations">Suites & Rooms</a></li>
             <li><a href="property.php#gallery">Photo Gallery</a></li>
             <li><a href="property.php#amenities">Curated Amenities</a></li>

@@ -57,6 +57,7 @@ $locationLink = ($activePage === 'home') ? '#location' : 'property.php#location'
       <nav class="nav" aria-label="Main Navigation">
         <a class="<?= $activePage === 'home' ? 'current' : '' ?>" href="index.php">Home</a>
         <a class="<?= $activePage === 'property' ? 'current' : '' ?>" href="property.php">The Property</a>
+        <a class="<?= $activePage === 'explore' ? 'current' : '' ?>" href="explore-aruba.html">Explore Aruba</a>
         <a class="<?= $activePage === 'booking' ? 'current' : '' ?>" href="booking.php">Book Your Stay</a>
         <a class="<?= $activePage === 'contact' ? 'current' : '' ?>" href="contact.php">Contact</a>
         <a class="nav-cta" href="booking.php">
