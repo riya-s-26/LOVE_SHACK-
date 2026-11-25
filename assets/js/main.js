@@ -1479,13 +1479,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".gallery-item, .mosaic-primary, .mosaic-card, [data-lightbox]").forEach(item => {
 
-      // Exclude massage section, island experiences, and bedroom section items - lightbox disabled strictly for these sections
+      // Exclude massage section, island experiences, bedroom section, and sea glass island items - lightbox disabled strictly for these sections
       if (
         item.closest(".massage-section") || item.classList.contains("massage-item") ||
         item.closest("#island-experiences") || item.closest('[aria-label="Aruba Island Experiences"]') ||
         item.closest(".beyond-shoreline-showcase") || item.classList.contains("beyond-shoreline-card") ||
         item.closest(".explore-exp-grid") || item.classList.contains(".explore-exp-card") ||
-        item.closest(".rooms-section") || item.closest("#accommodations") || item.closest(".bedroom-carousel") || item.classList.contains("bedroom-slide")
+        item.closest(".rooms-section") || item.closest("#accommodations") || item.closest(".bedroom-carousel") || item.classList.contains("bedroom-slide") ||
+        item.closest(".seaglass-section") || item.closest("#seaglass-island") || item.classList.contains("seaglass-card") || item.closest(".seaglass-collage-canvas")
       ) {
         return;
       }
@@ -1536,6 +1537,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const accommodationsSection = document.getElementById("accommodations") || document.querySelector(".rooms-section");
     if (accommodationsSection) {
       accommodationsSection.querySelectorAll(".bedroom-carousel-slides, .bedroom-slide, .bedroom-slide img").forEach(el => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      });
+    }
+
+    // Explicitly prevent click events on Sea Glass Island section images or cards
+    const seaGlassSection = document.getElementById("seaglass-island") || document.querySelector(".seaglass-section");
+    if (seaGlassSection) {
+      seaGlassSection.querySelectorAll(".seaglass-card, .seaglass-card img, .seaglass-bg-img, .seaglass-card .gallery-overlay").forEach(el => {
         el.addEventListener("click", (e) => {
           e.preventDefault();
           e.stopPropagation();
