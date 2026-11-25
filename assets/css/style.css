@@ -1368,6 +1368,22 @@ h3 em {
   display: block;
 }
 
+/* Property Showcase image click disabling (Picture yourself here) */
+.property-showcase-section .gallery-item {
+  cursor: default !important;
+  user-select: none;
+}
+
+.property-showcase-section .gallery-item img {
+  cursor: default !important;
+  pointer-events: none;
+}
+
+.property-showcase-section .gallery-item .gallery-overlay {
+  cursor: default !important;
+  pointer-events: none;
+}
+
 /* --------------------------------------------------------------------------
    LUXURY 5-PHOTO PROPERTY SHOWCASE MOSAIC
    -------------------------------------------------------------------------- */

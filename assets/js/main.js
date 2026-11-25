@@ -1486,7 +1486,8 @@ document.addEventListener("DOMContentLoaded", () => {
         item.closest(".beyond-shoreline-showcase") || item.classList.contains("beyond-shoreline-card") ||
         item.closest(".explore-exp-grid") || item.classList.contains(".explore-exp-card") ||
         item.closest(".rooms-section") || item.closest("#accommodations") || item.closest(".bedroom-carousel") || item.classList.contains("bedroom-slide") ||
-        item.closest(".seaglass-section") || item.closest("#seaglass-island") || item.classList.contains("seaglass-card") || item.closest(".seaglass-collage-canvas")
+        item.closest(".seaglass-section") || item.closest("#seaglass-island") || item.classList.contains("seaglass-card") || item.closest(".seaglass-collage-canvas") ||
+        item.closest(".property-showcase-section")
       ) {
         return;
       }
@@ -1548,6 +1549,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const seaGlassSection = document.getElementById("seaglass-island") || document.querySelector(".seaglass-section");
     if (seaGlassSection) {
       seaGlassSection.querySelectorAll(".seaglass-card, .seaglass-card img, .seaglass-bg-img, .seaglass-card .gallery-overlay").forEach(el => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      });
+    }
+
+    // Explicitly prevent click events on Property Showcase section (Picture yourself here) images
+    const propertyShowcase = document.querySelector(".property-showcase-section");
+    if (propertyShowcase) {
+      propertyShowcase.querySelectorAll(".gallery-item, .gallery-item img, .gallery-overlay").forEach(el => {
         el.addEventListener("click", (e) => {
           e.preventDefault();
           e.stopPropagation();

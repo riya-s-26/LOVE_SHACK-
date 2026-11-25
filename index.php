@@ -174,7 +174,7 @@ $reviews = get_reviews((int)($property['id'] ?? 1), 12);
     <!-- ====================================================================
          3. A GLIMPSE OF PARADISE – PROPERTY SHOWCASE GALLERY
          ==================================================================== -->
-    <section class="gallery-section wrap" id="gallery" aria-label="Villa Gallery Preview">
+    <section class="gallery-section wrap property-showcase-section" id="gallery" aria-label="Villa Gallery Preview">
       <div class="gallery-header-row">
         <div>
           <span class="eyebrow">PROPERTY SHOWCASE</span>
