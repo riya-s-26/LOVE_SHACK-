@@ -116,7 +116,7 @@ $amenitiesGrouped = get_amenities_grouped((int)($property['id'] ?? 1));
     <!-- ====================================================================
          2. FULL IMAGE GALLERY
          ==================================================================== -->
-    <section class="gallery-section wrap" id="gallery" aria-label="Photo Gallery">
+    <section class="gallery-section wrap property-showcase-section" id="gallery" aria-label="Photo Gallery">
       <div class="gallery-header-row">
         <div>
           <span class="eyebrow">PROPERTY SHOWCASE</span>

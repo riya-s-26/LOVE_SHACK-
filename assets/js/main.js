@@ -1556,16 +1556,15 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Explicitly prevent click events on Property Showcase section (Picture yourself here) images
-    const propertyShowcase = document.querySelector(".property-showcase-section");
-    if (propertyShowcase) {
+    // Explicitly prevent click events on Property Showcase sections (Picture yourself here & A glimpse of paradise) images
+    document.querySelectorAll(".property-showcase-section, #gallery").forEach(propertyShowcase => {
       propertyShowcase.querySelectorAll(".gallery-item, .gallery-item img, .gallery-overlay").forEach(el => {
         el.addEventListener("click", (e) => {
           e.preventDefault();
           e.stopPropagation();
         });
       });
-    }
+    });
 
 
 
