@@ -5006,14 +5006,23 @@ div[id] {
     flex-direction: column;
     gap: 18px;
     max-width: 420px;
+    width: 100%;
   }
   .seaglass-card {
     flex: 0 0 auto;
     width: 100%;
     max-width: 360px;
-    aspect-ratio: 4 / 3;
+    height: auto;
+    aspect-ratio: auto;
     transform: none !important;
     box-shadow: 0 12px 30px rgba(12, 62, 82, 0.22);
+  }
+  .seaglass-card img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    display: block;
   }
   .seaglass-card:hover {
     transform: translateY(-4px) !important;
@@ -5048,6 +5057,9 @@ div[id] {
   .seaglass-card {
     max-width: 100%;
     padding: 6px;
+  }
+  .seaglass-card .gallery-overlay {
+    inset: 6px;
   }
 }
 
