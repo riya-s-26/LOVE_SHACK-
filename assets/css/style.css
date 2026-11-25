@@ -2768,7 +2768,8 @@ div[id] {
   visibility: hidden;
   transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out, transform 0.6s ease-out;
   transform: scale(1.02);
-  cursor: pointer;
+  cursor: default !important;
+  user-select: none;
 }
 
 .bedroom-slide.active {
@@ -2785,6 +2786,8 @@ div[id] {
   object-position: center;
   display: block;
   transition: transform var(--transition-smooth);
+  cursor: default !important;
+  pointer-events: none;
 }
 
 .room-card:hover .bedroom-slide.active img {

@@ -1479,12 +1479,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".gallery-item, .mosaic-primary, .mosaic-card, [data-lightbox]").forEach(item => {
 
-      // Exclude massage section and island experiences items - lightbox disabled strictly for these sections
+      // Exclude massage section, island experiences, and bedroom section items - lightbox disabled strictly for these sections
       if (
         item.closest(".massage-section") || item.classList.contains("massage-item") ||
         item.closest("#island-experiences") || item.closest('[aria-label="Aruba Island Experiences"]') ||
         item.closest(".beyond-shoreline-showcase") || item.classList.contains("beyond-shoreline-card") ||
-        item.closest(".explore-exp-grid") || item.classList.contains("explore-exp-card")
+        item.closest(".explore-exp-grid") || item.classList.contains(".explore-exp-card") ||
+        item.closest(".rooms-section") || item.closest("#accommodations") || item.closest(".bedroom-carousel") || item.classList.contains("bedroom-slide")
       ) {
         return;
       }
@@ -1524,6 +1525,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const islandExpSection = document.getElementById("island-experiences") || document.querySelector('[aria-label="Aruba Island Experiences"]');
     if (islandExpSection) {
       islandExpSection.querySelectorAll(".beyond-shoreline-card, .beyond-shoreline-card img, .explore-exp-card, .explore-exp-img, .explore-exp-img img").forEach(el => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      });
+    }
+
+    // Explicitly prevent click events on bedroom section images or slides
+    const accommodationsSection = document.getElementById("accommodations") || document.querySelector(".rooms-section");
+    if (accommodationsSection) {
+      accommodationsSection.querySelectorAll(".bedroom-carousel-slides, .bedroom-slide, .bedroom-slide img").forEach(el => {
         el.addEventListener("click", (e) => {
           e.preventDefault();
           e.stopPropagation();
@@ -2029,13 +2041,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    // Clicking active slide opens lightbox
+    // Disable click-to-open image or lightbox on bedroom slides
 
     slides.forEach((slide) => {
 
-      slide.addEventListener("click", () => {
+      slide.addEventListener("click", (e) => {
 
-        triggerLightbox(slide);
+        e.preventDefault();
+
+        e.stopPropagation();
 
       });
 
