@@ -4839,15 +4839,16 @@ div[id] {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 28px;
   width: 100%;
-  max-width: 980px;
+  max-width: 1020px;
 }
 
 /* Base Floating Card */
 .seaglass-card {
   position: relative;
-  flex: 0 0 310px;
-  width: 310px;
+  flex: 0 0 290px;
+  width: 290px;
   aspect-ratio: 3 / 4;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -4874,41 +4875,41 @@ div[id] {
   pointer-events: none;
 }
 
-/* Card 1: Left Card - Tilted Slightly Left, Layered Under Center */
+/* Card 1: Left Card - Properly Positioned on Left with Zero Overlap */
 .seaglass-card-1 {
   z-index: 2;
-  transform: translateX(36px) translateY(12px) rotate(-3.5deg);
+  transform: translateY(8px) rotate(-1.5deg);
 }
 
-/* Card 2: Center Hero Card - Raised Higher & Centered Front */
+/* Card 2: Center Hero Card - Elevated Center with Zero Overlap */
 .seaglass-card-2 {
-  z-index: 4;
-  transform: translateY(-16px) scale(1.06);
+  z-index: 3;
+  transform: translateY(-10px);
   box-shadow: 0 24px 48px rgba(12, 62, 82, 0.2);
 }
 
-/* Card 3: Right Card - Tilted Slightly Right, Layered Under Center */
+/* Card 3: Right Card - Properly Positioned on Right with Zero Overlap */
 .seaglass-card-3 {
-  z-index: 3;
-  transform: translateX(-36px) translateY(14px) rotate(3.5deg);
+  z-index: 2;
+  transform: translateY(8px) rotate(1.5deg);
 }
 
-/* Interactive Floating Hover States */
+/* Interactive Floating Hover States - Preserving Hover Effect without Overlapping */
 .seaglass-card:hover {
   z-index: 10 !important;
   box-shadow: 0 28px 55px rgba(12, 62, 82, 0.25);
 }
 
 .seaglass-card-1:hover {
-  transform: translateX(10px) translateY(-8px) rotate(-0.5deg) scale(1.08);
+  transform: translateY(-4px) rotate(-0.5deg) scale(1.03);
 }
 
 .seaglass-card-2:hover {
-  transform: translateY(-24px) scale(1.1);
+  transform: translateY(-20px) scale(1.03);
 }
 
 .seaglass-card-3:hover {
-  transform: translateX(-10px) translateY(-8px) rotate(0.5deg) scale(1.08);
+  transform: translateY(-4px) rotate(0.5deg) scale(1.03);
 }
 
 .seaglass-card:hover img {
@@ -4967,18 +4968,30 @@ div[id] {
     min-height: 520px;
     padding: 50px 24px;
   }
+  .seaglass-floating-group {
+    gap: 20px;
+  }
   .seaglass-card {
-    flex: 0 0 260px;
-    width: 260px;
+    flex: 0 0 240px;
+    width: 240px;
   }
   .seaglass-card-1 {
-    transform: translateX(25px) translateY(8px) rotate(-2.5deg);
+    transform: translateY(6px) rotate(-1deg);
   }
   .seaglass-card-2 {
-    transform: translateY(-10px) scale(1.04);
+    transform: translateY(-8px);
   }
   .seaglass-card-3 {
-    transform: translateX(-25px) translateY(10px) rotate(2.5deg);
+    transform: translateY(6px) rotate(1deg);
+  }
+  .seaglass-card-1:hover {
+    transform: translateY(-2px) rotate(-0.5deg) scale(1.03);
+  }
+  .seaglass-card-2:hover {
+    transform: translateY(-16px) scale(1.03);
+  }
+  .seaglass-card-3:hover {
+    transform: translateY(-2px) rotate(0.5deg) scale(1.03);
   }
 }
 
