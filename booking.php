@@ -1175,7 +1175,7 @@ foreach ($services as $svc) {
         <aside class="booking-summary-card" aria-label="Reservation Summary">
           <div class="summary-villa-header">
             <div class="summary-thumb">
-              <img src="<?= htmlspecialchars($property['hero_image'] ?? 'assets/images/temporary-hero.jpg') ?>" alt="The Love Shack Villa">
+              <img src="<?= htmlspecialchars($property['hero_image'] ?? 'assets/images/villa-patio-pool.jpg') ?>" alt="The Love Shack Villa">
             </div>
             <div class="summary-header-text">
               <h3><?= htmlspecialchars($property['name'] ?? 'The Love Shack Villa') ?></h3>
